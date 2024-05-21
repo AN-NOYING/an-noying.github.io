@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'TmoneyRoundWindRegular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --md-text-font: 'TmoneyRoundWindRegular';
+}
+
+.md-content__inner.md-typeset sup, 
+.md-content__inner.md-typeset sub {
+    color: gray;
+}
+
+.md-content__inner.md-typeset h1 {
+    font-weight: bold;
+}
+
+.md-content__inner.md-typeset h2 {
+    border-bottom: 2px solid var(--md-primary-fg-color);
+    font-weight: bold;
+}
+.md-content__inner.md-typeset h3 {
+    border-bottom: 1px solid var(--md-primary-fg-color);
+    font-weight: bold;
+}
+.md-content__inner.md-typeset h4 {
+    border-left: 3px solid var(--md-primary-fg-color);
+    border-bottom: 1px solid var(--md-primary-fg-color);
+    font-weight: bold;
+}
+
+.md-content__inner.md-typeset p code {
+    color: var(--md-primary-fg-color);
+}
+
+.md-content__inner.md-typeset p input {
+    border: 1px solid var(--md-primary-fg-color);
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 0.25rem;
+}
+.md-content__inner.md-typeset p input[readonly] {
+    background-color: #FAFAFA;
+    cursor: default;
+    user-select: none;
+}
+
+.md-content__inner.md-typeset p u,
+.md-content__inner.md-typeset p ins {
+    text-decoration: none;
+    box-shadow: inset 0 -0.5rem 0 color-mix(in srgb, var(--md-primary-fg-color), transparent 50%) !important;
+}
+
+.md-content__inner.md-typeset img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+}
+
+.sakura {
+    pointer-events: none;
+    position: fixed; 
+}

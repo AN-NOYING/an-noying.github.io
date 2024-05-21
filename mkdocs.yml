@@ -1,0 +1,162 @@
+copyright: >
+  Copyright &copy; 2016 - 2024 Annoying –
+  <a href="#__consent">Change cookie settings</a>
+
+site_name: Annoying's Blog
+site_url: https://an-noying-github.io/
+theme:
+  custom_dir: overrides
+  favicon: assets/logo.png
+  features:
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.prune
+    - toc.follow
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - content.code.annotate
+    - content.tooltips
+  font:
+    code: Roboto Mono
+    # text: Noto Sans KR
+  language: ko
+  logo: assets/logo.png
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      primary: pink
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: pink
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+extra:
+  analytics:
+    provider: google
+    property: G-HXC1XXQP4K
+  consent:
+    actions:
+      - accept
+      - manage
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+  social:
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UCXd5Xu7oQjMEn69SfG-ezeQ
+
+extra_css:
+  - https://cdn.jsdelivr.net/npm/sakura-js@1.1.1/dist/sakura.min.css
+  - stylesheets/extra.css
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/sakura-js@1.1.1/dist/sakura.min.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/gh/DellZHackintosh/msemoji@1.1.2/src/script/msemoji.min.js
+  - javascripts/extra.js
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+
+nav:
+  - Hello:
+    - index.md
+  - 유용한 도구:
+    - blog/utils/index.md
+  # - 메이플 스토리:
+  #   - blog/maplestory/index.md
+  # - 프로그래밍:
+  #   - blog/programming/index.md
+  # - 통계 및 분석:
+  #   - blog/statNanl/index.md
+  # - 후기:
+  #   - blog/review/index.md
+
+plugins:
+  - search
+  - blog:
+      blog_dir: blog/utils
+      authors_file: "{blog}/.authors.yml"
+      archive: false
+      post_url_format: "{date}/{file}"
+  # - blog:
+  #     blog_dir: blog/maplestory
+  #     authors_file: "{blog}/.authors.yml"
+  #     archive: false
+  #     categories_allowed:
+  #       - Notice
+  #       - Walkthrough
+  #       - Analytics
+  # - blog:
+  #     blog_dir: blog/programming
+  #     authors_file: "{blog}/.authors.yml"
+  #     archive: false
+  #     post_url_format: "{date}/{file}"
+  #     categories_allowed:
+  #       - Coding Test
+  #       - C/C++
+  #       - C#
+  #       - Python
+  #       - LuaScript
+  #       - HTML/CSS
+  #       - JavaScript
+  # - blog:
+  #     blog_dir: blog/statNanl
+  #     authors_file: "{blog}/.authors.yml"
+  #     archive: false
+  #     post_url_format: "{date}/{file}"
+  # - blog:
+  #     blog_dir: blog/review
+  #     authors_file: "{blog}/.authors.yml"
+  #     archive: false
+  #     post_url_format: "{date}/{file}"
+  #     categories_allowed:
+  #       - ShoppingMall
+  #       - IT
+  #       - Event
+  - tags
