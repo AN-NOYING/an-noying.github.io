@@ -41,7 +41,7 @@ theme:
 extra:
   analytics:
     provider: google
-    property: G-HXC1XXQP4K
+    property: G-Y723WYTJY3
   consent:
     actions:
       - accept
