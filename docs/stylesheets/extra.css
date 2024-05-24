@@ -1,15 +1,14 @@
 @charset "utf-8";
 
 @font-face {
-    font-family: 'TmoneyRoundWindRegular';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
     font-style: normal;
-    font-display: swap;
 }
 
 :root {
-    --md-text-font: 'TmoneyRoundWindRegular';
+    --md-text-font: 'Pretendard-Regular';
 }
 
 .md-content__inner.md-typeset sup, 
