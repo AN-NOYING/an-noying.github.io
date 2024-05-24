@@ -121,6 +121,7 @@ plugins:
   - search
   - blog:
       blog_dir: blog/utils
+      blog_toc: true
       authors_file: "{blog}/.authors.yml"
       archive: false
       post_url_format: "{date}/{file}"
