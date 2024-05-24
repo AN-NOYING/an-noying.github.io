@@ -2,7 +2,9 @@ copyright: >
   Copyright &copy; 2016 - 2024 Annoying –
   <a href="#__consent">Change cookie settings</a>
 
-site_name: Annoying's Blog
+site_author: AnNoying
+site_description: 어노잉(AnNoying)의 이것저것 잡다하게 다루는 블로그입니다.
+site_name: AnNoying's Blog
 site_url: https://an-noying-github.io/
 theme:
   custom_dir: overrides
