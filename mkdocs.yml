@@ -14,9 +14,10 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.prune
-    - toc.follow
     - navigation.top
     - navigation.footer
+    - navigation.sections
+    - toc.follow
     - content.code.copy
     - content.code.annotate
     - content.tooltips
@@ -110,16 +111,13 @@ nav:
     - index.md
   - 유용한 도구:
     - blog/utils/index.md
-  # - 메이플 스토리:
-  #   - blog/maplestory/index.md
-  # - 프로그래밍:
-  #   - blog/programming/index.md
-  # - 통계 및 분석:
-  #   - blog/statNanl/index.md
-  # - 후기:
-  #   - blog/review/index.md
+  - 개발:
+    - blog/development/index.md
+  - 후기:
+    - blog/review/index.md
 
 plugins:
+  - glightbox
   - search
   - blog:
       blog_dir: blog/utils
@@ -127,39 +125,21 @@ plugins:
       authors_file: "{blog}/.authors.yml"
       archive: false
       post_url_format: "{date}/{file}"
-  # - blog:
-  #     blog_dir: blog/maplestory
-  #     authors_file: "{blog}/.authors.yml"
-  #     archive: false
-  #     categories_allowed:
-  #       - Notice
-  #       - Walkthrough
-  #       - Analytics
-  # - blog:
-  #     blog_dir: blog/programming
-  #     authors_file: "{blog}/.authors.yml"
-  #     archive: false
-  #     post_url_format: "{date}/{file}"
-  #     categories_allowed:
-  #       - Coding Test
-  #       - C/C++
-  #       - C#
-  #       - Python
-  #       - LuaScript
-  #       - HTML/CSS
-  #       - JavaScript
-  # - blog:
-  #     blog_dir: blog/statNanl
-  #     authors_file: "{blog}/.authors.yml"
-  #     archive: false
-  #     post_url_format: "{date}/{file}"
-  # - blog:
-  #     blog_dir: blog/review
-  #     authors_file: "{blog}/.authors.yml"
-  #     archive: false
-  #     post_url_format: "{date}/{file}"
-  #     categories_allowed:
-  #       - ShoppingMall
-  #       - IT
-  #       - Event
+  - blog:
+      blog_dir: blog/development
+      blog_toc: true
+      authors_file: "{blog}/.authors.yml"
+      archive: false
+      categories_allowed:
+        - Game
+      post_url_format: "{date}/{file}"
+  - blog:
+      blog_dir: blog/review
+      blog_toc: true
+      authors_file: "{blog}/.authors.yml"
+      archive: false
+      categories_allowed:
+        - Clothes
+        - Electronics
+      post_url_format: "{date}/{file}"
   - tags

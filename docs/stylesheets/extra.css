@@ -31,6 +31,7 @@
 .md-content__inner.md-typeset h4 {
     border-left: 3px solid var(--md-primary-fg-color);
     border-bottom: 1px solid var(--md-primary-fg-color);
+    padding-left: 0.25rem;
     font-weight: bold;
 }
 
@@ -52,14 +53,27 @@
 .md-content__inner.md-typeset p u,
 .md-content__inner.md-typeset p ins {
     text-decoration: none;
-    box-shadow: inset 0 -0.5rem 0 color-mix(in srgb, var(--md-primary-fg-color), transparent 50%) !important;
+    box-shadow: inset 0 -0.5rem 0 color-mix(in srgb, var(--md-primary-fg-color), transparent 75%) !important;
 }
 
 .md-content__inner.md-typeset p strong {
     color: var(--md-primary-fg-color);
 }
 
-.md-content__inner.md-typeset img.emoji {
+.md-content__inner.md-typeset p del {
+    color: lightgray;
+}
+
+.md-content__inner.md-typeset p {
+    line-height: 1.8;
+}
+
+.md-content__inner.md-typeset figure > figcaption {
+    font-style: normal;
+    color: darkgray;
+}
+
+img.emoji {
     height: 1em;
     width: 1em;
     margin: 0 .05em 0 .1em;

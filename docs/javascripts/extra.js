@@ -3,5 +3,5 @@ document.addEventListener('DOMContentLoaded', () => {
         folder: '3D'
     });
 
-    new Sakura('body');
+    new Sakura('html');
 });
