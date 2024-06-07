@@ -132,6 +132,7 @@ plugins:
       archive: false
       categories_allowed:
         - Game
+        - Etc
       post_url_format: "{date}/{file}"
   - blog:
       blog_dir: blog/review
