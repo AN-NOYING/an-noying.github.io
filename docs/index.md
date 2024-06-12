@@ -15,6 +15,9 @@
             - [후기](/blog/review "후기") 게시판 및 그외 카테고리 추가
             - 스크롤 시 헤더가 따라오지 않던 오류 수정
             - 본문에 사용되는 일부 스타일 수정
+        - 2024/06/12
+            - [통계 및 분석](/blog/stat_anl "통계 및 분석") 게시판 추가
+            - 프리텐다드 글꼴에서 아리따돋움 글꼴로 변경
 
 ## 라이선스
 
@@ -24,7 +27,7 @@
 
 ### 글꼴
 
-게시글의 본문은 [프리텐다드](https://cactus.tistory.com/306 "Pretendard") 글꼴을 사용하고 있으며, 소스코드 하이라이팅은 [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono "Roboto Mono")를 사용하고 있습니다.
+게시글의 본문은 [아리따돋움](https://www.apgroup.com/int/ko/about-us/visual-identity/arita-typeface/arita-typeface.html "아리따돋움") 글꼴을 사용하고 있으며, 소스코드 하이라이팅은 [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono "Roboto Mono")를 사용하고 있습니다.
 
 ### 이미지
 

@@ -67,6 +67,7 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - https://cdn.jsdelivr.net/gh/DellZHackintosh/msemoji@1.1.2/src/script/msemoji.min.js
+  - https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js
   - javascripts/extra.js
 
 markdown_extensions:
@@ -115,6 +116,10 @@ nav:
     - blog/development/index.md
   - 후기:
     - blog/review/index.md
+  - 통계 및 분석:
+    - blog/stat_anal/index.md
+  - 프로그래밍:
+    - blog/programming/index.md
 
 plugins:
   - glightbox
@@ -142,5 +147,22 @@ plugins:
       categories_allowed:
         - Clothes
         - Electronics
+      post_url_format: "{date}/{file}"
+  - blog:
+      blog_dir: blog/stat_anal
+      blog_toc: true
+      authors_file: "{blog}/.authors.yml"
+      archive: false
+      post_url_format: "{date}/{file}"
+  - blog:
+      blog_dir: blog/programming
+      blog_toc: true
+      authors_file: "{blog}/.authors.yml"
+      archive: false
+      categories_allowed:
+        - CPP
+        - Python
+        - LuaScript
+        - JavaScript
       post_url_format: "{date}/{file}"
   - tags

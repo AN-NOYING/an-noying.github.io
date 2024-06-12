@@ -1,14 +1,14 @@
 @charset "utf-8";
 
 @font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
+    font-family: 'Arita-dotum-Medium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-dotum-Medium.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
 }
 
 :root {
-    --md-text-font: 'Pretendard-Regular';
+    --md-text-font: 'Arita-dotum-Medium';
 }
 
 .md-content__inner.md-typeset sup, 
@@ -51,7 +51,8 @@
 }
 
 .md-content__inner.md-typeset p u,
-.md-content__inner.md-typeset p ins {
+.md-content__inner.md-typeset p ins,
+.md-content__inner.md-typeset li ins {
     text-decoration: none;
     box-shadow: inset 0 -0.5rem 0 color-mix(in srgb, var(--md-primary-fg-color), transparent 75%) !important;
 }
@@ -62,6 +63,10 @@
 
 .md-content__inner.md-typeset p del {
     color: lightgray;
+}
+.md-content__inner.md-typeset p del.blur {
+    color: inherit;
+    filter: blur(1px);
 }
 
 .md-content__inner.md-typeset p {
