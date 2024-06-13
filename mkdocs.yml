@@ -97,7 +97,12 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.smartsymbols
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: python
+          class: python
+          validator: !!python/name:markdown_exec.validator
+          format: !!python/name:markdown_exec.formatter
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
@@ -124,6 +129,7 @@ nav:
 plugins:
   - glightbox
   - search
+  - markdown-exec
   - blog:
       blog_dir: blog/utils
       blog_toc: true

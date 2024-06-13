@@ -9,16 +9,18 @@
 ??? info "갱신 내역"
     ??? note "2024"
         - 2024/05/29
-            - [개발](/blog/development "개발") 게시판 및 [게임 카테고리](/blog/development/category/game) 추가
+            - [개발](blog/development/index.md "개발") 게시판 추가
             - 인덱스 페이지의 내용 수정
         - 2024/06/01
-            - [후기](/blog/review "후기") 게시판 및 그외 카테고리 추가
+            - [후기](blog/review/index.md "후기") 게시판 및 그외 카테고리 추가
             - 스크롤 시 헤더가 따라오지 않던 오류 수정
             - 본문에 사용되는 일부 스타일 수정
         - 2024/06/12
-            - [통계 및 분석](/blog/stat_anl "통계 및 분석") 게시판 추가
+            - [통계 및 분석](blog/stat_anal/index.md "통계 및 분석") 게시판 추가
             - 프리텐다드 글꼴에서 아리따돋움 글꼴로 변경
-            - [프로그래밍](/blog/programming "프로그래밍") 게시판 추가
+            - [프로그래밍](blog/programming/index.md "프로그래밍") 게시판 추가
+        - 2024/06/13
+            - [markdown-exec](https://pawamoy.github.io/markdown-exec/ "markdown-exec") 플러그인 추가
 
 ## 라이선스
 
