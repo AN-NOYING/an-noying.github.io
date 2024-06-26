@@ -1,14 +1,14 @@
 @charset "utf-8";
 
 @font-face {
-    font-family: 'KingSejongInstitute-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/fontbee/font@main/Ksif/KingSejongInstitute-Regular.woff2') format('woff2');
-    font-weight: 400;
+    font-family: 'NEXON Lv2 Gothic';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
 }
 
 :root {
-    --md-text-font: 'KingSejongInstitute-Regular';
+    --md-text-font: 'NEXON Lv2 Gothic';
 }
 
 .md-content__inner.md-typeset sup, 

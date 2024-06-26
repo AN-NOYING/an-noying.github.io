@@ -48,6 +48,7 @@ extra:
   consent:
     actions:
       - accept
+      - reject
       - manage
     title: Cookie consent
     description: >- 
@@ -57,7 +58,7 @@ extra:
       make our documentation better.
   social:
     - icon: fontawesome/brands/youtube
-      link: https://www.youtube.com/channel/UCXd5Xu7oQjMEn69SfG-ezeQ
+      link: https://www.youtube.com/channel/UCK0FIT7eGEXncgm2x-mbJRA
 
 extra_css:
   - https://cdn.jsdelivr.net/npm/sakura-js@1.1.1/dist/sakura.min.css

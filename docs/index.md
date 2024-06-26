@@ -22,6 +22,9 @@
         - 2024/06/13
             - [markdown-exec](https://pawamoy.github.io/markdown-exec/ "markdown-exec") 플러그인 추가
             - [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload "vanilla-lazyload") 추가
+        - 2024/06/26
+            - [넥슨 Lv.2 고딕](https://brand.nexon.com/ko/ci-brand-guidelines/typeface#section-lv2-gothic "넥슨Lv.2고딕") 글꼴로 변경
+            - 유튜브 채널 주소 수정
 
 ## 라이선스
 
@@ -31,7 +34,7 @@
 
 ### 글꼴
 
-게시글의 본문은 [세종학당체](https://www.ksif.or.kr/com/cmm/EgovContentView.do?menuNo=10101260 "세종학당체") 글꼴을 사용하고 있으며, 소스코드 하이라이팅은 [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono "Roboto Mono")를 사용하고 있습니다.
+게시글의 본문은 [넥슨 Lv.2 고딕](https://brand.nexon.com/ko/ci-brand-guidelines/typeface#section-lv2-gothic "넥슨Lv.2고딕") 글꼴을 사용하고 있으며, 소스코드 하이라이팅은 [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono "Roboto Mono")를 사용하고 있습니다.
 
 ### 이미지
 
