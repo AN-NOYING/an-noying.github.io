@@ -25,6 +25,17 @@
         - 2024/06/26
             - [넥슨 Lv.2 고딕](https://brand.nexon.com/ko/ci-brand-guidelines/typeface#section-lv2-gothic "넥슨Lv.2고딕") 글꼴로 변경
             - 유튜브 채널 주소 수정
+        - 2024/06/28
+            - [윈도 한글](https://windos.quiple.dev/ "윈도 한글") 글꼴로 변경
+            - 실시간 구글 트렌드 추가
+        - 2024/06/29
+            - CSS 수정
+        
+            
+
+## 실시간 구글 트렌드
+
+<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/3769_RC01/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderWidget("dailytrends", "", {"geo":"KR","guestPath":"https://trends.google.com:443/trends/embed/"}); </script>
 
 ## 라이선스
 
@@ -34,11 +45,15 @@
 
 ### 글꼴
 
-게시글의 본문은 [넥슨 Lv.2 고딕](https://brand.nexon.com/ko/ci-brand-guidelines/typeface#section-lv2-gothic "넥슨Lv.2고딕") 글꼴을 사용하고 있으며, 소스코드 하이라이팅은 [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono "Roboto Mono")를 사용하고 있습니다.
+[윈도 한글](https://windos.quiple.dev/ "윈도 한글") 글꼴을 사용하고 있습니다.
 
 ### 이미지
 
 게시글에 포함되는 이미지의 경우 [ImgBB](https://ko.imgbb.com/ "ImgBB")라는 무료 이미지 호스팅을 이용하고 있습니다.
+
+### 파일
+
+아직 파일 공유를 사용 중이지 않지만 사용한다면 [GoFile](https://gofile.io/welcome "GoFile")이나 [Dropbox](https://www.dropbox.com/ko/ "Dropbox")를 사용합니다.
 
 ### 플러그인
 

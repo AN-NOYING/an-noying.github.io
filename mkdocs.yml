@@ -21,8 +21,8 @@ theme:
     - content.code.copy
     - content.code.annotate
     - content.tooltips
-  font:
-    code: Roboto Mono
+  font: false
+    # code: Roboto Mono
     # text: Noto Sans KR
   language: ko
   logo: assets/logo.png
@@ -87,8 +87,6 @@ markdown_extensions:
   - pymdownx.tilde
   - pymdownx.critic
   - pymdownx.details
-  - pymdownx.highlight:
-      anchor_linenums: true
   - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true
@@ -98,20 +96,10 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.smartsymbols
   - pymdownx.snippets
-  - pymdownx.superfences:
-      custom_fences:
-        - name: python
-          class: python
-          validator: !!python/name:markdown_exec.validator
-          format: !!python/name:markdown_exec.formatter
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
 
 nav:
   - Hello:
