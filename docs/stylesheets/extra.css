@@ -81,6 +81,10 @@ html {
     filter: blur(1px);
 }
 
+.md-content__inner.md-typeset .admonition li {
+    font-size: 100%;
+}
+
 .md-content__inner.md-typeset li,
 .md-content__inner.md-typeset > p,
 .md-content__inner > .md-typeset > p,
