@@ -30,32 +30,70 @@
             - 실시간 구글 트렌드 추가
         - 2024/06/29
             - CSS 수정
+        - 2024/06/30
+            - CSS 수정
+            - 메인 문서 수정
+            - D-DAY 추가
         
-            
+## D-DAY
+??? info "확인하기"
+    - <span class="dday-end"></span>
+    - <span class="dday-christmas"></span>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        function calcDays(startDate, endDate) {
+            const remainDays = ((endDate - startDate) / (1000 * 60 * 60 * 24));
+            return remainDays;
+        }
+
+        function getTotalDaysOfYear() {
+            const today = new Date();
+            const startOfYear = new Date(today.getFullYear(), 0, 1); // 올해의 1월 1일
+            const nextYear = new Date(today.getFullYear() + 1, 0, 1); // 다음 해의 1월 1일
+
+            const totalDaysOfYear = ((nextYear - startOfYear) / (1000 * 60 * 60 * 24));
+            return totalDaysOfYear;
+        }
+
+        const today = new Date();
+
+        const result1 = calcDays(today, new Date(today.getFullYear() + 1, 0, 1)).toFixed(2);
+        const progressPercent = (100.0 - (((result1 - 1) / getTotalDaysOfYear()) * 100)).toFixed(2);
+        const output1 = `올해가 지나가기까지 ${result1}일 남았으며, 올해는 ${progressPercent}%만큼 진행되었습니다.`;
+        document.querySelector('.dday-end').textContent = output1;
+
+        const result2 = calcDays(today, new Date(today.getFullYear(), 11, 25)).toFixed(2);
+        const output2 = `올해의 크리스마스까지 ${result2}일 남았습니다. 🎅`;
+        document.querySelector('.dday-christmas').textContent = output2;
+});
+</script>
 
 ## 실시간 구글 트렌드
 
-<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/3769_RC01/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderWidget("dailytrends", "", {"geo":"KR","guestPath":"https://trends.google.com:443/trends/embed/"}); </script>
+??? info "확인하기"
+    <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/3769_RC01/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderWidget("dailytrends", "", {"geo":"KR","guestPath":"https://trends.google.com:443/trends/embed/"}); </script>
 
 ## 라이선스
 
-### 블로그
+??? info "확인하기"
+    ### 블로그
 
-본 블로그는 [squidfunk](https://github.com/squidfunk "squidfunk")의 [MkDocs-Material](https://squidfunk.github.io/mkdocs-material/ "MkDocs Material") 프로젝트를 사용하여 운영 중에 있습니다.
+    본 블로그는 [squidfunk](https://github.com/squidfunk "squidfunk")의 [MkDocs-Material](https://squidfunk.github.io/mkdocs-material/ "MkDocs Material") 프로젝트를 사용하여 운영 중에 있습니다.
 
-### 글꼴
+    ### 글꼴
 
-[윈도 한글](https://windos.quiple.dev/ "윈도 한글") 글꼴을 사용하고 있습니다.
+    [윈도 한글](https://windos.quiple.dev/ "윈도 한글") 글꼴을 사용하고 있습니다.
 
-### 이미지
+    ### 이미지
 
-게시글에 포함되는 이미지의 경우 [ImgBB](https://ko.imgbb.com/ "ImgBB")라는 무료 이미지 호스팅을 이용하고 있습니다.
+    게시글에 포함되는 이미지의 경우 [ImgBB](https://ko.imgbb.com/ "ImgBB")라는 무료 이미지 호스팅을 이용하고 있습니다.
 
-### 파일
+    ### 파일
 
-아직 파일 공유를 사용 중이지 않지만 사용한다면 [GoFile](https://gofile.io/welcome "GoFile")이나 [Dropbox](https://www.dropbox.com/ko/ "Dropbox")를 사용합니다.
+    아직 파일 공유를 사용 중이지 않지만 사용한다면 [GoFile](https://gofile.io/welcome "GoFile")이나 [Dropbox](https://www.dropbox.com/ko/ "Dropbox")를 사용합니다.
 
-### 플러그인
+    ### 플러그인
 
-- [jhammann - sakura](https://github.com/jhammann/sakura "Sakura")
-- [DellZHackintosh - msemoji](https://github.com/DellZHackintosh/msemoji "msemoji")
+    - [jhammann - sakura](https://github.com/jhammann/sakura "Sakura")
+    - [DellZHackintosh - msemoji](https://github.com/DellZHackintosh/msemoji "msemoji")

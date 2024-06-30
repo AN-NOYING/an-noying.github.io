@@ -90,7 +90,6 @@ html {
 .md-content__inner > .md-typeset > p,
 .md-content__inner > .md-post > .md-post__content.md-typeset > p {
     line-height: 1.8;
-    font-size: 85%;
 }
 
 .md-content__inner.md-typeset p samp {
