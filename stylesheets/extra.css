@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+.md-content__inner.md-typeset sup, 
+.md-content__inner.md-typeset sub {
+    color: gray;
+}
+
+.md-content__inner.md-typeset h1 {
+    font-weight: bold;
+}
+
+.md-content__inner.md-typeset h2 {
+    border-bottom: 2px solid var(--md-primary-fg-color);
+    font-weight: bold;
+}
+.md-content__inner.md-typeset h3 {
+    border-bottom: 1px solid var(--md-primary-fg-color);
+    font-weight: bold;
+}
+.md-content__inner.md-typeset h4 {
+    border-left: 3px solid var(--md-primary-fg-color);
+    border-bottom: 1px solid var(--md-primary-fg-color);
+    padding-left: 0.25rem;
+    font-weight: bold;
+}
+
+.md-content__inner.md-typeset p code,
+.md-content__inner.md-typeset li code,
+.md-content__inner.md-typeset table td code {
+    color: var(--md-primary-fg-color);
+}
+
+.md-content__inner.md-typeset p input {
+    border: 1px solid var(--md-primary-fg-color);
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 0.25rem;
+}
+.md-content__inner.md-typeset p input[readonly] {
+    background-color: #FAFAFA;
+    cursor: default;
+    user-select: none;
+}
+
+.md-content__inner.md-typeset p u,
+.md-content__inner.md-typeset p ins,
+.md-content__inner.md-typeset li ins {
+    text-decoration: none;
+    box-shadow: inset 0 -0.35rem 0 color-mix(in srgb, var(--md-primary-fg-color), transparent 75%) !important;
+}
+
+.md-content__inner.md-typeset p strong {
+    color: var(--md-primary-fg-color);
+}
+
+.md-content__inner.md-typeset p del {
+    color: lightgray;
+}
+.md-content__inner.md-typeset p del.blur {
+    color: inherit;
+    filter: blur(1px);
+}
+
+.md-content__inner.md-typeset li,
+.md-content__inner.md-typeset > p,
+.md-content__inner > .md-typeset > p,
+.md-content__inner > .md-post > .md-post__content.md-typeset > p {
+    line-height: 1.8;
+}
+
+.md-content__inner.md-typeset p samp {
+    display: block;
+    background-color: black;
+    color: white;
+    padding: 0.25rem;
+    font-family: var(--md-code-font);
+}
+
+.md-content__inner.md-typeset figure > figcaption {
+    font-style: normal;
+    font-size: 0.625rem;
+    color: darkgray;
+    margin-bottom: 0;
+}
+
+.md-content__inner.md-typeset table:not([class]) td {
+    vertical-align: middle;
+}
+
+img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+}
+
+.sakura {
+    pointer-events: none;
+    position: fixed; 
+}
+
+.md-content > .md-content__inner > .md-post.md-post--excerpt {
+    border-bottom: 1px solid var(--md-primary-fg-color);
+    padding-bottom: 1rem;
+}
