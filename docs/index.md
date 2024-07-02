@@ -34,6 +34,9 @@
             - CSS 수정
             - 메인 문서 수정
             - D-DAY 추가
+        - 2024/07/01
+            - 통계 및 분석 게시판에 카테고리 추가
+            - 본문 및 코드 글꼴 변경
         
 ## D-DAY
 ??? info "확인하기"
@@ -72,7 +75,7 @@
 ## 실시간 구글 트렌드
 
 ??? info "확인하기"
-    <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/3769_RC01/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderWidget("dailytrends", "", {"geo":"KR","guestPath":"https://trends.google.com:443/trends/embed/"}); </script>
+    <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/3769_RC01/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderWidget("dailytrends", "", {"geo":"KR","guestPath":"https://trends.google.co.kr:443/trends/embed/"}); </script>
 
 ## 라이선스
 
@@ -83,7 +86,7 @@
 
     ### 글꼴
 
-    [윈도 한글](https://windos.quiple.dev/ "윈도 한글") 글꼴을 사용하고 있습니다.
+    본문은 [Noto Sans KR](https://fonts.google.com/noto/specimen/Noto+Sans+KR?subset=korean&noto.script=Kore "Noto Sans KR") 글꼴을 사용 중이며, 소스 코드는 [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono "Roboto Mono")를 사용하고 있습니다. 결국엔 돌고돌아 순정이네요.
 
     ### 이미지
 

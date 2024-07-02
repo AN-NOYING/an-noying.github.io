@@ -21,9 +21,9 @@ theme:
     - content.code.copy
     - content.code.annotate
     - content.tooltips
-  font: false
-    # code: Roboto Mono
-    # text: Noto Sans KR
+  font:
+    code: Roboto Mono
+    text: Noto Sans KR
   language: ko
   logo: assets/logo.png
   name: material
@@ -149,6 +149,9 @@ plugins:
       authors_file: "{blog}/.authors.yml"
       archive: false
       post_url_format: "{date}/{file}"
+      categories_allowed:
+        - Analysis
+        - Study
   - blog:
       blog_dir: blog/programming
       blog_toc: true

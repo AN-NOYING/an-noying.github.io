@@ -7,6 +7,8 @@ tags:
     - 청년매입임대
     - 경쟁률
 comments: true
+categories:
+    - Analysis
 ---
 
 # 최근 LH 청년매입임대 서울특별시 경쟁률 추이

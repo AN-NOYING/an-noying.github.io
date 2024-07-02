@@ -1,21 +1,5 @@
 @charset "utf-8";
 
-@font-face {
-    font-family: 'WinKor';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/WinKor.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-:root {
-    --md-text-font: 'WinKor';
-    --md-code-font: 'WinKor';
-}
-
-html {
-    font-size: 125%;
-}
-
 .md-content__inner.md-typeset sup, 
 .md-content__inner.md-typeset sub {
     color: gray;
@@ -40,15 +24,10 @@ html {
     font-weight: bold;
 }
 
-.md-content__inner.md-typeset .admonition pre code.md-code__content {
-    font-size: 1em;
-}
-
 .md-content__inner.md-typeset p code,
 .md-content__inner.md-typeset li code,
 .md-content__inner.md-typeset table td code {
     color: var(--md-primary-fg-color);
-    font-size: 1em;
 }
 
 .md-content__inner.md-typeset p input {
@@ -79,10 +58,6 @@ html {
 .md-content__inner.md-typeset p del.blur {
     color: inherit;
     filter: blur(1px);
-}
-
-.md-content__inner.md-typeset .admonition li {
-    font-size: 100%;
 }
 
 .md-content__inner.md-typeset li,
