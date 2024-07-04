@@ -29,4 +29,5 @@ jobs:
       - run: pip install mkdocs-glightbox
       - run: pip install markdown-exec[ansi]
       - run: pip install pandas
+      - run: pip install plotly
       - run: mkdocs gh-deploy --force
