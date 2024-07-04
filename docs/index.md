@@ -1,4 +1,4 @@
-# 반갑습니다 👋
+# 반갑습니다 :raised_hands:
 
 반갑습니다. 어노잉의 개인 블로그입니다.
 
@@ -37,11 +37,13 @@
         - 2024/07/01
             - 통계 및 분석 게시판에 카테고리 추가
             - 본문 및 코드 글꼴 변경
+        - 2024/07/04
+            - TWEMOJI로 변경(MSEMOJI 제거)
         
 ## D-DAY
 ??? info "확인하기"
     - <span class="dday-end"></span>
-    - <span class="dday-christmas"></span>
+    - <span class="dday-christmas"></span> :santa:
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -67,7 +69,7 @@
         document.querySelector('.dday-end').textContent = output1;
 
         const result2 = calcDays(today, new Date(today.getFullYear(), 11, 25)).toFixed(2);
-        const output2 = `올해의 크리스마스까지 ${result2}일 남았습니다. 🎅`;
+        const output2 = `올해의 크리스마스까지 ${result2}일 남았습니다.`;
         document.querySelector('.dday-christmas').textContent = output2;
 });
 </script>
@@ -99,4 +101,3 @@
     ### 플러그인
 
     - [jhammann - sakura](https://github.com/jhammann/sakura "Sakura")
-    - [DellZHackintosh - msemoji](https://github.com/DellZHackintosh/msemoji "msemoji")

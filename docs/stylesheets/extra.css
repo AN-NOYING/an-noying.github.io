@@ -82,15 +82,9 @@
     margin-bottom: 0;
 }
 
+.md-content__inner.md-typeset table:not([class]) th,
 .md-content__inner.md-typeset table:not([class]) td {
     vertical-align: middle;
-}
-
-img.emoji {
-    height: 1em;
-    width: 1em;
-    margin: 0 .05em 0 .1em;
-    vertical-align: -0.1em;
 }
 
 .sakura {
