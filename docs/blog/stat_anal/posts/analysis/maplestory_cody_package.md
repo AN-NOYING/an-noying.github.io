@@ -50,7 +50,7 @@ comments: true
 import pandas as pd
 import plotly.graph_objects as go
 
-df = pd.read_csv('https://raw.githubusercontent.com/AN-NOYING/DataRoom/main/Blog/Analysis/MapleStory_Adeventure_Package.csv', encoding='euc-kr')
+df = pd.read_csv('https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/MapleStory_Adeventure_Package.csv', encoding='euc-kr')
 df.rename(columns={ '아이템 이름': 'Name', ' 개수 ': 'Count', ' 가격 ': 'Price', ' 개당 가격 ': 'Price2', '날짜': 'Date' }, inplace=True)
 
 fig = go.Figure(data=[go.Bar(x=['판매량'], y=[df['Name'].count()], text=[df['Name'].count()], textposition='outside', width=[0.125])], layout={ 'title': '모험가 패키지 선택권 판매량' })
@@ -71,7 +71,7 @@ print(html_output)
 import pandas as pd
 import plotly.express as px
 
-df = pd.read_csv('https://raw.githubusercontent.com/AN-NOYING/DataRoom/main/Blog/Analysis/MapleStory_Adeventure_Package.csv', encoding='euc-kr')
+df = pd.read_csv('https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/MapleStory_Adeventure_Package.csv', encoding='euc-kr')
 df.rename(columns={ '아이템 이름': 'Name', ' 개수 ': 'Count', ' 가격 ': 'Price', ' 개당 가격 ': 'Price2', '날짜': 'Date' }, inplace=True)
 df['Price'] = df['Price'].str.replace(',', '').astype('int64')
 
@@ -86,7 +86,7 @@ print(html_output)
 ```python exec="true"
 import pandas as pd
 
-df = pd.read_csv('https://raw.githubusercontent.com/AN-NOYING/DataRoom/main/Blog/Analysis/MapleStory_Adeventure_Package.csv', encoding='euc-kr')
+df = pd.read_csv('https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/MapleStory_Adeventure_Package.csv', encoding='euc-kr')
 df.rename(columns={ '아이템 이름': 'Name', ' 개수 ': 'Count', ' 가격 ': 'Price', ' 개당 가격 ': 'Price2', '날짜': 'Date' }, inplace=True)
 df['Price'] = df['Price'].str.replace(',', '').astype('int64')
 
@@ -121,9 +121,9 @@ print(f"|{'{:,.0f}'.format(df['Price'].min())}|{'{:,.0f}'.format(df['Price'].max
 import plotly.graph_objects as go
 import pandas as pd
 
-df1 = pd.read_csv('https://raw.githubusercontent.com/AN-NOYING/DataRoom/main/Blog/Analysis/MapleStory_Hero_Package.csv', encoding='euc-kr')
+df1 = pd.read_csv('https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/MapleStory_Hero_Package.csv', encoding='euc-kr')
 df1.rename(columns={ '아이템 이름': 'Name', ' 개수 ': 'Count', ' 가격 ': 'Price', ' 개당 가격 ': 'Price2', '날짜': 'Date'}, inplace=True)
-df2 = pd.read_csv('https://raw.githubusercontent.com/AN-NOYING/DataRoom/main/Blog/Analysis/MapleStory_Knight_Package.csv', encoding='euc-kr')
+df2 = pd.read_csv('https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/MapleStory_Knight_Package.csv', encoding='euc-kr')
 df2.rename(columns={ '아이템 이름': 'Name', ' 개수 ': 'Count', ' 가격 ': 'Price', ' 개당 가격 ': 'Price2', '날짜': 'Date'}, inplace=True)
 
 fig = go.Figure(data=[
@@ -152,15 +152,17 @@ print(html_output)
 import plotly.graph_objects as go
 import pandas as pd
 
-df1 = pd.read_csv('https://raw.githubusercontent.com/AN-NOYING/DataRoom/main/Blog/Analysis/MapleStory_Hero_Package.csv', encoding='euc-kr')
+df1 = pd.read_csv('https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/MapleStory_Hero_Package.csv', encoding='euc-kr')
 df1.rename(columns={ '아이템 이름': 'Name', ' 개수 ': 'Count', ' 가격 ': 'Price', ' 개당 가격 ': 'Price2', '날짜': 'Date'}, inplace=True)
+df1.dropna(inplace=True)
 df1['Price'] = df1['Price'].str.replace(',', '').astype('int')
 df1['Price2'] = df1['Price2'].str.replace(',', '').astype('int')
 data_cnt1 = df1.groupby('Date').size().reset_index(name='Count')
 
 
-df2 = pd.read_csv('https://raw.githubusercontent.com/AN-NOYING/DataRoom/main/Blog/Analysis/MapleStory_Knight_Package.csv', encoding='euc-kr')
+df2 = pd.read_csv('https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/MapleStory_Knight_Package.csv', encoding='euc-kr')
 df2.rename(columns={ '아이템 이름': 'Name', ' 개수 ': 'Count', ' 가격 ': 'Price', ' 개당 가격 ': 'Price2', '날짜': 'Date'}, inplace=True)
+# df2.dropna(inplace=True)
 df2['Price'] = df2['Price'].str.replace(',', '').astype('int')
 df2['Price2'] = df2['Price2'].str.replace(',', '').astype('int')
 data_cnt2 = df2.groupby('Date').size().reset_index(name='Count')
@@ -186,14 +188,16 @@ print(html_output)
 import plotly.graph_objects as go
 import pandas as pd
 
-df1 = pd.read_csv('https://raw.githubusercontent.com/AN-NOYING/DataRoom/main/Blog/Analysis/MapleStory_Hero_Package.csv', encoding='euc-kr')
+df1 = pd.read_csv('https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/MapleStory_Hero_Package.csv', encoding='euc-kr')
 df1.rename(columns={ '아이템 이름': 'Name', ' 개수 ': 'Count', ' 가격 ': 'Price', ' 개당 가격 ': 'Price2', '날짜': 'Date'}, inplace=True)
+df1.dropna(inplace=True)
 df1['Price'] = df1['Price'].str.replace(',', '').astype('int')
 df1['Price2'] = df1['Price2'].str.replace(',', '').astype('int')
 data_cnt1 = df1.groupby('Date').size().reset_index(name='Count')
 
-df2 = pd.read_csv('https://raw.githubusercontent.com/AN-NOYING/DataRoom/main/Blog/Analysis/MapleStory_Knight_Package.csv', encoding='euc-kr')
+df2 = pd.read_csv('https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/MapleStory_Knight_Package.csv', encoding='euc-kr')
 df2.rename(columns={ '아이템 이름': 'Name', ' 개수 ': 'Count', ' 가격 ': 'Price', ' 개당 가격 ': 'Price2', '날짜': 'Date'}, inplace=True)
+# df2.dropna(inplace=True)
 df2['Price'] = df2['Price'].str.replace(',', '').astype('int')
 df2['Price2'] = df2['Price2'].str.replace(',', '').astype('int')
 data_cnt2 = df2.groupby('Date').size().reset_index(name='Count')
@@ -246,7 +250,7 @@ print(html_output)
 import plotly.graph_objects as go
 import pandas as pd
 
-df = pd.read_csv('https://raw.githubusercontent.com/AN-NOYING/DataRoom/main/Blog/Analysis/MapleStory_Hero_Package.csv', encoding='euc-kr')
+df = pd.read_csv('https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/MapleStory_Hero_Package.csv', encoding='euc-kr')
 df.rename(columns={ '아이템 이름': 'Name', ' 개수 ': 'Count', ' 가격 ': 'Price', ' 개당 가격 ': 'Price2', '날짜': 'Date'}, inplace=True)
 
 print("|판매량|캐시 가격|매출|")
@@ -264,7 +268,7 @@ print(f"|{df['Name'].count()}|150,000|{'{:,.0f}원'.format(df['Name'].count() * 
 import plotly.graph_objects as go
 import pandas as pd
 
-df = pd.read_csv('https://raw.githubusercontent.com/AN-NOYING/DataRoom/main/Blog/Analysis/MapleStory_Hero_Package.csv', encoding='euc-kr')
+df = pd.read_csv('https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/MapleStory_Hero_Package.csv', encoding='euc-kr')
 df.rename(columns={ '아이템 이름': 'Name', ' 개수 ': 'Count', ' 가격 ': 'Price', ' 개당 가격 ': 'Price2', '날짜': 'Date'}, inplace=True)
 
 print("|판매량|캐시 가격|매출|")
@@ -282,7 +286,7 @@ print(f"|{df['Name'].count()}|70,000|{'{:,.0f}원'.format(df['Name'].count() * 7
 import plotly.graph_objects as go
 import pandas as pd
 
-df = pd.read_csv('https://raw.githubusercontent.com/AN-NOYING/DataRoom/main/Blog/Analysis/MapleStory_Knight_Package.csv', encoding='euc-kr')
+df = pd.read_csv('https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/MapleStory_Knight_Package.csv', encoding='euc-kr')
 df.rename(columns={ '아이템 이름': 'Name', ' 개수 ': 'Count', ' 가격 ': 'Price', ' 개당 가격 ': 'Price2', '날짜': 'Date'}, inplace=True)
 
 print("|판매량|캐시 가격|매출|")
@@ -305,11 +309,11 @@ print(f"|{df['Name'].count()}|99,000|{'{:,.0f}원'.format(df['Name'].count() * 9
     
     갱신되는 시간은 따로 정해져 있지 않습니다.
 
-[:octicons-download-24: 메이플스토리 모험가 패키지 선택권 CSV 다운로드](https://raw.githubusercontent.com/AN-NOYING/DataRoom/main/Blog/Analysis/MapleStory_Adeventure_Package.csv){ .md-button }
+[:octicons-download-24: 메이플스토리 모험가 패키지 선택권 CSV 다운로드](https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/MapleStory_Adeventure_Package.csv){ .md-button }
 
-[:octicons-download-24: 메이플스토리 영웅 패키지 선택권 CSV 다운로드](https://raw.githubusercontent.com/AN-NOYING/DataRoom/main/Blog/Analysis/MapleStory_Hero_Package.csv){ .md-button }
+[:octicons-download-24: 메이플스토리 영웅 패키지 선택권 CSV 다운로드](https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/MapleStory_Hero_Package.csv){ .md-button }
 
-[:octicons-download-24: 메이플스토리 시그너스 기사단 패키지 선택권 CSV 다운로드](https://raw.githubusercontent.com/AN-NOYING/DataRoom/main/Blog/Analysis/MapleStory_Knight_Package.csv){ .md-button }
+[:octicons-download-24: 메이플스토리 시그너스 기사단 패키지 선택권 CSV 다운로드](https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/MapleStory_Knight_Package.csv){ .md-button }
 
 
 <!-- 
