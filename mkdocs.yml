@@ -18,12 +18,14 @@ theme:
     - navigation.footer
     - navigation.sections
     - toc.follow
+    - content.action.edit
+    - content.action.view
     - content.code.copy
     - content.code.annotate
     - content.tooltips
   font:
     code: Roboto Mono
-    text: Noto Sans KR
+    # text: Noto Sans KR
   language: ko
   logo: assets/logo.png
   name: material
@@ -108,6 +110,8 @@ markdown_extensions:
 nav:
   - Hello:
     - index.md
+  - 일상:
+    - blog/daily/index.md
   - 유용한 도구:
     - blog/utils/index.md
   - 개발:
@@ -125,6 +129,12 @@ plugins:
   - markdown-exec
   - blog:
       blog_dir: blog/utils
+      blog_toc: true
+      authors_file: "{blog}/.authors.yml"
+      archive: false
+      post_url_format: "{date}/{file}"
+  - blog:
+      blog_dir: blog/daily
       blog_toc: true
       authors_file: "{blog}/.authors.yml"
       archive: false

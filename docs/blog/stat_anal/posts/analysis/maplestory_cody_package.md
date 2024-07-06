@@ -154,7 +154,7 @@ import pandas as pd
 
 df1 = pd.read_csv('https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/MapleStory_Hero_Package.csv', encoding='euc-kr')
 df1.rename(columns={ '아이템 이름': 'Name', ' 개수 ': 'Count', ' 가격 ': 'Price', ' 개당 가격 ': 'Price2', '날짜': 'Date'}, inplace=True)
-df1.dropna(inplace=True)
+# df1.dropna(inplace=True)
 df1['Price'] = df1['Price'].str.replace(',', '').astype('int')
 df1['Price2'] = df1['Price2'].str.replace(',', '').astype('int')
 data_cnt1 = df1.groupby('Date').size().reset_index(name='Count')
@@ -170,6 +170,7 @@ data_cnt2 = df2.groupby('Date').size().reset_index(name='Count')
 fig = go.Figure(layout={ 'title': '날짜별 패키지 선택권 판매량' })
 fig.add_trace(go.Bar(x=data_cnt1['Date'], y=data_cnt1['Count'], name='영웅 패키지 선택권', marker_color='dodgerblue'))
 fig.add_trace(go.Bar(x=data_cnt1['Date'], y=data_cnt2['Count'], name='시그너스 기사단 패키지 선택권', marker_color='lightskyblue'))
+fig.update_layout(legend_orientation='h')
 
 html_output = fig.to_html(full_html=False, include_plotlyjs="cdn")
 print(html_output)
@@ -190,7 +191,7 @@ import pandas as pd
 
 df1 = pd.read_csv('https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/MapleStory_Hero_Package.csv', encoding='euc-kr')
 df1.rename(columns={ '아이템 이름': 'Name', ' 개수 ': 'Count', ' 가격 ': 'Price', ' 개당 가격 ': 'Price2', '날짜': 'Date'}, inplace=True)
-df1.dropna(inplace=True)
+# df1.dropna(inplace=True)
 df1['Price'] = df1['Price'].str.replace(',', '').astype('int')
 df1['Price2'] = df1['Price2'].str.replace(',', '').astype('int')
 data_cnt1 = df1.groupby('Date').size().reset_index(name='Count')
@@ -314,52 +315,3 @@ print(f"|{df['Name'].count()}|99,000|{'{:,.0f}원'.format(df['Name'].count() * 9
 [:octicons-download-24: 메이플스토리 영웅 패키지 선택권 CSV 다운로드](https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/MapleStory_Hero_Package.csv){ .md-button }
 
 [:octicons-download-24: 메이플스토리 시그너스 기사단 패키지 선택권 CSV 다운로드](https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/MapleStory_Knight_Package.csv){ .md-button }
-
-
-<!-- 
-
-### 메이플 팀의 매출?!
-
-!!! warning
-    여기서부터 작성하는 내용은 정확한 데이터없이 작성한 것이기 때문에 부정확합니다.
-
-|패키지명|캐시 가격|
-|:-----:|:-----:|
-|영웅과 기사단 패키지|150,000원|
-|깨어난 영웅 패키지|70,000원|
-|승리의 시그너스 기사단 패키지|90,000원|
-
-캐시샵에서 판매되는 패키지의 가격은 위와 같습니다. 여기서부터 작성하는 내용은 다음과 같습니다.
-
-1.  경매장에서 판매된 패키지는 실제 캐시샵에서 구입한 사람으로 간주해보자. (1)
-    { .annotate }
-
-    1.  넥슨 캐시로 구매 시 보너스 아이템을 포함하여 사용 전 1회에 한해 타인과 교환할 수 있다. 메이플 포인트의 경우에는 불가하다.
-
-2.  묶음 패키지(영웅과 기사단 패키지)와 개별 패키지 각각의 판매량에 캐시 가격을 곱한다. (1)
-    { .annotate }
-
-    1.  실제 판매 가격으로 추정해볼 수 있음.
-
-3.  메이플스토리의 모든 서버는 스카니아를 포함하여 `14`개이다. 버닝 서버를 포함하면 `17`개가 되지만, 버닝은 3일 후 경매장 판매가 가능하기 때문에 계산 대상에서 제외한다.
-
-4.  메이플스토리의 서버 수와 스카니아 월드의 매출액을 곱하면 대략적인 전체 서버의 매출액을 추정해볼 수 있다. 못해도 최소 이정도는 벌었을 것이라는 것. (1)
-    { .annotate }
-
-    1.  전 서버 모두 스카니아 판매량만큼 판매되었다고 가정한다.
-
-|패키지명|캐시 가격|스카니아 판매량|스카니아 매출|전 서버 매출|
-|:-----:|:-----:|:-----:|:-----:|:-----:|
-|영웅과 기사단 패키지|150,000원||||
-|깨어난 영웅 패키지|70,000원|476|$476 \times 70000 = 33,320,000$|$33320000 \times 17 = 566,440,000$|
-|승리의 시그너스 기사단 패키지|90,000원|402|$402 \times 90000 = 36,180,000$|$36180000 \times 17 = 615,060,000$|
-
-깨어난 영웅 패키지와 승리의 시그너스 기사단 패키지의 전 서버 매출을 모두 합하면 `1,181,500,000`원으로 산출된다. 약 11억 원 이상을 벌었다고 추정할 수 있다.
-
-하지만, 깨어난 영웅 패키지와 승리의 시그너스 기사단 패키지는 하나로 묶여있는 영웅과 기사단 패키지에서 별개로 판매할 수도 있다. 영웅과 기사단 패키지는 경매장에서 별도로 검색되는 제품이 아니기 때문에 정확한 판매량을 알 수 없다. 그래서 이 경우에는 깨어난 영웅 패키지와 승리의 시그너스 기사단 패키지의 판매량 기준으로 산출해서 비교해보도록 한다.
-
-깨어난 영웅 패키지를 기준으로 할 경우 $476 \times 150000 = 71,400,000$원으로 나타나며, 전 서버 기준으로 볼 경우 $71400000 \times 17 = 1,213,800,000$원으로 나타난다.
-
-승리의 시그너스 기사단 패키지를 기준으로 할 경우 $402 \times 150000 = 60,300,000$원으로 나타나며, 전 서버 기준으로 볼 경우 $60300000 \times 17 = 1,025,100,000$원으로 나타난다.
-
-캐시 아이템 구매 후 경매장에 판매하지 않는 사용자도 있으니 그러한 데이터까지 포함한다면 못해도 10억 원 이상은 무조건 벌었을 것으로 추정된다. -->
