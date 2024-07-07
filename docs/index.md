@@ -98,7 +98,7 @@
             - 2024/06/12
                 - [통계 및 분석](blog/stat_anal/index.md "통계 및 분석") 게시판 추가
                 - 프리텐다드 글꼴에서 세종학당체 글꼴로 변경
-                - [프로그래밍](blog/programming/index.md "프로그래밍") 게시판 추가
+                - 프로그래밍 게시판 추가
             - 2024/06/13
                 - [markdown-exec](https://pawamoy.github.io/markdown-exec/ "markdown-exec") 플러그인 추가
                 - [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload "vanilla-lazyload") 추가
@@ -128,3 +128,4 @@
                 - 메인 화면 개편
             - 2024/07/07
                 - [일상](blog/daily/index.md "일상") 게시판 추가
+                - 프로그래밍 게시판 제거

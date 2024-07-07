@@ -120,8 +120,6 @@ nav:
     - blog/review/index.md
   - 통계 및 분석:
     - blog/stat_anal/index.md
-  - 프로그래밍:
-    - blog/programming/index.md
 
 plugins:
   - glightbox
@@ -166,15 +164,4 @@ plugins:
       categories_allowed:
         - Analysis
         - Study
-  - blog:
-      blog_dir: blog/programming
-      blog_toc: true
-      authors_file: "{blog}/.authors.yml"
-      archive: false
-      categories_allowed:
-        - CPP
-        - Python
-        - LuaScript
-        - JavaScript
-      post_url_format: "{date}/{file}"
   - tags
