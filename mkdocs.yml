@@ -120,6 +120,8 @@ nav:
     - blog/review/index.md
   - 통계 및 분석:
     - blog/stat_anal/index.md
+  - 이거 진짜예요?:
+    - blog/fact_check/index.md
 
 plugins:
   - glightbox
@@ -164,4 +166,10 @@ plugins:
       categories_allowed:
         - Analysis
         - Study
+  - blog:
+      blog_dir: blog/fact_check
+      blog_toc: true
+      authors_file: "{blog}/.authors.yml"
+      archive: false
+      post_url_format: "{date}/{file}"
   - tags
