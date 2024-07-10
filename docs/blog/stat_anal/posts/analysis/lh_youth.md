@@ -563,3 +563,61 @@ categories:
 평균 공급호수는 11.52이며, 종로와 광진, 영등포에서 평균을 넘어서는 공급호수를 보이고 있습니다. 종로는 1차 때처럼 물량이 또 많네요.
 
 2차 공급호수는 1차 공급호수에 비해 많기는 한데요... 이정도 물량으로 청년 주거 문제를 해결할 수 있을 지 참 궁금하네요...
+
+#### 자치구별 신청건수
+<div class="lh-chart-wrapper">
+    <canvas id="LH-CHART13" height="400"></canvas>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const ctx = document.getElementById('LH-CHART13');
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: [ '종로구', '중구', '용산구', '성동구', '광진구', '동대문구', '중랑구', '성북구', '노원구', '은평구', '서대문구', '양천구', '강서구', '구로구', '금천구', '영등포구', '동작구', '관악구', '서초구', '송파구', '강동구' ],
+                    datasets: [{
+                        label: '신청건수',
+                        data: [ 15294, 765, 2500, 1276, 4121, 1074, 1230, 746, 1436, 1291, 1341, 1193, 828, 390, 1003, 5503, 806, 361, 3282, 3855, 2994 ]
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                }
+            });
+        }
+    });
+</script>
+
+총 신청 건 수는 52,577건으로 9,312건 더 많습니다. 갈 수록 LH 청년매입임대 주택의 경쟁률이 높아질 것 같네요.
+
+종로와 영등포의 신청건수가 제일 많습니다.
+
+공급호수에 비해 서초, 송파, 강동도 꽤 높게 나타나 있습니다.
+
+#### 자치구별 경쟁률
+<div class="lh-chart-wrapper">
+    <canvas id="LH-CHART14" height="400"></canvas>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const ctx = document.getElementById('LH-CHART14');
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: [ '종로구', '중구', '용산구', '성동구', '광진구', '동대문구', '중랑구', '성북구', '노원구', '은평구', '서대문구', '양천구', '강서구', '구로구', '금천구', '영등포구', '동작구', '관악구', '서초구', '송파구', '강동구' ],
+                    datasets: [{
+                        label: '경쟁률',
+                        data: [ 15294 / 96, 765 / 2, 2500 / 6, 1276 / 2, 4121 / 27, 1074 / 7, 1230 / 9, 746 / 5, 1436 / 6, 1291 / 3, 1341 / 4, 1193 / 5, 828 / 5, 390 / 2, 1003 / 5, 5503 / 20, 806 / 2, 361 / 3, 3282 / 6, 3855 / 8, 2994 / 16 ]
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                }
+            });
+        }
+    });
+</script>
+
+전체 경쟁률은 217.2이며, 평균 경쟁률은 292.58입니다. 평균 경쟁률이 전체 경쟁률보다 매우 높게 나타나 있습니다.
