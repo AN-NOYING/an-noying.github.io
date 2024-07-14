@@ -72,7 +72,7 @@ X += SPEED;
 델타 타임<sup>Delta Time</sup>은 두 연속된 프레임 간의 <ins>시간 간격</ins>을 말합니다.
 
 <figure markdown="span">
-    ![Laraticon](https://i.ibb.co/Wy6X781/49.png)
+    ![Laraticon](https://i.ibb.co/qDrzyCM/156.png)
     <figcaption>예? 않이 무슨 게임 개발하는데 이론까지?!</figpcation>
 </figure>
 
