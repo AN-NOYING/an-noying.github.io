@@ -131,3 +131,12 @@
                 - 프로그래밍 게시판 제거
             - 2024/07/09
                 - [이거 진짜예요?](blog/fact_check/index.md "이거 진짜예요?") 게시판 추가
+            - 2024/07/15
+                - 헤더 우측에 저장소 추가
+                - 연락처 추가
+        
+??? contact "Contact"
+    === ":simple-github: &nbsp; Github"
+        [GitHub Issues](https://github.com/AN-NOYING/an-noying.github.io/issues "GitHub Issues")
+
+        본 블로그의 Issues 탭에서 질문을 남겨주세요.
