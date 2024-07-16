@@ -18,6 +18,9 @@
 </script>
 
 !!! calendar-clock "D-DAY"
+    === ":simple-now: 오늘"
+        <span class="dday-today"></span>
+        
     === ":sunrise: 올해"
         <span class="dday-end"></span>
 
@@ -62,6 +65,15 @@
         const result3 = calcDays(today, birthday).toFixed(2);
         const output3 = `주인장의 생일까지 ${result3}일 남았습니다.`;
         document.querySelector('.dday-birthday').textContent = output3;
+
+        // 오늘
+        const startOfDay = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 0, 0, 0);
+        const endOfDay = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 23, 59, 59);
+        const nowInMillis = today.getTime() - startOfDay.getTime();
+        const totalMillisInDay = endOfDay.getTime() - startOfDay.getTime();
+        const progressPercent2 = ((nowInMillis / totalMillisInDay) * 100).toFixed(2);
+        const output4 = `오늘은 ${progressPercent2}%만큼 진행되었습니다.`;
+        document.querySelector('.dday-today').textContent = output4;
 });
 </script>
 
