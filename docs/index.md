@@ -146,6 +146,10 @@
             - 2024/07/15
                 - 헤더 우측에 저장소 추가
                 - 연락처 추가
+
+        === "August"
+            - 2024/08/04
+                - [나눔스퀘어 라운드](https://hangeul.naver.com/font) 폰트로 변경
         
 ??? contact "Contact"
     === ":simple-github: &nbsp; Github"

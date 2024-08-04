@@ -143,7 +143,6 @@ plugins:
       post_url_format: "{date}/{file}"
       categories_allowed:
         - Free
-        - LH
         - Pastime
   - blog:
       blog_dir: blog/development
@@ -162,6 +161,7 @@ plugins:
       categories_allowed:
         - Clothes
         - Electronics
+        - LH
       post_url_format: "{date}/{file}"
   - blog:
       blog_dir: blog/stat_anal
