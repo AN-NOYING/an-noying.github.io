@@ -150,6 +150,8 @@
         === "August"
             - 2024/08/04
                 - [나눔스퀘어 라운드](https://hangeul.naver.com/font) 폰트로 변경
+            - 2024/08/23
+                - 본문 이미지에 테두리 추가 (이미지 구분을 위해)
         
 ??? contact "Contact"
     === ":simple-github: &nbsp; Github"

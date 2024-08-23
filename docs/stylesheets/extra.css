@@ -134,6 +134,38 @@
     font-family: var(--md-code-font);
 }
 
+.md-content__inner.md-typeset figure.blur a {
+    position: relative;
+    display: block;
+}
+.md-content__inner.md-typeset figure.blur a::after {
+    content: '마우스 커서를 올려주세요.';
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+    width: 100%;
+}
+.md-content__inner.md-typeset figure.blur a:hover::after {
+    display: none;
+}
+
+.md-content__inner.md-typeset figure img {
+    border: 1px solid var(--md-primary-fg-color);
+}
+
+.md-content__inner.md-typeset figure.blur img {
+    filter: blur(5px);
+    transition: filter 300ms linear;
+}
+.md-content__inner.md-typeset figure.blur img:hover {
+    filter: blur(0);
+}
+
 .md-content__inner.md-typeset figure > figcaption {
     font-style: normal;
     font-size: 0.625rem;

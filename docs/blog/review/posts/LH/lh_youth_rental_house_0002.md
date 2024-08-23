@@ -23,7 +23,7 @@ LH 청년매입임대 1순위 0점으로 시작해 신청부터 입주까지의 
 ## 서류 신청
 
 <figure markdown="span">
-    ![LH_1](https://i.ibb.co/Y82jfgJ/lh-1.png)
+    ![LH_1](https://i.ibb.co/Y82jfgJ/lh-1.png){ lazy=loading }
     <figcaption>지원 공고</figcaption>
 </figure>
 
@@ -49,7 +49,7 @@ LH 청년매입임대의 1차 공고는 3월 말에 공고문이 올라옵니다
 ----------
 
 <figure markdown="span">
-    ![LH_2](https://i.ibb.co/d2QjLS3/lh-2.png)
+    ![LH_2](https://i.ibb.co/d2QjLS3/lh-2.png){ lazy=loading }
     <figcaption>신청</figcaption>
 </figure>
 
@@ -67,7 +67,7 @@ LH 청년매입임대의 1차 공고는 3월 말에 공고문이 올라옵니다
 ## 서류 제출 대상자 선정
 
 <figure markdown="span">
-    ![LH_3](https://i.ibb.co/n8MLsnp/lh-3.png)
+    ![LH_3](https://i.ibb.co/n8MLsnp/lh-3.png){ lazy=loading }
     <figcaption>서류 제출 대상자</figcaption>
 </figure>
 
@@ -88,7 +88,7 @@ LH 청년매입임대의 1차 공고는 3월 말에 공고문이 올라옵니다
 ## 예비 입주자 순번 발표
 
 <figure markdown="span">
-    ![LH_3](https://i.ibb.co/JyQD6tW/lh-4.png)
+    ![LH_3](https://i.ibb.co/JyQD6tW/lh-4.png){ lazy=loading }
     <figcaption>예비 입주자 순번 발표</figcaption>
 </figure>
 
@@ -106,14 +106,14 @@ LH 청년매입임대의 1차 공고는 3월 말에 공고문이 올라옵니다
 ## 그런데, 짜잔?!
 
 <figure markdown="span">
-    ![LH_5](https://i.ibb.co/NghFRVj/lh-5.png)
+    ![LH_5](https://i.ibb.co/NghFRVj/lh-5.png){ lazy=loading }
     <figcaption>이게 뭐냐?!</figcaption>
 </figure>
 
 집에서 꼬긁하고 있는 데 갑자기 문자가 왔습니다...
 
 <figure markdown="span">
-    ![LARA](https://i.ibb.co/qDrzyCM/156.png)
+    ![LARA](https://i.ibb.co/qDrzyCM/156.png){ lazy=loading }
     <figcaption>스팸인가...?</figcaption>
 </figure>
 
