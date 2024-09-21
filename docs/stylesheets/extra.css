@@ -178,6 +178,10 @@
     vertical-align: middle;
 }
 
+.md-content__inner.md-typeset iframe.youtube {
+    width: 100% !important;
+}
+
 .sakura {
     pointer-events: none;
     position: fixed; 
