@@ -82,7 +82,7 @@
         본 블로그는 [squidfunk](https://github.com/squidfunk "squidfunk")의 [MkDocs-Material](https://squidfunk.github.io/mkdocs-material/ "MkDocs Material") 프로젝트를 사용하여 운영 중에 있습니다.
 
     === "글꼴"
-        본문은 [Spoqa Han Sans NEO](https://spoqa.github.io/spoqa-han-sans/ "스포카 한 산스 네오") 글꼴을 사용 중이며, 소스 코드는 [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono "Roboto Mono")를 사용하고 있습니다. ~~폰트병 오짐~~
+        본문은 [프리텐다드](https://cactus.tistory.com/306 "프리텐다드") 글꼴을 사용 중이며, 소스 코드는 [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono "Roboto Mono")를 사용하고 있습니다. ~~폰트병 오짐~~
 
     === "이미지"
         게시글에 포함되는 이미지의 경우 [ImgBB](https://ko.imgbb.com/ "ImgBB")라는 무료 이미지 호스팅을 이용하고 있습니다.
@@ -152,6 +152,10 @@
                 - [나눔스퀘어 라운드](https://hangeul.naver.com/font) 폰트로 변경
             - 2024/08/23
                 - 본문 이미지에 테두리 추가 (이미지 구분을 위해)
+
+        === "September"
+            - 2024/09/24
+                - [프리텐다드](https://hangeul.naver.com/font "프리텐다드") 폰트로 변경
         
 ??? contact "Contact"
     === ":simple-github: &nbsp; Github"
