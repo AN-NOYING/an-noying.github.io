@@ -1,0 +1,1725 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+  <!-- Add scripts that need to run before here -->
+  
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="어노잉(AnNoying)의 이것저것 잡다하게 다루는 블로그입니다.">
+      
+      
+        <meta name="author" content="AnNoying">
+      
+      
+        <link rel="canonical" href="https://an-noying.github.io/blog/stat_anal/2024/07/01/mean/">
+      
+      
+        <link rel="prev" href="../../../06/12/lh_youth/">
+      
+      
+        <link rel="next" href="../../03/maplestory_cody_package/">
+      
+      
+      <link rel="icon" href="../../../../../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.37">
+    
+  <!-- Add scripts that need to run afterwards here -->
+  <meta name="naver-site-verification" content="0b928e78b1747f8e7bd6f6bc4e48514746e39abb" />
+  <meta name="google-adsense-account" content="ca-pub-7065893733087116">
+
+
+    
+      
+        <title>산술, 기하, 조화 평균에 대해 알아보자 - AnNoying's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/_markdown_exec_pyodide.css">
+    
+      <link rel="stylesheet" href="../../../../../../assets/_markdown_exec_ansi.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sakura-js@1.1.1/dist/sakura.min.css">
+    
+      <link rel="stylesheet" href="../../../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-Y723WYTJY3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-Y723WYTJY3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-Y723WYTJY3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+    
+   <link href="../../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../../../../../.." title="AnNoying&#39;s Blog" class="md-header__button md-logo" aria-label="AnNoying's Blog" data-md-component="logo">
+      
+  <img src="../../../../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AnNoying's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              산술, 기하, 조화 평균에 대해 알아보자
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AN-NOYING/an-noying.github.io" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    저장소로 이동
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../.." class="md-tabs__link">
+          
+  
+  Hello
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../daily/" class="md-tabs__link">
+          
+  
+  일상
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../utils/" class="md-tabs__link">
+          
+  
+  유용한 도구
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../development/" class="md-tabs__link">
+          
+  
+  개발
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../review/" class="md-tabs__link">
+          
+  
+  후기
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+  통계 및 분석
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../fact_check/" class="md-tabs__link">
+          
+  
+  이거 진짜예요?
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="AnNoying&#39;s Blog" class="md-nav__button md-logo" aria-label="AnNoying's Blog" data-md-component="logo">
+      
+  <img src="../../../../../../assets/logo.png" alt="logo">
+
+    </a>
+    AnNoying's Blog
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AN-NOYING/an-noying.github.io" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    저장소로 이동
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../../.." class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Hello
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../../daily/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    일상
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../../utils/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    유용한 도구
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../../development/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    개발
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../../review/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    후기
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    통계 및 분석
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            통계 및 분석
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    통계 및 분석
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    카테고리
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            카테고리
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/study/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Study
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../../fact_check/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    이거 진짜예요?
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      개요
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      산술 평균
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      기하 평균
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="기하 평균">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      연평균 주식 수익률
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      인구 성장률
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="인구 성장률">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      산술 평균 사용 시
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      기하 평균 사용 시
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      결론
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      조화 평균
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="조화 평균">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      평균 속력
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Index로 돌아가기
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/u/36888398" alt="어노잉">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          <a href="https://an-noying.github.io/blog/">어노잉</a>
+                        
+                      </strong>
+                      <br>
+                      블로거
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    메타데이터
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2024-07-01 00:00:00" class="md-ellipsis">2024년 7월 1일</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            카테고리
+                            
+                              <a href="../../../../category/study/">Study</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              읽는시간 8분
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+  
+
+<nav class="md-tags" >
+  
+    
+    
+    
+      <span class="md-tag">평균</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">산술</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">기하</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">조화</span>
+    
+  
+</nav>
+
+
+  
+    <a href="https://github.com/AN-NOYING/an-noying.github.io/edit/master/docs/blog/stat_anal/posts/study/mean.md" title="이 페이지를 편집" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/AN-NOYING/an-noying.github.io/raw/master/docs/blog/stat_anal/posts/study/mean.md" title="페이지소스 보기" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="_1">산술, 기하, 조화 평균에 대해 알아보자<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>평균에도 여러 종류가 있다는 사실!!! 알고계셨나요?</p>
+<p>산술과 기하 그리고 조화 평균에 대해 알아봅시다.</p>
+<!-- more -->
+
+<h2 id="_2">개요<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p class="annotate">평균이라는 개념에 대해 알아보도록 합시다. 평균에도 여러 종류가 있다는 사실 알고계셨나요...? 제가 학생일 때 교육과정에는 없어서 성인이 되고 나서야 종류가 나뉜다는 걸 알았습니다... (1)</p>
+<p>본 글을 통해 평균의 종류에는 무엇이 있고, 어떠한 상황에서 사용하는 지 알아보는 시간을 갖도록 합시다.</p>
+<ol>
+<li>실제 다녔던 학교가 실업계(특성화고)였는데, 인문계와 교육과정(교과과정) 기준이 달라 미적분, 벡터, 허수 등 이런 거 아예 몰랐습니다. (억울)</li>
+</ol>
+<h2 id="_3">산술 평균<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>산술 평균<sup>Arithmetic Mean</sup>은 우리가 일상생활 속에서 흔히 사용하는 <b>그 평균</b>입니다. 예를 들어 평균 연령, 평균 신장, 평균 체중 등 이때 사용하는 평균이 바로 <strong>산술 평균</strong>입니다.</p>
+<p>영어로는 Arithmetic이 수식되는데요, 보통 이를 생략하고 단순히 mean으로 작성해 표기하기도 합니다. 그래서 보통 mean이라고 하면 산술 평균으로 보시면 됩니다. <del>그냥 갑자기 떠오르는 <a href="https://namu.wiki/w/%ED%8F%89%EA%B7%A0%20%EB%93%9C%EB%A6%BD" title="평균 드립">그 드립</a></del></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">산술 평균 공식</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ \frac{x_1 + x_2 + x_3 + ... + x_n}{n} \]</div>
+</div>
+</div>
+</div>
+<p>산술 평균은 <code>N</code>개의 데이터가 있을 때 이를 모두 더한 후 <code>N</code>으로 나누어 구할 수 있습니다. </p>
+<div class="admonition example annotate">
+<p class="admonition-title">Example</p>
+<p>중간고사에서 국어는 100점, 영어는 85점, 수학은 50점을 받았다고 가정해봅시다. 이 세 과목의 산술 평균을 구하면 얼마일까요?</p>
+<p>산술 평균 공식에 의해 <span class="arithmatex">\((100 + 85 + 50) \div 3\)</span> 식이 도출되고 결괏값으로 <code>78.33</code>이라는 평균 점수가 산출(1)됩니다. 이 평균 점수는 학생이 전체적으로 평균 <code>78.33</code>점을 얻었다는 것을 의미하고 이를 통해 학생의 전반적인 학업 성취도를 파악할 수 있습니다. 하지만, 각 과목의 가중치, 난이도 등을 반영하지 않았기 때문에 단순히 평균 점수만으로 해당 학생이 어느 과목에서 강하고 약한 지를 파악할 수 없습니다.</p>
+</div>
+<ol>
+<li>수치나 값을 계산해내는 것</li>
+</ol>
+<div class="admonition info annotate">
+<p class="admonition-title">산술 평균은 극단치에 약하다!</p>
+<p>산술 평균은 <strong>극단치</strong>(1)에 약하다는 단점이 존재합니다.</p>
+<p>예를 들어 <code>1</code>, <code>2</code>, <code>3</code>의 데이터가 있을 때 산술 평균을 구하면 <span class="arithmatex">\((1 + 2 + 3) \div 3\)</span>의 식으로 <code>2</code>라는 값이 산출됩니다. 하지만 여기에 <code>100</code>이라는 극단적으로 큰 값이 포함되면 산술 평균이 <code>26.5</code>로 매우 크게 변동됩니다.</p>
+<p>예시가 그다지 와닿지 않아서 <strong style="color: red">그래서 어쩌라고?!</strong> 생각할 수 있습니다. 아래의 예시로 이해도를 높여봅시다.</p>
+<p>당신은 중소기업 A 회사에 다니고 있고 직원의 수는 총 5명입니다. 어느 날 우연히 메일로 직원 연봉 테이블이 수신(2)되어버리는 대참사가 일어나 버렸고... 각 직원의 연봉은 아래와 같았습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">직원</th>
+<th style="text-align: center;">연봉</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">30,000,000</td>
+</tr>
+<tr>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">35,000,000</td>
+</tr>
+<tr>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">40,000,000</td>
+</tr>
+<tr>
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">45,000,000</td>
+</tr>
+<tr>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">150,000,000</td>
+</tr>
+</tbody>
+</table>
+<p>회사 직원의 평균 연봉을 알고 싶어서 산술 평균 값을 구하게 되었고 <code>60,000,000</code>이라는 값이 산출되었습니다. 여기서... 여러분이 보기에는 어떠신가요? 이 값은 직원들의 연봉을 잘 나타낸다고 생각하시나요?</p>
+<p>평균 연봉으로 <code>60,000,000</code>이 산출되었지만 대부분의 직원은 이보다 낮은 걸로 확인되고 단 한 명만 평균보다 높게 받고 있습니다. 이러한 정보는 왜곡된 정보를 전달할 가능성이 높습니다. 예를 들어 <strong style="color: brown">A 회사는 평균 연봉이 60,000,000이래! 대부분 저 정도 받나봐!!</strong> 라는 매우 억울한 정보가 돌게 됩니다. 대부분은 평균보다 못받는데 말이죠. 즉, 한 명의 높은 연봉(극단치)으로 인해 평균 값이 높아져 직원들의 일반적인 연봉을 잘 나타내지 못하는 경우가 있습니다. 이를 <strong>산술 평균의 함정</strong>이라 합니다.</p>
+<p>산술 평균의 함정을 피하기 위해 보통 중앙값<sup>Median</sup>이라는 걸 같이 표기합니다. 중앙값은 데이터의 크기를 순서대로 나열했을 때 중앙에 위치하는 값을 말합니다. 즉, 중앙값은 극단치 등으로 인해 격차가 커져 평균이 의미가 없을 때 사용합니다.</p>
+<p>위 연봉 테이블을 기준으로 중앙값은 <code>40,000,000</code>이 됩니다. 중앙값은 극단치의 영향을 받지 않기 때문에 직원들의 일반적인 연봉을 더 잘 나타낼 수 있습니다.</p>
+<details class="question">
+<summary>👋 중앙값은 어떻게 구하죠?</summary>
+<p>데이터의 수가 <b>홀수</b>일 때 중앙값은 <span class="arithmatex">\((n + 1) \div 2\)</span>로 구할 수 있습니다. 즉, <span class="arithmatex">\((n + 1) \div 2\)</span> 위치에 있는 값이 중앙값입니다. <b>짝수</b>일 때 중앙값은 <span class="arithmatex">\(n \div 2\)</span>번째 값과 <span class="arithmatex">\((n \div 2) + 1\)</span>번째 값의 산술 평균을 중앙값으로 합니다.</p>
+</details>
+</div>
+<ol>
+<li>단어 그대로 극단적으로 값이 작거나 큰 것을 말한다. 같은 말로 이상치가 있다.</li>
+<li>정보를 받음</li>
+</ol>
+<h2 id="_4">기하 평균<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>기하 평균<sup>Geometric Mean</sup>은 산술 평균과 성격이 다릅니다. 이 녀석은 변화율의 대한 평균값을 의미합니다.</p>
+<p>산술 평균이 합의 평균이었다면, 기하 평균은 곱의 평균이라 할 수 있습니다. 왜 곱의 평균이라 하냐면... 산술 평균은 단순히 값을 더한 후 나누는데 이 방법은 비율과 같은 곱의 성질을 제대로 반영하지 못하기 때문입니다. 즉, 기하 평균이 곱의 성질을 더 잘 반영합니다.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">기하 평균 공식</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ \sqrt[n]{x_1 \times x_2 \times ... \times x_n} \]</div>
+</div>
+</div>
+</div>
+<p>기하 평균은 데이터의 수가 <code>N</code>개 일 때 <code>N</code>개의 수치를 모두 곱한 후 <strong>N 제곱근</strong>을 구합니다.</p>
+<figure>
+    <a class="glightbox" href="https://i.ibb.co/qDrzyCM/156.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="MONG_MARIA" loading="lazy" src="https://i.ibb.co/qDrzyCM/156.png" /></a>
+    <figcaption>뭔 <del>개</del>소리야...?</figcaption>
+</figure>
+<p class="annotate">음... 왠지 모르게 <a href="https://namu.wiki/w/%EC%9E%A5%EA%B8%B0%ED%95%98" title="장기하">그 인물</a>이 떠오르는 기하 평균은 연평균 주식 수익률과 인구 성장률(1)이라는 두 가지의 예시로 설명해 드리겠습니다. 예시를 보시면 바로 이해가 되실 거예요.</p>
+<ol>
+<li>전년대비 인구의 변화율을 말한다. 즉, 증가 또는 감소를 나타내는 지표이다.</li>
+</ol>
+<h3 id="_5">연평균 주식 수익률<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p class="annotate">당신은 약 2년간 해외가 아닌 국내 주식(?)을 투자했습니다. 2022년에 10,000,000원의 시드 머니(1)로 시작해 한해동안 10%의 수익이 발생하여 2023년에는 11,000,000원이 되었습니다. 2023년도 마찬가지로 한해동안 수익이 무려 25% 발생해서 2024년에는 13,750,000원이 되었습니다.</p>
+<ol>
+<li>종잣돈. 여유분의 돈을 의미한다.</li>
+</ol>
+<p>자, 여기서 문제입니다. 당신의 연평균 수익률은 얼마일까요?</p>
+<p>10%의 수익률과 25%의 수익률이 발생했으니 <span class="arithmatex">\((10 + 25) \div 2\)</span>의 산출 값인 <code>17.5%</code>가 연평균 수익률일까요? 즉, 연간 평균적으로 <code>17.5%</code>를 벌었다는 의미가 된다는 건데 정확한 값인지 검증해봅시다.</p>
+<p>2022년 한해 동안 10,000,000원으로 시작하여 연평균 <code>17.5%</code>를 벌었다면 11,750,000원이 됩니다. 그리고 2023년 한해 동안 연평균 <code>17.5%</code>를 벌었다면 2024년에는 최종적으로 13,806,250원이 됩니다.</p>
+<p>음... 뭔가 이상하지 않나요? 여러분은 분명 2024년에 최종적으로 13,750,000원을 벌었는데 연평균 수익률로 계산하면 돈을 더 번 걸로 나옵니다. <del>(조상님이 도와줬나?!)</del></p>
+<p>사실 우리는 잘못된 계산 방법으로 접근했습니다. 산술 평균으로 산출한 연평균 수익률로는 2024년의 최종 자산 가치를 구할 수 없습니다. </p>
+<p>연평균 수익률이라는 것은 매년 얼마만큼의 수익률을 발생시켜야 현재의 자산가치가 될 수 있는 지를 의미합니다. 2023년의 자산 가치는 2022년의 자산 가치에 수익률을 곱해서 구할 수 있고, 2024년의 자산 가치는 2023년의 자산 가치에 수익률을 곱해서 구할 수 있습니다. 즉, 2024년의 자산 가치는 2022년과 2023년 수익률의 곱인 것을 의미합니다. 우리는 합이 아닌 곱의 성질을 이용해야 하기 때문에 산술 평균이 아닌 기하 평균을 이용해야 합니다.</p>
+<hr />
+<p>기하 평균을 이용하려면 우선 퍼센트 수익률을 비율로 변환해야 합니다. 10%와 25%를 비율로 변환하면 <code>1.10</code>과 <code>1.25</code>입니다. 이를 기하 평균 공식에 그대로 대입하면 됩니다.</p>
+<div class="arithmatex">\[ \sqrt[2]{1.10 \times 1.25} = \sqrt[2]{1.375}\]</div>
+<p>위 수식은 값을 2번 곱했을 때 1.375가 나와야하는 것을 의미합니다. 결과적으로 <code>1.1726</code>이라는 값이 산출됩니다. 이를 다시 백분율(퍼센트)로 표기하기 위해 1을 뺀 후 100을 곱해줍니다.</p>
+<p>최종적으로 <code>17.26%</code>라는 값이 나왔습니다. 자, 이제 검증해봅시다.</p>
+<p>2022년 한해 동안 10,000,000원으로 시작하여 연평균 <code>17.26%</code>를 벌었다면 11,726,000원이 됩니다. 그리고 2023년 한해 동안 연평균 <code>17.26%</code>를 벌었다면 2024년에는 최종적으로 13,749,907원이 됩니다.</p>
+<figure>
+    <a class="glightbox" href="https://i.ibb.co/zrfXD2w/167.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HOGOGOK" loading="lazy" src="https://i.ibb.co/zrfXD2w/167.png" /></a>
+    <figcaption>으아닛?!</figcaption>
+</figure>
+<p>산술 평균으로 나타낸 연평균 수익률로 계산했을 때와 기하 평균으로 나타낸 연평균 수익률로 계산했을 때 최종 값의 차이가 어떠신가요?</p>
+<p>산술 평균은 엄청난 차이를 보인 반면에 기하 평균은 2024년 실제 자산 가치에 매우 근접한 값(근사치)을 보이는 걸 확인할 수 있습니다.</p>
+<div class="admonition question annotate">
+<p class="admonition-title">2023년 자산은 좀 이상한데요?</p>
+<p>실제 2023년의 자산은 11,000,000원인데, 기하 평균에 의하면 11,726,000원으로 나타나 있습니다. 확실히 이상해보이죠?</p>
+<p>이는 연평균 수익률 계산 특성 때문입니다. 연평균 수익률 <code>17.26%</code>라는 건 2년 동안의 성과를 균등하게 나눈 것입니다. 첫 해에 10%, 그 다음 해에 25%의 수익률이 발생했지만... 어쨌든 평균을 구해 매년 동일한 비율(17.26%)로 가정해서 그렇습니다.</p>
+<p>연평균 수익률 특성 상 장기적인 투자 성과와 관점을 분석하고 평가하는 데 사용하기 때문에 각 연도를 정확하게 반영하지는 않습니다. 이 점 염두(1)에 두어주세요.</p>
+</div>
+<ol>
+<li>마음 속에 깊이 새기다.</li>
+</ol>
+<h3 id="_6">인구 성장률<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>인구 성장률은 전년대비 인구의 변화율을 말합니다. 즉, 인구의 증가 또는 감소 지표를 의미하죠.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">연도</th>
+<th style="text-align: center;">인구 성장률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">2022</td>
+<td style="text-align: center;">10%</td>
+</tr>
+<tr>
+<td style="text-align: center;">2023</td>
+<td style="text-align: center;">20%</td>
+</tr>
+<tr>
+<td style="text-align: center;">2024</td>
+<td style="text-align: center;">-15%</td>
+</tr>
+</tbody>
+</table>
+<p>최근 3년 간 인구 성장률이 위 표와 같다고 가정해봅시다. 주식 수익률 예시처럼 산술 평균과 기하 평균의 값을 구한 후 검증해보겠습니다.</p>
+<p>초기 인구 수는 100명이라 가정합니다.</p>
+<h4 id="_7">산술 평균 사용 시<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>산술 평균 공식으로 계산하면 평균 연간 성장률은 <span class="arithmatex">\((10 + 20 + (-15)) \div 3\)</span> 식에 의해 <code>5%</code>로 산출됩니다.</p>
+<p>해마다 <code>5%</code>씩 증가한다고 하면 아래 표와 같습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">연도</th>
+<th style="text-align: left;">인구수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">2022</td>
+<td style="text-align: left;"><span class="arithmatex">\(100 \times 1.05 = 105\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">2023</td>
+<td style="text-align: left;"><span class="arithmatex">\(105 \times 1.05 = 110.25\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">2024</td>
+<td style="text-align: left;"><span class="arithmatex">\(110.25 \times 1.05 = 115.76\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><code>5%</code>를 비율로 나타내면 <code>1.05</code>입니다.</p>
+<p>산술 평균에 따라 3년 후 인구는 약 115.76명으로 나타납니다.</p>
+<h4 id="_8">기하 평균 사용 시<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p>기하 평균에 의한 평균 연간 성장률을 구하려면 정확성을 위해 성장률을 비율로 변환해야 합니다.</p>
+<p>퍼센트 성장률을 비율로 나타내면 <code>1.10</code>, <code>1.20</code>, <code>0.85</code>입니다.</p>
+<p>기하 평균 공식을 따르면 <span class="arithmatex">\(\sqrt[3]{1.10 \times 1.20 \times 0.85}\)</span>은 <span class="arithmatex">\(\sqrt[3]{1.122}\)</span>로... <ins>3번 곱해서 1.122가 나오는 수</ins>를 찾으면 됩니다. 즉, <span class="arithmatex">\(1.122^{(1/3)}\)</span>으로 <code>1.039</code>가 산출됩니다. </p>
+<p>이를 다시 퍼센트로 변환하면 <span class="arithmatex">\(1.039 - 1.0 = 0.039\)</span>로, 백분율 표기를 위해 <span class="arithmatex">\(100\)</span>을 곱하면 <span class="arithmatex">\(3.9\%\)</span>가 최종적으로 산출됩니다. 즉, 기하 평균에 의하면 평균 연간 성장률은 <code>3.9%</code>입니다.</p>
+<p>해마다 <code>3.9%</code>씩 증가한다고 하면 아래 표와 같습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">연도</th>
+<th style="text-align: left;">인구수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">2022</td>
+<td style="text-align: left;"><span class="arithmatex">\(100 \times 1.039 = 103.9\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">2023</td>
+<td style="text-align: left;"><span class="arithmatex">\(105 \times 1.039 = 108.95\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">2024</td>
+<td style="text-align: left;"><span class="arithmatex">\(110.25 \times 1.039 = 113.20\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>기하 평균에 따라 3년 후 인구는 약 113.20명으로 나타납니다.</p>
+<h4 id="_9">결론<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">연도</th>
+<th style="text-align: left;">인구수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">2022</td>
+<td style="text-align: left;"><span class="arithmatex">\(100 \times 1.10 = 110\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">2023</td>
+<td style="text-align: left;"><span class="arithmatex">\(110 \times 1.20 = 132\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">2024</td>
+<td style="text-align: left;"><span class="arithmatex">\(132 \times 0.85 = 112.2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>초기 인기 100명을 기준으로 실제 연도별 변화를 반영하면 위 표와 같습니다.</p>
+<p>실제 3년 후 인구는 112.2명입니다.</p>
+<p>산술 평균 5%를 사용한 결과는 115.76명이고 기하 평균 3.9%를 사용한 결과는 113.20명으로 나타났습니다. 차이가 꽤 크죠? 기하 평균 3.9%를 사용한 결과가 실제 결과에 매우 가깝습니다. (근사치)</p>
+<p>이는 산술 평균보다 기하 평균이 곱셈과 같은 변동을 더 정확하게 반영하기 때문입니다. 그래서 성장률과 같이 곱셈적 특성을 가지는 데이터를 분석할 때는 기하 평균을 사용합니다.</p>
+<h2 id="_10">조화 평균<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>조화 평균<sup>Harmonic Mean</sup>은 <code>N</code>개의 데이터가 있을 때, 각 데이터의 역수를 취해 산술 평균을 구한 후 다시 역수를 취하는 것을 말합니다.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">조화 평균 공식</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[\frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \frac{1}{x_3} + ... + \frac{1}{x_n}}\]</div>
+</div>
+</div>
+</div>
+<p>조화 평균을 계산하는 공식은 대략 위와 같습니다. 조화 평균은 데이터의 역수가 의미가 있을 때 사용합니다. 의미가 있다는 말이 참 아리송하죠?! 이번에도 예시를 통해 이해해 봅시다.</p>
+<h3 id="_11">평균 속력<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>조화 평균은 보통 평균 속력을 구할 때 많이 사용합니다. 데이터의 역수가 의미가 있어야 한다고 했었죠?</p>
+<p>예를 들어 어느 거리를 이동하는 데 시속 10km/h 일 때 그 역수는 <span class="arithmatex">\(\frac{1}{10}\)</span> h/km입니다. 이 역수가 의미하는 바는 특정 거리(1km)를 이동하는 데 걸리는 시간을 의미합니다.</p>
+<p class="annotate">10km/h라는 속도는 1시간 동안 10km를 이동하는 속도입니다. 이를 역수로 변환하면 1km를 이동하는 데 걸리는 시간을 의미하게 되죠. 1km를 이동하는데 <span class="arithmatex">\(\frac{1}{10}\)</span>시간... 즉 6분이 걸리네요.(1)</p>
+<ol>
+<li>1시간은 60분이므로 <span class="arithmatex">\(\frac{1}{10}\)</span>을 분 단위로 변환하면 <span class="arithmatex">\(\frac{1}{10} \times 60 = \frac{60}{10} = 6\)</span>분으로 산출됩니다.</li>
+</ol>
+<p>데이터의 역수가 의미있어야 한다는 것은 이것을 말합니다.</p>
+<hr />
+<p>자, 이제 예시로 이해해 봅시다.</p>
+<p>당신은 자전거를 타고 A, B, C 지점을 각각 시속 15km/h, 20km/h, 30km/h로 이동했습니다. 각 지점 사이의 거리는 50km로 동일합니다.</p>
+<p>조금 더 쉽게 이해하기 위해 아래 표를 준비했습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">지점</th>
+<th style="text-align: center;">시속</th>
+<th style="text-align: center;">소요 시간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">15km/h</td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{50}{15} = 3.33\)</span>시간</td>
+</tr>
+<tr>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">20km/h</td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{50}{20} = 2.5\)</span>시간</td>
+</tr>
+<tr>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">30km/h</td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{50}{30} = 1.66\)</span>시간</td>
+</tr>
+</tbody>
+</table>
+<p>전체 소요 시간은 7.49시간으로 나타납니다. 반올림하면 대략 7.5시간이지요. 자, 이때의 평균 속력을 구해봅시다.</p>
+<p>혹시 산술 평균으로 계산하려 했나요? 그러면 안 됩니다.</p>
+<p><span class="arithmatex">\((15 + 20 + 30) \div 3 = 21.67\)</span></p>
+<p>위 식과 같이 산술 평균으로 구하면 21.67km/h라는 값이 산출됩니다. 그렇다면 이 값을 이용하면 이동한 경과 시간이 그대로 산출될까요?</p>
+<p>총 이동 거리는 <code>150km</code>이고 평균 속력은 <code>21.67km</code>이니 <span class="arithmatex">\(\frac{150}{21.67} = 6.9\)</span> 시간으로 산출됩니다. 실제 소요 시간과 꽤 차이가 나버립니다. 즉, 산술 평균으로 구한 평균 속력은 틀렸음을 나타내고 있습니다. 그렇다면 조화 평균의 계산식을 이용해 구해봅시다.</p>
+<div class="arithmatex">\[\frac{3}{\frac{1}{15} + \frac{1}{20} + \frac{1}{30}} = \frac{3}{\frac{4}{60} + \frac{3}{60} + \frac{2}{60}} = \frac{3}{\frac{9}{60}} = \frac{3}{\frac{3}{20}} = \frac{3}{0.15}\]</div>
+<p>시속의 역수를 구한 후 분수의 덧셈을 수행합니다. 분수를 더하거나 빼려면 분모가 같아야 합니다. 그래서 최소공배수를 찾아 공통된 분모를 갖게 합니다. 최종 결괏값으로 <span class="arithmatex">\(\frac{3}{0.15}\)</span> 산출되었는데 분모에 소수가 있어 정확히 무슨 값인지 모를 수 있습니다. 분모와 분자에 <code>100</code>을 곱한 후 나눠봅시다.</p>
+<div class="arithmatex">\[\frac{3}{0.15} = \frac{300}{15} = 20\]</div>
+<p>조화 평균으로 평균 속력을 구하니 <code>20km/h</code>로 나타났습니다. 그렇다면 검증에 들어가봅시다.</p>
+<figure>
+    <a class="glightbox" href="https://i.ibb.co/2yZbTc5/163.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="WTF" loading="lazy" src="https://i.ibb.co/2yZbTc5/163.png" /></a>
+    <figcaption>나니?!</figcaption>
+</figure>
+<p>총 이동 거리는 <code>150km</code>이고 평균 속력은 <code>20km/h</code>이니 <span class="arithmatex">\(\frac{150}{20} = 7.5\)</span> 시간으로 산출됩니다. 어떠신가요? 실제 소요 시간과 같지 않나요?</p>
+<p>각 구간별 데이터로 부터 전체의 평균을 구하려면 산술 평균이 아닌 조화 평균을 이용합니다. 평균 속력 말고도 평균 응답 시간, 인터넷 속도 등 생각보다 다양한 곳에서 사용되고 있습니다.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+  
+
+
+
+  <!-- <h2 id="__comments">댓글</h2> -->
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+    data-repo="an-noying/an-noying.github.io"
+    data-repo-id="R_kgDOL-rpZw"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOL-rpZ84CfhDC"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="ko"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="하단/푸터" >
+        
+          
+          <a href="../../../06/12/lh_youth/" class="md-footer__link md-footer__link--prev" aria-label="이전: 최근 LH 청년매입임대 서울특별시 경쟁률 추이">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                이전
+              </span>
+              <div class="md-ellipsis">
+                최근 LH 청년매입임대 서울특별시 경쟁률 추이
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../03/maplestory_cody_package/" class="md-footer__link md-footer__link--next" aria-label="다음: 메이플스토리 전 직업 일러스트 컬렉션 스카니아 경매장 판매량 추이">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                다음
+              </span>
+              <div class="md-ellipsis">
+                메이플스토리 전 직업 일러스트 컬렉션 스카니아 경매장 판매량 추이
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2016 - 2024 Annoying – <a href="#__consent">Change cookie settings</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCK0FIT7eGEXncgm2x-mbJRA" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305m-317.51 213.508V175.185l142.739 81.205z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+  
+    
+  
+
+
+  
+    
+  
+
+
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" checked>
+          <span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+      </li>
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">동의 허락</button>
+    
+    
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">동의 거부</button>
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">동의 허락 관리</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    <script id="__config" type="application/json">{"base": "../../../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.prune", "navigation.top", "navigation.footer", "navigation.sections", "toc.follow", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.d6f25eb3.min.js"></script>
+      
+        <script src="../../../../../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/sakura-js@1.1.1/dist/sakura.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+      
+        <script src="../../../../../../javascripts/extra.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
