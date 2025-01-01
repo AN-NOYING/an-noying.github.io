@@ -1,0 +1,65 @@
+site_name: K's Garage
+site_url: https://an-noying.github.io/
+theme:
+  name: material
+  custom_dir: overrides
+  font: false
+  language: ko
+  features:
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.prune
+    - toc.follow
+    - navigation.top
+    - navigation.footer
+
+extra:
+  analytics:
+    provider: google
+    property: G-WD2K7BQBQZ
+
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - javascripts/lazyload-image.js
+
+plugins:
+  - search:
+      lang: ko
+  - blog:
+      blog_dir: reversing
+      post_url_format: "${categories}/${file}"
+      archive: false
+      categories_allowed:
+        - 리버싱 핵심원리
+  - tags
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - pymdownx.betterem
+  - pymdownx.blocks.caption
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji 
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+
+nav:
+  - K's Garage: index.md
+  - 리버스 엔지니어링:
+    - reversing/index.md
