@@ -6,3 +6,10 @@
     <meta name="google-site-verification" content="GRz7q1CfePijOZEl_h4J-v9Qtf3670jdlxoTbSY-jKY" />
     <meta name="naver-site-verification" content="0b928e78b1747f8e7bd6f6bc4e48514746e39abb" />
 {% endblock %}
+
+{% block analytics %}
+    {{ super() }}
+
+    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">if(!wcs_add) var wcs_add = {};wcs_add["wa"] = "1a2ce08ab542b00";if(window.wcs) {wcs_do();}</script>
+{% endblock %}
