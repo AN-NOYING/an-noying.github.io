@@ -22,7 +22,7 @@ extra:
 extra_css:
   - stylesheets/extra.css
 extra_javascript:
-  - javascripts/lazyload-image.js
+  - javascripts/lazyload.js
 
 plugins:
   - search:
