@@ -39,13 +39,18 @@ extra:
   analytics:
     provider: google
     property: G-WD2K7BQBQZ
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/AN-NOYING
+    - icon: fontawesome/brands/tiktok
+      link: https://lite.tiktok.com/t/ZS66ucnc8
 
 extra_css:
   - stylesheets/extra.css
 extra_javascript:
-  - javascripts/lazyload.js
-  - javascripts/scroll-percentage.js
-  - javascripts/drag-search.js
+  - javascripts/lazyload.min.js
+  - javascripts/scroll-percentage.min.js
+  - javascripts/drag-search.min.js
 
 plugins:
   - search:
@@ -84,6 +89,8 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
 
 nav:
   - K's Garage: index.md
