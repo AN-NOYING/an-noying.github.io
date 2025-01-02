@@ -2,20 +2,16 @@
 
 @font-face {
     font-display: swap;
-    font-family: 'goorm-sans-regular';
-    src: url('//fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/goorm-sans-regular.woff2') format('woff2');
-}
-@font-face {
-    font-display: swap;
-    font-family: 'goorm-sans-code';
-    src: url('//fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/goorm-sans-code.woff2') format('woff2');
+    font-family: 'SUIT-Regular';
+    src: url('//fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
 }
 
 :root {
     --md-primary-fg-color: #F67280;
+    --md-accent-fg-color: #F67280;
 
-    --md-text-font: 'goorm-sans-regular';
-    --md-code-font: 'goorm-sans-code';
+    --md-text-font: 'SUIT-Regular';
+    --md-code-font: 'Consolas';
 }
 .md-content__inner.md-typeset h1,.md-content__inner.md-typeset h2,.md-content__inner.md-typeset h3,.md-content__inner.md-typeset h4{font-weight:700}
 .md-content__inner.md-typeset h2{border-left:4px solid var(--md-primary-fg-color);border-bottom:2px solid var(--md-primary-fg-color);padding:.25rem .5rem}
@@ -24,3 +20,4 @@
 .md-content__inner.md-typeset h3::after{position:absolute;z-index:1;bottom:0;content:'';width:100%;border-bottom:2px solid var(--md-typeset-kbd-border-color)}
 .md-content__inner.md-typeset h4{border-bottom:1px dashed var(--md-primary-fg-color);padding-bottom:.25rem}
 .md-content__inner.md-typeset h5{border-left:4px solid var(--md-primary-fg-color);padding:.125rem .5rem}
+.md-content__inner.md-typeset figure figcaption{font-style:normal;color:gray}
