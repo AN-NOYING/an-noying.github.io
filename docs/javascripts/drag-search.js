@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         #DRAG-SEARCH{position:fixed;z-index:3;padding:.5rem 1rem;display:none;border-radius:1rem;background-color:var(--md-default-bg-color);box-shadow:var(--md-shadow-z1);transition-property:top,right,bottom,left;transition-duration:.25s}
         #DRAG-SEARCH ul{list-style:none;padding:0;margin:0;display:flex;align-items:center;gap:1rem}
         #DRAG-SEARCH li{display:flex;align-items:center}
+        #DRAG-SEARCH li:not(:last-child){border-right:1px solid var(--md-typeset-kbd-border-color);padding-right:1rem}
         #DRAG-SEARCH button{outline:none;border:none;padding:0;background-color:transparent;cursor:pointer}
         #DRAG-SEARCH img{display:block;width:16px;height:16px}
     `;
