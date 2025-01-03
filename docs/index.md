@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 [![SVG Banners](https://svg-banners.vercel.app/api?type=glitch&text1=K's%20Garage%20👨‍💻&width=800&height=400)](https://github.com/Akshay090/svg-banners)
 
 # Welcome to K's Garage
