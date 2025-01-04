@@ -53,6 +53,7 @@ extra_javascript:
   - javascripts/drag-search.min.js
 
 plugins:
+  - markdown-exec
   - search:
       lang: ko
   - blog:
