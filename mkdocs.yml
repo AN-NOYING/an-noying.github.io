@@ -67,6 +67,21 @@ plugins:
       archive: false
       categories_allowed:
         - 치트
+  - blog:
+      blog_dir: review
+      post_url_format: "{categories}/{file}"
+      archive: false
+      categories_allowed:
+        - 아르바이트
+        - 식품
+        - 게임
+        - 도서
+        - 영화
+        - 음악
+        - 애니메이션
+        - 드라마
+        - 전자기기
+        - LH
   - tags
 
 markdown_extensions:
@@ -104,3 +119,5 @@ nav:
     - reversing/index.md
   - 게임:
     - game/index.md
+  - 후기:
+    - review/index.md
