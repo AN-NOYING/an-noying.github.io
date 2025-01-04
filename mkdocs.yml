@@ -57,13 +57,13 @@ plugins:
       lang: ko
   - blog:
       blog_dir: reversing
-      post_url_format: "${categories}/${file}"
+      post_url_format: "{categories}/{file}"
       archive: false
       categories_allowed:
         - 리버싱 핵심원리
   - blog:
       blog_dir: game
-      post_url_format: "${categories}/${file}"
+      post_url_format: "{categories}/{file}"
       archive: false
       categories_allowed:
         - 치트
