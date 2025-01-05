@@ -84,6 +84,10 @@ plugins:
         - 드라마
         - 전자기기
         - LH
+  - blog:
+      blog_dir: stat
+      post_url_format: "{categories}/{file}"
+      archive: false
   - tags
 
 markdown_extensions:
@@ -126,3 +130,5 @@ nav:
     - game/index.md
   - 후기:
     - review/index.md
+  - 통계 및 분석:
+    - stat/index.md

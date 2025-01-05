@@ -2,8 +2,6 @@
 title: LH 청년매입임대주택 서울특별시 추이 및 경쟁률, 커트라인
 authors:
   - annoying
-categories:
-    - LH
 date: 2025-01-05T00:00:00
 readtime: 20
 tags:
@@ -186,4 +184,4 @@ LH가 공급하는 주택의 메리트와 최근 몇 년 전부터 발생한 전
 
 
 <script defer src="//cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
-<script defer src="//cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Review/LH/lh-competiton-rate.js"></script>
+<script defer src="//cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/lh-competition-rate.js"></script>
