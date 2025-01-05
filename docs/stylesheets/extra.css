@@ -1,11 +1,18 @@
 @charset 'utf-8';
 
+@font-face {
+    font-family: 'TmoneyRoundWindRegular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07/TmoneyRoundWindRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --md-primary-fg-color: #F67280;
     --md-accent-fg-color: #F67280;
 
-    --md-text-font: 'Goorm Sans';
-    --md-code-font: 'Goorm Sans Code';
+    --md-text-font: 'TmoneyRoundWindRegular';
+    --md-code-font: 'Consolas';
 }
 .md-content__inner.md-typeset h1,.md-content__inner.md-typeset h2,.md-content__inner.md-typeset h3,.md-content__inner.md-typeset h4,.md-content__inner.md-typeset h5{font-weight:700}
 .md-content__inner.md-typeset h2{border-left:4px solid var(--md-primary-fg-color);border-bottom:2px solid var(--md-primary-fg-color);padding:.25rem .5rem}

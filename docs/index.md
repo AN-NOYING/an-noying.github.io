@@ -35,5 +35,4 @@ hide:
 
 ## License
 ### Font
-- 본문: [구름 산스](https://goorm-sans.goorm.io/ "구름 산스"){ target="_blank" }
-- 코드: [구름 산스 코드](https://goorm-sans.goorm.io/ "구름 산스 코드"){ target="_blank" }
+- 본문: [티머니둥근바람](https://www.tmoney.co.kr/aeb/cmnctn/ci/ci.dev "티머니둥근바람"){ target="_blank" }
