@@ -3,7 +3,8 @@ site_url: https://an-noying.github.io/
 theme:
   name: material
   custom_dir: overrides
-  font: false
+  font:
+    code: Roboto Mono
   language: ko
   features:
     - navigation.tracking
