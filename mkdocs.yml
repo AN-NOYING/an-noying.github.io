@@ -58,6 +58,12 @@ plugins:
   - search:
       lang: ko
   - blog:
+      blog_dir: programming
+      post_url_format: "{categories}/{file}"
+      archive: false
+      categories_allowed:
+        - 꿀팁
+  - blog:
       blog_dir: reversing
       post_url_format: "{categories}/{file}"
       archive: false
@@ -126,6 +132,8 @@ nav:
   - K's Garage: index.md
   - 리버스 엔지니어링:
     - reversing/index.md
+  - 프로그래밍:
+    - programming/index.md
   - 게임:
     - game/index.md
   - 후기:

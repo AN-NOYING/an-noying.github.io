@@ -1,10 +1,9 @@
 @charset 'utf-8';
 
 @font-face {
+    font-display: swap;
     font-family: 'TmoneyRoundWindRegular';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07/TmoneyRoundWindRegular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 }
 
 :root {
