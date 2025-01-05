@@ -5,7 +5,7 @@ authors:
 categories:
     - 꿀팁
 date: 2025-01-05T00:00:00
-readtime: 5
+readtime: 20
 tags:
   - 게임 개발
   - FPS
