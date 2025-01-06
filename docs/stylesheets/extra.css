@@ -24,6 +24,7 @@
 .md-content__inner.md-typeset h5{border-left:4px solid var(--md-primary-fg-color);padding:.125rem .5rem}
 .md-content__inner.md-typeset figure figcaption{font-style:normal;color:gray;margin-bottom:0}
 .md-content__inner.md-typeset mark.half-line{background-color:transparent;box-shadow: inset 0 -0.35rem 0 color-mix(in srgb, var(--line-color, var(--md-primary-fg-color)), transparent 50%)}
+.md-content__inner.md-typeset .md-code__content{max-height:400px}
 
 /* Admonitions */
 .md-typeset .admonition.money,

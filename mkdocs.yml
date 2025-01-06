@@ -1,11 +1,17 @@
 site_name: K's Garage
 site_url: https://an-noying.github.io/
+repo_url: https://github.com/AN-NOYING/an-noying.github.io
+repo_name: an-noying/an-noying
+edit_uri: edit/main/docs/
 theme:
   name: material
   custom_dir: overrides
   font:
     code: Roboto Mono
   language: ko
+  icon:
+    edit: material/pencil 
+    view: material/eye
   features:
     - navigation.tracking
     - navigation.tabs
@@ -17,6 +23,7 @@ theme:
     - content.code.copy
     - content.code.annotate
     - content.tooltips
+    - content.action.edit
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
