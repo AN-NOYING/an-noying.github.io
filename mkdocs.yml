@@ -20,6 +20,7 @@ theme:
     - toc.follow
     - navigation.top
     - navigation.footer
+    - navigation.sections
     - content.code.copy
     - content.code.annotate
     - content.tooltips
@@ -66,24 +67,28 @@ plugins:
       lang: ko
   - blog:
       blog_dir: programming
+      blog_toc: true
       post_url_format: "{categories}/{file}"
       archive: false
       categories_allowed:
         - 꿀팁
   - blog:
       blog_dir: reversing
+      blog_toc: true
       post_url_format: "{categories}/{file}"
       archive: false
       categories_allowed:
         - 리버싱 핵심원리
   - blog:
       blog_dir: game
+      blog_toc: true
       post_url_format: "{categories}/{file}"
       archive: false
       categories_allowed:
         - 치트
   - blog:
       blog_dir: review
+      blog_toc: true
       post_url_format: "{categories}/{file}"
       archive: false
       categories_allowed:
@@ -99,6 +104,7 @@ plugins:
         - LH
   - blog:
       blog_dir: stat
+      blog_toc: true
       post_url_format: "{categories}/{file}"
       archive: false
   - tags
