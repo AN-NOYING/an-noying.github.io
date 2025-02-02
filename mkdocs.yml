@@ -18,7 +18,6 @@ theme:
     - navigation.tabs.sticky
     - navigation.prune
     - toc.follow
-    - navigation.top
     - navigation.footer
     - navigation.sections
     - content.code.copy
@@ -60,6 +59,7 @@ extra_javascript:
   - javascripts/lazyload.min.js
   - javascripts/scroll-percentage.min.js
   - javascripts/drag-search.min.js
+  - javascripts/back2tb.min.js
 
 plugins:
   - markdown-exec

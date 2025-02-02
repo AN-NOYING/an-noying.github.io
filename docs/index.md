@@ -33,6 +33,11 @@ hide:
 ### 드래그 서치
 본 블로그는 사용자가 드래그하여 선택한 텍스트를 구글과 유튜브 그리고 네이버에 검색할 수 있도록 도와주는 드래그 서치(Drag Search) 기능을 제공하고 있습니다.
 
+### Back to top & bottom
+본 블로그는 페이지의 최상단과 최하단으로 이동할 수 있는 Back to top과 Back to bottom 기능을 제공하고 있습니다. 뷰포트의 우측 하단에서 확인할 수 있습니다.
+
+지연로딩 기능으로 인해 페이지의 최하단 이동이 원활하지 않을 수 있습니다.
+
 ## License
 ### Font
 - 본문: [티머니둥근바람](https://www.tmoney.co.kr/aeb/cmnctn/ci/ci.dev "티머니둥근바람"){ target="_blank" }
