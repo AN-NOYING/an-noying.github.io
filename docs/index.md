@@ -42,3 +42,8 @@ hide:
 ### Font
 - 본문: [티머니둥근바람](https://www.tmoney.co.kr/aeb/cmnctn/ci/ci.dev "티머니둥근바람"){ target="_blank" }
 - 코드: [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono "Roboto Mono"){ target="_blank" }
+
+## 신고
+페이지의 최하단에 있는 푸터(Footer) 영역에서 :material-alert: 아이콘을 클릭해 신고하기 페이지로 이동할 수 있습니다.
+
+부적절하거나 잘못된 것을 발견하시면 신고하기 기능으로 제보해주세요.
