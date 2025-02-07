@@ -1,7 +1,7 @@
 site_name: K's Garage
 site_url: https://an-noying.github.io/
 repo_url: https://github.com/AN-NOYING/an-noying.github.io
-repo_name: an-noying/an-noying
+repo_name: 블로그의 소스코드 보기
 edit_uri: edit/main/docs/
 theme:
   name: material
@@ -24,6 +24,7 @@ theme:
     - content.code.annotate
     - content.tooltips
     - content.action.edit
+    - content.action.view
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
