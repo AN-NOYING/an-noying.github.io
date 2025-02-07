@@ -1,0 +1,49 @@
+<!-- Google Adsense - 1 -->
+{% if not ("127.0.0.1" in config.site_url or "localhost" in config.site_url) %}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7065893733087116" crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-7065893733087116"
+     data-ad-slot="8592136030"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+{% endif %}
+
+<!-- Tags -->
+{% include "partials/tags.html" %}
+
+<!-- Actions -->
+{% include "partials/actions.html" %}
+
+<!--
+  Hack: check whether the content contains a h1 headline. If it doesn't, the
+  page title (or respectively site name) is used as the main headline.
+-->
+{% if "\x3ch1" not in page.content %}
+  <h1>{{ page.title | d(config.site_name, true)}}</h1>
+{% endif %}
+
+<!-- Page content -->
+{{ page.content }}
+
+<!-- Google Adsense - 2 -->
+{% if not ("127.0.0.1" in config.site_url or "localhost" in config.site_url) %}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7065893733087116" crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-7065893733087116"
+     data-ad-slot="2638716179"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+{% endif %}
+
+<!-- Source file information -->
+{% include "partials/source-file.html" %}
+
+<!-- Was this page helpful? -->
+{% include "partials/feedback.html" %}
+
+<!-- Comment system -->
+{% include "partials/comments.html" %}
