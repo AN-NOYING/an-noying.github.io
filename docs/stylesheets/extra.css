@@ -27,6 +27,8 @@
 .md-content__inner.md-typeset hr.scissors{position:relative;border:0;border-top:1px dashed lightgray;width:100%;overflow:visible}
 .md-content__inner.md-typeset hr.scissors::after{position:absolute;content:'\002702';display:inline-block;top:-.85rem;left:50%;transform:translateX(-50%);padding:0 3px;background:transparent;color:lightgray;font-size:1rem}
 .md-content__inner.md-typeset .first-letter-big:first-letter{font-size:3em}
+.md-content__inner.md-typeset .blur-2px{filter:blur(2px);transition:filter .25s}
+.md-content__inner.md-typeset .blur-2px:hover{filter:none}
 
 /* Admonitions */
 .md-typeset .admonition.money,
