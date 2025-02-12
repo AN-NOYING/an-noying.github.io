@@ -1,0 +1,37 @@
+<!-- Actions -->
+{% if page.edit_url %}
+  <!-- Repoting button -->
+  <a href="https://forms.gle/1gcnTUPV6e9S7HFh7" title="Reporting" class="md-content__button md-icon" target="_blank" rel="noopener noreferrer">
+    {% set icon = "material/alarm-light" %}
+    {% include ".icons/" ~ icon ~ ".svg" %}
+  </a>
+
+  <!-- Edit button -->
+  {% if "content.action.edit" in features %}
+    <a
+      href="{{ page.edit_url }}"
+      title="{{ lang.t('action.edit') }}"
+      class="md-content__button md-icon"
+    >
+      {% set icon = config.theme.icon.edit or "material/file-edit-outline" %}
+      {% include ".icons/" ~ icon ~ ".svg" %}
+    </a>
+  {% endif %}
+
+  <!-- View button -->
+  {% if "content.action.view" in features %}
+    {% if "/blob/" in page.edit_url %}
+      {% set part = "blob" %}
+    {% else %}
+      {% set part = "edit" %}
+    {% endif %}
+    <a
+      href="{{ page.edit_url | replace(part, 'raw') }}"
+      title="{{ lang.t('action.view') }}"
+      class="md-content__button md-icon"
+    >
+      {% set icon = config.theme.icon.view or "material/file-eye-outline" %}
+      {% include ".icons/" ~ icon ~ ".svg" %}
+    </a>
+  {% endif %}
+{% endif %}
