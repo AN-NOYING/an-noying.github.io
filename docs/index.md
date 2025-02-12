@@ -46,6 +46,9 @@ hide:
         - 본문: [티머니둥근바람](https://www.tmoney.co.kr/aeb/cmnctn/ci/ci.dev "티머니둥근바람"){ target="_blank" }
         - 코드: [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono "Roboto Mono"){ target="_blank" }
 
+=== "댓글"
+    본 블로그의 댓글 시스템은 [giscus](https://giscus.app/ko "giscus")를 사용하고 있습니다. [GitHub](https://github.com/ "GitHub") 계정이 있으신 분만 로그인하여 작성할 수 있습니다. 변경 예정은 없습니다.
+
 === "광고"
     본 블로그에는 구글 애드센스의 광고가 설정되어 있습니다. 
 
