@@ -30,7 +30,10 @@
 .md-content__inner.md-typeset .blur-2px{filter:blur(2px);transition:filter .25s}
 .md-content__inner.md-typeset .blur-2px:hover{filter:none}
 .md-content__inner.md-typeset select{padding: 1em;border: 1px dashed var(--md-primary-fg-color);border-radius: 4px;outline-color:var(--md-primary-fg-color)}
-.md-content__inner.md-typeset select:focus{border:1px solid var(--md-primary-fg-color)}
+.md-content__inner.md-typeset select:focus,
+.md-content__inner.md-typeset input[type="number"]:focus{border:1px solid var(--md-primary-fg-color)}
+.md-content__inner.md-typeset input[type="number"]{border:1px dashed var(--md-primary-fg-color);border-radius:.1rem;padding:1em}
+
 
 /* Admonitions */
 .md-typeset .admonition.money,
