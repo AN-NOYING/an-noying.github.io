@@ -51,7 +51,7 @@ comments: true
     fetchCSV();
 </script>
 
-# LH 로또 통계 및 번호 생성기
+# 로또 통계 및 번호 생성기
 
 !!! warning "주의"
     - 본 게시글에 사용된 로또 데이터는 [동행복권](https://dhlottery.co.kr/common.do?method=main "동행복권")을 기반으로 하고 있으며, [AN-NOYING/DataRoom](https://github.com/AN-NOYING/DataRoom)에서 데이터를 확인할 수 있습니다.
