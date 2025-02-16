@@ -90,6 +90,14 @@ plugins:
       categories_allowed:
         - 치트
   - blog:
+      blog_dir: how-to-use
+      blog_toc: true
+      post_url_format: "{categories}/{file}"
+      archive: false
+      categories_allowed:
+        - 소프트웨어
+        - 하드웨어
+  - blog:
       blog_dir: review
       blog_toc: true
       post_url_format: "{categories}/{file}"
@@ -154,6 +162,8 @@ nav:
     - programming/index.md
   - 게임:
     - game/index.md
+  - 사용법:
+    - how-to-use/index.md
   - 후기:
     - review/index.md
   - 통계 및 분석:
