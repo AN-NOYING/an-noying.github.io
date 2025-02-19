@@ -43,7 +43,7 @@ hide:
     합법적이고 정당한 저작물 이용을 위해 블로그 메인 페이지에 라이선스를 표기하고 있습니다.
 
     === "글꼴"
-        - 본문: [티머니둥근바람](https://www.tmoney.co.kr/aeb/cmnctn/ci/ci.dev "티머니둥근바람"){ target="_blank" }
+        - 본문: [PAPERLOGY](https://freesentation.blog/paperlogyfont "페이저로지"){ target="_blank" }
         - 코드: [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono "Roboto Mono"){ target="_blank" }
 
 === "댓글"
