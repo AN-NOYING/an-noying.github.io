@@ -35,7 +35,7 @@
 .md-content__inner.md-typeset select:focus,
 .md-content__inner.md-typeset input[type="number"]:focus{border:1px solid var(--md-primary-fg-color)}
 .md-content__inner.md-typeset input[type="number"]{border:1px dashed var(--md-primary-fg-color);border-radius:.1rem;padding:1em}
-
+.md-content__inner.md-typeset samp.terminal-black{background-color:#000;color:#fff;padding:.25em .5em;font-family:var(--md-text-font);display:block}
 
 /* Admonitions */
 .md-typeset .admonition.money,
