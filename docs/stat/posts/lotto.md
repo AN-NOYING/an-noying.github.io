@@ -4,7 +4,7 @@ authors:
   - annoying
 date: 
   created: 2025-02-12T00:00:00
-  updated: 2025-02-16T15:09:00
+  updated: 2025-02-22T15:09:00
 readtime: 20
 tags:
   - 로또
@@ -22,7 +22,7 @@ comments: true
     
     // CSV 데이터 불러오기 함수
     async function fetchCSV() {
-        const url = "https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom@main/Blog/Analysis/lotto.csv";
+        const url = "https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom@latest/Blog/Analysis/lotto.csv";
 
         try {
             const response = await fetch(url);
