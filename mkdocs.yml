@@ -76,6 +76,7 @@ plugins:
       categories_allowed:
         - 꿀팁
         - 소프트웨어
+        - 자료구조
   - blog:
       blog_dir: reversing
       blog_toc: true
