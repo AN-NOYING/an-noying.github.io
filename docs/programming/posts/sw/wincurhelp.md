@@ -4,7 +4,9 @@ authors:
   - annoying
 categories:
     - 소프트웨어
-date: 2025-02-25T00:00:00
+date: 
+    created: 2025-02-25T00:00:00
+    updated: 2025-02-26T00:00:00
 readtime: 5
 tags:
   - 마우스 커서
@@ -67,10 +69,15 @@ comments: true
 
 1.   윈도우즈에서 기본적으로 17개의 마우스 커서를 사용 중이기 때문.
 
+!!! info "파일은 아래와 같이"
+    ![IMAGE-4](https://i.ibb.co/gFfzWgmB/3.webp)
+
+    파일의 이름은 무조건 위 사진과 같이 되어있어야 합니다.
+
 ## 결론
 
 <figure markdown="span">
-    ![IMAGE-4](https://i.ibb.co/tpr8hbvM/2.webp)
+    ![IMAGE-5](https://i.ibb.co/tpr8hbvM/2.webp)
     <figcaption>흡족</figcaption>
 </figure>
 
