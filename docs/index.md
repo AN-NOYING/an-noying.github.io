@@ -45,6 +45,7 @@ hide:
     === "글꼴"
         - 본문: [PAPERLOGY](https://freesentation.blog/paperlogyfont "페이저로지"){ target="_blank" }
         - 코드: [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono "Roboto Mono"){ target="_blank" }
+        - [온글잎 콘콘체](https://www.ownglyph.com/trial/c9d001d1-c8ac-4e41-95fd-b4e7383160aa "온글잎 콘콘체"){ target="_blank" }
 
 === "댓글"
     본 블로그의 댓글 시스템은 [giscus](https://giscus.app/ko "giscus")를 사용하고 있습니다. [GitHub](https://github.com/ "GitHub") 계정이 있으신 분만 로그인하여 작성할 수 있습니다. 변경 예정은 없습니다.
