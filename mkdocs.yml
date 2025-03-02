@@ -71,7 +71,9 @@ plugins:
   - search:
       lang: ko
   - rss:
-      match_path: "(programming|reversing|game|how-to-use|review|stat)/post/.*/.*"
+      match_path: "(programming|reversing|game|how-to-use|review|stat)/posts/.*/.*"
+      date_from_meta:
+        as_creation: created
   - blog:
       blog_dir: programming
       blog_toc: true
