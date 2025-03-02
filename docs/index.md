@@ -14,8 +14,6 @@ hide:
 
 블로그에 관한 자세한 내용은 아래의 탭 메뉴에서 확인해주세요.
 
-<img src="./asdasd.png">
-
 === "위젯"
     === "D-DAY"
         [![Moon.svg](https://dday-widget.minung.dev/widget?text=New%20Year%20%F0%9F%99%82&date=2026-01-01&startDate=2025-01-01&theme=theme1)](https://dday-widget.minung.dev)
