@@ -51,8 +51,10 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/AN-NOYING
-    - icon: fontawesome/brands/tiktok
-      link: https://lite.tiktok.com/t/ZS66ucnc8
+      name: GitHub
+    - icon: fontawesome/solid/rss
+      link: /feed_rss_created.xml
+      name: RSS
 
 extra_css:
   - stylesheets/extra.css
@@ -68,6 +70,8 @@ plugins:
   - markdown-exec
   - search:
       lang: ko
+  - rss:
+      match_path: "(programming|reversing|game|how-to-use|review|stat)/post/.*/.*"
   - blog:
       blog_dir: programming
       blog_toc: true
