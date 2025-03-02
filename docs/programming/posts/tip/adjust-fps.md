@@ -82,7 +82,7 @@ if (Input::CheckKeyNow("right")) {
 델타 타임을 처음 듣는 분을 위해 간단하게 설명하고 넘어가겠습니다. 델타 타임은 **두 연속된 프레임 간의 시간 간격**입니다.
 
 <figure markdown="span">
-    ![laraticon-1](https://i.ibb.co/KVn23Sg/image.png)
+    ![laraticon-1](https://i.postimg.cc/HsJrQJsP/image.png)
     <figcaption>게임 개발하는데 무슨 이론까지...</figcaption>
 </figure>
 
@@ -172,7 +172,7 @@ FPS가 변해도 일정한 변화율을 보이도록 하려면 이 역시 보간
 아무튼 `A *= B`의 식을 `A += A * (POW(B, BASE_FPS / FPS) - 1.0)`으로 변경해 보간할 수 있습니다.
 
 <figure markdown="span">
-    ![laraticon-2](https://i.ibb.co/GF0rPZm/image.png)
+    ![laraticon-2](https://i.postimg.cc/VN4sy1kC/image.png)
     <figcaption>알아듣게 설명좀...</figcaption>
 </figure>
 

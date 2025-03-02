@@ -18,7 +18,7 @@ comments: true
 # <테무> 키티 앤 퍼피 131키 키보드 키캡 후기
 !!! money "내돈내산"
     <figure markdown="span">
-        ![IMAGE1-1](https://i.ibb.co/jRjLcsY/image.png)
+        ![IMAGE1-1](https://i.postimg.cc/DzjYGYzG/image.png)
         <figcaption>내돈내산</figcaption>
     </figure>
 
@@ -36,7 +36,7 @@ comments: true
 
 ## 개봉
 <figure markdown="span">
-    ![IMAGE1-3](https://i.ibb.co/MSg2PYs/20250102-125331.jpg)
+    ![IMAGE1-3](https://i.postimg.cc/44hFKPRK/image.png)
     <figcaption>개봉된 모습</figcaption>
 </figure>
 
@@ -50,7 +50,7 @@ comments: true
 
 ## 여분의 스페이스 바
 <figure markdown="span">
-    ![IMAGE1-4](https://i.ibb.co/2FxFPb3/20250102-125437.jpg)
+    ![IMAGE1-4](https://i.postimg.cc/2SCHKfbv/image.png)
     <figcaption>여분의 스페이스 바</figcaption>
 </figure>
 
@@ -60,7 +60,7 @@ comments: true
 
 ## 다소 아쉬운 키
 <figure markdown="span">
-    ![IMAGE1-5](https://i.ibb.co/9VjmPTw/image.jpg)
+    ![IMAGE1-5](https://i.postimg.cc/fbL8MjvR/image.png)
     <figcaption>아쉬운 0번 키</figcaption>
 </figure>
 
@@ -71,13 +71,13 @@ comments: true
 ## 키캡 교체
 ### [그 가수](https://namu.wiki/w/QWER "QWER")
 <figure markdown="span">
-    ![IMAGE1-6](https://i.ibb.co/ZzQRR2h/20250102-131953.jpg)
+    ![IMAGE1-6](https://i.postimg.cc/D0V6dV3S/image.png)
     <figcaption>키캡 교체 중 그 가수</figcaption>
 </figure>
 
 ### 교체 완료
 <figure markdown="span">
-    ![IMAGE1-7](https://i.ibb.co/XZ3dtX7/20250102-132427.jpg)
+    ![IMAGE1-7](https://i.postimg.cc/WprXp40g/image.png)
     <figcaption>교체 완료</figcaption>
 </figure>
 

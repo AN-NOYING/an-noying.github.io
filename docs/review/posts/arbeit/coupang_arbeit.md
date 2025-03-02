@@ -28,7 +28,7 @@ comments: true
 ## 인천4센터
 ### 지원
 <figure markdown="span">
-    ![IMAGE-1](https://i.ibb.co/G3G361SG/cfs-1.webp)
+    ![IMAGE-1](https://i.postimg.cc/KcKCPFB8/image.png)
     <figcaption>알바몬 공고</figcaption>
 </figure>
 

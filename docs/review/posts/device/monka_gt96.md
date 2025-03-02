@@ -20,7 +20,7 @@ comments: true
 ## 내돈내산
 !!! money "내돈내산"
     <figure markdown="span">
-        ![IMAGE1-1](https://i.ibb.co/j4m6sgH/gt96-1.png)
+        ![IMAGE1-1](https://i.postimg.cc/xT2gXSP7/image.png)
         <figcaption>내돈내산</figcaption>
     </figure>
 
@@ -43,7 +43,7 @@ GDEVIL(지데빌)이라는 다른 이름을 가진 게이밍 제품도 판매 �
 ## GT-96
 ### 구성
 <figure markdown="span">
-    ![IMAGE1-3](https://i.ibb.co/Cm4RDJr/gt96-2.jpg)
+    ![IMAGE1-3](https://i.postimg.cc/pXJC81Gd/image.png)
     <figcaption>구성</figcaption>
 </figure>
 
@@ -53,7 +53,7 @@ GDEVIL(지데빌)이라는 다른 이름을 가진 게이밍 제품도 판매 �
 
 ??? info "아크릴 무드등"
     <figure markdown="span">
-        ![IMAGE1-4](https://i.ibb.co/TM5DRgn/gt96-3.jpg)
+        ![IMAGE1-4](https://i.postimg.cc/SK3fk0sg/image.png)
         <figcaption>박스</figcaption>
     </figure>
 
@@ -62,14 +62,14 @@ GDEVIL(지데빌)이라는 다른 이름을 가진 게이밍 제품도 판매 �
     Visualization Lamp가 뭔가 했는 데 상자를 열어보니 그냥 아크릴 무드등이었습니다. :cry:
 
     <figure markdown="span">
-        ![IMAGE1-5](https://i.ibb.co/Nx8CPxJ/gt96-4.jpg)
+        ![IMAGE1-5](https://i.postimg.cc/fLdjbHSD/image.png)
         <figcaption>구성</figcaption>
     </figure>
 
     아크릴로 추정되는 메인 판과 ABS 플라스틱 재질의 받침판 그리고 USB A to 5pin 케이블, 영문 간이 설명서가 포함되어 있습니다. 케이블은 5핀이 아닌 C타입이었으면 하는 아쉬움이 있습니다.
     
     <figure markdown="span">
-        ![IMAGE1-6](https://i.ibb.co/KVvWZPd/gt96-5.jpg)
+        ![IMAGE1-6](https://i.postimg.cc/tJHdnhFP/image.png)
         <figcaption>건전지 사용 가능</figcaption>
     </figure>
 
@@ -82,7 +82,7 @@ GDEVIL(지데빌)이라는 다른 이름을 가진 게이밍 제품도 판매 �
     킹 받으라고 올리는 영상 ㅋ
 
     <figure markdown="span">
-        ![IMAGE1-7](https://i.ibb.co/zsrJQxx/gt96-6.jpg)
+        ![IMAGE1-7](https://i.postimg.cc/mkNYYtSn/image.png)
         <figcaption>ㅗㅜㅑ</figcaption>
     </figure>
 
@@ -103,21 +103,21 @@ GDEVIL(지데빌)이라는 다른 이름을 가진 게이밍 제품도 판매 �
 
 ### 개봉
 <figure markdown="span">
-    ![IMAGE1-8](https://i.ibb.co/44GKRrx/gt96-7.jpg)
+    ![IMAGE1-8](https://i.postimg.cc/5NbqxS4W/image.png)
     <figcaption>개봉 (뚜껑만)</figcaption>
 </figure>
 
 케이스의 뚜껑을 벗기면 위와 같이 몬카 캐릭터의 일러스타가 그려진 종이 뚜껑이 나타납니다. ~~열 때 엉덩이부터 보여서 당황~~
 
 <figure markdown="span">
-    ![IMAGE1-9](https://i.ibb.co/g9HvRPm/gt96-8.jpg)
+    ![IMAGE1-9](https://i.postimg.cc/7Y91bJhG/image.png)
     <figcaption>진짜 개봉</figcaption>
 </figure>
 
 종이 뚜껑을 열면 USB A to C 케이블이 동봉된 적색 상자와 GT-96 게임 컨트롤러 그리고 설명서가 포함된 봉투가 포함되어 있습니다.
 
 <figure markdown="span">
-    ![IMAGE1-10](https://i.ibb.co/HNNrk9H/gt96-9.jpg)
+    ![IMAGE1-10](https://i.postimg.cc/CxKG8Mnv/image.png)
     <figcaption>케이블</figcaption>
 </figure>
 
@@ -128,7 +128,7 @@ GDEVIL(지데빌)이라는 다른 이름을 가진 게이밍 제품도 판매 �
 ### 게임 컨트롤러
 === "정면"
     <figure markdown="span">
-        ![IMAGE1-11](https://i.ibb.co/g33L79D/gt96-10.jpg)
+        ![IMAGE1-11](https://i.postimg.cc/XYDwkMwn/image.png)
         <figcaption>정면</figcaption>
     </figure>
 
@@ -141,7 +141,7 @@ GDEVIL(지데빌)이라는 다른 이름을 가진 게이밍 제품도 판매 �
     버튼의 경우 살짝 뻑뻑한 편입니다.
 === "후면 1"
     <figure markdown="span">
-        ![IMAGE1-12](https://i.ibb.co/W2BfH8x/gt96-11.jpg)
+        ![IMAGE1-12](https://i.postimg.cc/SK2cZZrC/image.png)
         <figcaption>후면 1</figcaption>
     </figure>
 
@@ -150,7 +150,7 @@ GDEVIL(지데빌)이라는 다른 이름을 가진 게이밍 제품도 판매 �
     스티커 하단에는 LIGHT 버튼이 있습니다. 패드의 LED를 설정할 때 사용합니다. 설명서에는 LIGHT 버튼을 2초 이상 누르면 끄고 켤 수 있다고 표시되어 있는 데 의도한 대로 작동이 안 됩니다. 그래서 이것저것 해보다가 L3와 R3 버튼을 동시에 2초 이상 눌러야 꺼지고 켜집니다.
 === "후면 2"
     <figure markdown="span">
-        ![IMAGE1-13](https://i.ibb.co/bFQSZ2k/gt96-12.jpg)
+        ![IMAGE1-13](https://i.postimg.cc/jjpPBzg9/image.png)
         <figcaption>후면 2 </figcaption>
     </figure>
 
@@ -170,7 +170,7 @@ GDEVIL(지데빌)이라는 다른 이름을 가진 게이밍 제품도 판매 �
 
 ### 테스트
 <figure markdown="span">
-    ![IMAGE1-14](https://i.ibb.co/28jZ5Z8/gt96-13.png)
+    ![IMAGE1-14](https://i.postimg.cc/4dpVGmj3/image.png)
     <figcaption>Gamepad Tester</figcaption>
 </figure>
 

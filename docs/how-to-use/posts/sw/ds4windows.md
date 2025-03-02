@@ -20,7 +20,7 @@ comments: true
 
 ## 개요
 <figure markdown="span">
-    ![IMAGE-1](https://i.ibb.co/RG0Xz3VZ/ds4windows-1.webp)
+    ![IMAGE-1](https://i.postimg.cc/8c6ZvpFJ/image.png)
     <figcaption>이미지 1</figcaption>
 </figure>
 
@@ -85,7 +85,7 @@ DS4Windows는 Windows 10 이상의 환경에서 작동합니다.
 DS4Windows의 다운로드는 위 버튼을 클릭해 다운로드 페이지로 이동할 수 있습니다.
 
 <figure markdown="span">
-    ![IMAGE-4](https://i.ibb.co/qL6fBw6C/ds4windows-2.webp)
+    ![IMAGE-4](https://i.postimg.cc/9fgbNRZw/image.png)
     <figcaption>다운로드</figcaption>
 </figure>
 
@@ -113,7 +113,7 @@ DS4Windows는 .NET Framework를 기반으로 개발되었기 때문에 .NET Runt
 #### DS4Windows
 ??? setup "설치하기"
     <figure markdown="span">
-        ![IMAGE-5](https://i.ibb.co/35mR91JD/ds4windows-3.webp)
+        ![IMAGE-5](https://i.postimg.cc/PrMmRvkf/image.png)
         <figcaption>설치 과정 1</figcaption>
     </figure>
 
@@ -122,7 +122,7 @@ DS4Windows는 .NET Framework를 기반으로 개발되었기 때문에 .NET Runt
     영어로 작성되어 있어 불친절하지만(?) 무지성으로 Next 버튼을 눌러주세요.
 
     <figure markdown="span">
-        ![IMAGE-6](https://i.ibb.co/sd8n9wgk/ds4windows-4.webp)
+        ![IMAGE-6](https://i.postimg.cc/jjDP28nC/image.png)
         <figcaption>설치 과정 2</figcaption>
     </figure>
 
@@ -134,21 +134,21 @@ DS4Windows는 .NET Framework를 기반으로 개발되었기 때문에 .NET Runt
     저는 HideHide 옵션까지만 체크한 후 설치하겠습니다. Next 버튼을 눌러주세요.
 
     <figure markdown="span">
-        ![IMAGE-7](https://i.ibb.co/FbwS2nSH/ds4windows-5.webp)
+        ![IMAGE-7](https://i.postimg.cc/YSTgW1QR/image.png)
         <figcaption>설치 과정 3</figcaption>
     </figure>
 
     DS4Windows의 설치 경로입니다. 기본값 그대로 둔 후 Install 버튼을 눌러 설치해주세요.
 
     <figure markdown="span">
-        ![IMAGE-8](https://i.ibb.co/dJKJX7kN/ds4windows-6.webp)
+        ![IMAGE-8](https://i.postimg.cc/hv17666Z/image.png)
         <figcaption>설치 과정 4</figcaption>
     </figure>
 
     설치 진행 중 중간에 ViGEmBus 설치 창이 나타납니다. 따로 설정할 건 없으니 Next 버튼 클릭 후 나타나는 <span style="color: brown">I agree to the License terms and conditions.</span>에 체크하신 후 설치해주시면 됩니다. ==HideHide도 마찬가지입니다.=={ .half-line }
 
     <figure markdown="span">
-        ![IMAGE-9](https://i.ibb.co/XxBbjvrJ/ds4windows-7.webp)
+        ![IMAGE-9](https://i.postimg.cc/52RQhwKJ/image.png)
         <figcaption>설치 과정 5</figcaption>
     </figure>
 
@@ -157,7 +157,7 @@ DS4Windows는 .NET Framework를 기반으로 개발되었기 때문에 .NET Runt
 ## 사용법
 ??? info "Save Where"
     <figure markdown="span">
-        ![IMAGE-10](https://i.ibb.co/Fbs1fCC4/ds4windows-8.webp)
+        ![IMAGE-10](https://i.postimg.cc/X7Dvqnfc/image.png)
         <figcaption>어디에 저장할까요</figcaption>
     </figure>
 
@@ -167,7 +167,7 @@ DS4Windows는 .NET Framework를 기반으로 개발되었기 때문에 .NET Runt
 
 ??? info "First Launch"
     <figure markdown="span">
-        ![IMAGE-11](https://i.ibb.co/mVMXygGz/ds4windows-9.webp)
+        ![IMAGE-11](https://i.postimg.cc/kMYCFf27/image.png)
         <figcaption>디바이스 매퍼 지원 활성화</figcaption>
     </figure>
 
@@ -177,7 +177,7 @@ DS4Windows는 .NET Framework를 기반으로 개발되었기 때문에 .NET Runt
 
 ### 기본 외관
 <figure markdown="span">
-    ![IMAGE-12](https://i.ibb.co/gFhNpv6T/ds4windows-10.webp)
+    ![IMAGE-12](https://i.postimg.cc/GhYcLvpr/image.png)
     <figcaption>기본 외관</figcaption>
 </figure>
 
@@ -185,7 +185,7 @@ DS4Windows의 기본 외관은 위 사진과 같습니다.
 
 ### Controllers
 <figure markdown="span">
-    ![IMAGE-13](https://i.ibb.co/5gFc50db/ds4windows-11.webp)
+    ![IMAGE-13](https://i.postimg.cc/D0LtTdPM/image.png)
     <figcaption>Controllers</figcaption>
 </figure>
 
@@ -199,7 +199,7 @@ Edit 버튼을 클릭해 현재 선택된 프로필을 편집할 수 있고, 우
 
 ### Profiles
 <figure markdown="span">
-    ![IMAGE-14](https://i.ibb.co/4gWfkfWq/ds4windows-12.webp)
+    ![IMAGE-14](https://i.postimg.cc/pXB6JdGz/image.png)
     <figcaption>Profiles</figcaption>
 </figure>
 
@@ -207,14 +207,14 @@ Profiles 탭은 게임 컨트롤러와 관련된 설정을 수행할 수 있고,
 
 ??? info "New 버튼"
     <figure markdown="span">
-        ![IMAGE-15](https://i.ibb.co/TBzVsGNX/ds4windows-13.webp)
+        ![IMAGE-15](https://i.postimg.cc/CKRr0sFs/image.png)
         <figcaption>프리셋 1</figcaption>
     </figure>
 
     New 버튼을 클릭하면 프리셋 옵션을 사용할거냔 질문을 냅다 던집니다. 즉, 미리 세팅된 값들이 있는 데 이를 기반으로 할거냐 물어보는 겁니다.
 
     <figure markdown="span">
-        ![IMAGE-16](https://i.ibb.co/fdzFJw4S/ds4windows-14.webp)
+        ![IMAGE-16](https://i.postimg.cc/mDMdzZ1c/image.png)
         <figcaption>프리셋 2</figcaption>
     </figure>
 
@@ -224,7 +224,7 @@ Profiles 탭은 게임 컨트롤러와 관련된 설정을 수행할 수 있고,
 
 ??? info "Edit 버튼"
     <figure markdown="span">
-        ![IMAGE-17](https://i.ibb.co/nMb0FD9M/ds4windows-15.webp)
+        ![IMAGE-17](https://i.postimg.cc/C5sm7vNS/image.png)
         <figcaption>Edit</figcaption>
     </figure>
 
@@ -234,7 +234,7 @@ Profiles 탭은 게임 컨트롤러와 관련된 설정을 수행할 수 있고,
 
     === "Controls"
         <figure markdown="span">
-            ![IMAGE-18](https://i.ibb.co/Qv3t80X3/ds4windows-16.webp)
+            ![IMAGE-18](https://i.postimg.cc/5NpsFRym/image.png)
             <figcaption>Controls 탭</figcaption>
         </figure>
 
@@ -242,7 +242,7 @@ Profiles 탭은 게임 컨트롤러와 관련된 설정을 수행할 수 있고,
         
         === "① 매핑"
             <figure markdown="span">
-                ![IMAGE-19](https://i.ibb.co/HLZn4ghk/ds4windows-17.webp)
+                ![IMAGE-19](https://i.postimg.cc/T3wCjJWv/image.png)
                 <figcaption>매핑</figcaption>
             </figure>
 
@@ -256,7 +256,7 @@ Profiles 탭은 게임 컨트롤러와 관련된 설정을 수행할 수 있고,
 
             ??? info "매크로"
                 <figure markdown="span">
-                    ![IMAGE-20](https://i.ibb.co/gMYbXJhT/ds4windows-18.webp)
+                    ![IMAGE-20](https://i.postimg.cc/wBR2ZxVW/image.png)
                     <figcaption>매크로</figcaption>
                 </figure>
 

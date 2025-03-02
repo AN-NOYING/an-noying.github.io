@@ -21,7 +21,7 @@ comments: true
 ## 내돈내산
 !!! money "내돈내산"
     <figure markdown="span">
-        ![IMAGE1-1](https://i.ibb.co/SDk2YxCc/mamoney.jpg)
+        ![IMAGE1-1](https://i.postimg.cc/L5Rf8mM3/image.png)
         <figcaption>내돈내산</figcaption>
     </figure>
 
@@ -53,14 +53,14 @@ HDMI의 버전은 1.4로 규격상 1920x1080 기준으로 144hz까지 지원하�
 
 ### 배송
 <figure markdown="span">
-  ![IMAGE1-2](https://i.ibb.co/fJCBjFt/monitor1.webp)
+  ![IMAGE1-2](https://i.postimg.cc/mkw9cKLf/image.png)
   <figcaption>모니터 상자</figcaption>
 </figure>
 
 모니터의 배송사는 일양로지스입니다. 덕분에 택배를 받는 데 오래 걸렸죠.
 
 <figure markdown="span">
-  ![IMAGE1-3](https://i.ibb.co/Tqxm0S9J/monitor2.webp)
+  ![IMAGE1-3](https://i.postimg.cc/y6Xcr3FQ/image.png)
   <figcaption>스티로폼</figcaption>
 </figure>
 
@@ -71,12 +71,12 @@ HDMI의 버전은 1.4로 규격상 1920x1080 기준으로 144hz까지 지원하�
 ### 구성
 === "모니터"
     <figure markdown="span">
-      ![IMAGE1-5](https://i.ibb.co/2748M6hL/monitor4.webp)
+      ![IMAGE1-5](https://i.postimg.cc/hPDTF4sS/image.png)
       <figcaption>모니터</figcaption>
     </figure>
 === "부속품"
     <figure markdown="span">
-      ![IMAGE1-4](https://i.ibb.co/PsNj1rzG/monitor3.webp)
+      ![IMAGE1-4](https://i.postimg.cc/P5NDx609/image.png)
       <figcaption>구성품</figcaption>
     </figure>
 
@@ -86,14 +86,14 @@ HDMI의 버전은 1.4로 규격상 1920x1080 기준으로 144hz까지 지원하�
 
 ??? info "모니터 스탠드 장착법"
     <figure markdown="span">
-      ![IMAGE1-5](https://i.ibb.co/F4jvtMwh/monitor5.webp)
+      ![IMAGE1-5](https://i.postimg.cc/CKqfCRh4/image.png)
       <figcaption>모니터 스탠드 조립</figcaption>
     </figure>
 
     모니터 스탠드를 조립하는 방법은 간단합니다. 모니터 스탠드 받침에 M4 규격의 나사 2개가 있습니다. 먼저 해체하신 후 스탠드를 다시 조립해주시면 위 사진과 같이 됩니다.
 
     <figure markdown="span">
-      ![IMAGE1-6](https://i.ibb.co/8gzVcBcW/monitor6.webp)
+      ![IMAGE1-6](https://i.postimg.cc/nzf93nMf/image.png)
       <figcaption>모니터 결합부</figcaption>
     </figure>
 
@@ -102,7 +102,7 @@ HDMI의 버전은 1.4로 규격상 1920x1080 기준으로 144hz까지 지원하�
     각도 조절 가능합니다.
 
 <figure markdown="span">
-  ![IMAGE1-6](https://i.ibb.co/FqhsG6Dg/monitor7.webp)
+  ![IMAGE1-6](https://i.postimg.cc/4yBK4tPX/image.png)
   <figcaption>모니터</figcaption>
 </figure>
 
@@ -112,7 +112,7 @@ HDMI의 버전은 1.4로 규격상 1920x1080 기준으로 144hz까지 지원하�
 
 ### 실사용
 <figure markdown="span">
-  ![IMAGE1-6](https://i.ibb.co/5XXmgHVc/monitor8.webp)
+  ![IMAGE1-6](https://i.postimg.cc/153nCCRX/image.png)
   <figcaption>모니터</figcaption>
 </figure>
 

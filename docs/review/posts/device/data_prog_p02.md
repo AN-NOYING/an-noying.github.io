@@ -19,7 +19,7 @@ comments: true
 ## 내돈내산
 !!! money "내돈내산"
     <figure markdown="span">
-        ![IMAGE1-1](https://i.ibb.co/JdjbgTN/order.png)
+        ![IMAGE1-1](https://i.postimg.cc/KcdwQVDr/image.png)
         <figcaption>내돈내산</figcaption>
     </figure>
 
@@ -31,7 +31,7 @@ comments: true
 
 ## 포장
 <figure markdown="span">
-    ![IMAGE1-2](https://i.ibb.co/TTLTDwC/box1-jpg.jpg)
+    ![IMAGE1-2](https://i.postimg.cc/ZKpgQcfk/image.png)
     <figcaption>포장 상태</figcaption>
 </figure>
 
@@ -42,7 +42,7 @@ comments: true
 ## 외관
 === "정면"
     <figure markdown="span">
-        ![IMAGE1-3](https://i.ibb.co/bdk2PM5/p02-1.jpg)
+        ![IMAGE1-3](https://i.postimg.cc/sgz8Ch8M/image.png)
         <figcaption>정면</figcaption>
     </figure>
 
@@ -51,7 +51,7 @@ comments: true
     이 게임 컨트롤러는 사진에서 확인할 수 있듯 대칭형 스틱을 채택하고 있습니다. 덕분에 피로감은 상승.
 === "후면"
     <figure markdown="span">
-        ![IMAGE1-4](https://i.ibb.co/27y1Cbz/p02-2.jpg)
+        ![IMAGE1-4](https://i.postimg.cc/Qdqz8MG0/image.png)
         <figcaption>후면</figcaption>
     </figure>
 
@@ -73,7 +73,7 @@ comments: true
 
 ## 테스트
 <figure markdown="span">
-    ![IMAGE1-5](https://i.ibb.co/M65k1jL/hardwaretester-com-gamepad.jpg)
+    ![IMAGE1-5](https://i.postimg.cc/Xv7zp0n3/image.png)
     <figcaption>테스트 결과</figcaption>
 </figure>
 
