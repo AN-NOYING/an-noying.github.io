@@ -27,7 +27,7 @@ experience:
         - "Coupang Fulfillment Services"
     blood_donations: 
         - whole_blood: 3
-        - apheresis: 1
+        - apheresis: 2
     hsc:          # hematopoietic stem cell
         - status: "Registration is in progress",
         - donate: false
