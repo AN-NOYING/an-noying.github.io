@@ -1,4 +1,5 @@
 ---
+description: 블로그 주인장에 대한 여러가지 정보를 YAML 형식에 맞추어 보여줍니다.
 hide:
   - navigation
   - toc

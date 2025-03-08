@@ -1,4 +1,5 @@
 ---
+description: AnNoying의 블로그입니다. 자세한 내용은 아래의 내용을 참고해주세요.
 hide:
   - navigation
   - toc
