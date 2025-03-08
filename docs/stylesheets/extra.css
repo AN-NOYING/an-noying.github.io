@@ -25,6 +25,7 @@
     --md-admonition-icon--food: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m5.44 7.96.52-.53c.58-.58 1.54-.58 2.14.04l.02.03c.49.5 1.14.74 1.85.81.97.09 1.91.61 2.53 1.55.68 1.08.67 2.52-.04 3.59a3.322 3.322 0 0 1-5.18.55c-.56-.55-.88-1.26-.96-2-.08-.73-.37-1.42-.88-1.93-.58-.57-.58-1.53 0-2.11M9.64 16c-1.17 0-2.26-.45-3.07-1.28-.7-.72-1.14-1.62-1.25-2.6-.03-.3-.12-.69-.36-1.05C4.36 11.9 4 12.9 4 14c0 1.64.8 3.09 2.03 4H19v-1c0-3.6-2.39-6.65-5.66-7.65.89 1.4.87 3.27-.04 4.65-.8 1.25-2.18 2-3.66 2m5.14-8.44h1.27c.87 0 1.63.61 1.63 1.7V10h1.25V9c0-1.5-1.33-2.64-2.88-2.64h-1.27c-.83 0-1.54-.82-1.54-1.66s.71-1.46 1.54-1.46V2C13.24 2 12 3.24 12 4.78s1.24 2.78 2.78 2.78M4.5 7.55c.06-.1.14-.2.23-.3l.52-.52c.09-.09.19-.16.29-.23L4.13 5.07c.14-.27.09-.62-.13-.85a.767.767 0 0 0-1.07 0c-.14.14-.21.31-.22.49-.18.01-.35.08-.49.22-.29.29-.29.77 0 1.07.23.22.57.27.85.13zm13.89-3.16c.51-.51.83-1.2.83-1.97h-1.25c0 .83-.7 1.53-1.53 1.53v1.24c1.86 0 3.32 1.52 3.32 3.38V11H21V8.57a4.61 4.61 0 0 0-2.61-4.18M5 21h14c1.11 0 2-.89 2-2H3a2 2 0 0 0 2 2"/></svg>');
     --md-admonition-icon--practice: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm6-10h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93zm12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12z"/></svg>');
     --md-admonition-icon--answer: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.486 0c-1.92 0-2.881 0-3.615.373A3.43 3.43 0 0 0 .373 1.871C-.001 2.605 0 3.566 0 5.486v9.6c0 1.92 0 2.88.373 3.613.329.645.853 1.17 1.498 1.498.734.374 1.695.375 3.615.375h11.657V24l.793-.396c2.201-1.101 3.3-1.652 4.105-2.473a6.85 6.85 0 0 0 1.584-2.56C24 17.483 24 16.251 24 13.79V5.486c0-1.92 0-2.881-.373-3.615A3.43 3.43 0 0 0 22.129.373C21.395-.001 20.434 0 18.514 0zm1.371 10.285h10.286a5.142 5.142 0 0 1-10.286.024z"/></svg>');
+    --md-admonition-icon--code: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.59 3.41 7 4.82 3.82 8 7 11.18 5.59 12.6 1 8zm5.82 0L16 8l-4.59 4.6L10 11.18 13.18 8 10 4.82zM22 6v12c0 1.11-.89 2-2 2H4a2 2 0 0 1-2-2v-4h2v4h16V6h-2.97V4H20c1.11 0 2 .89 2 2"/></svg>');
 }
 .md-content__inner.md-typeset h1,.md-content__inner.md-typeset h2,.md-content__inner.md-typeset h3,.md-content__inner.md-typeset h4,.md-content__inner.md-typeset h5{font-weight:700;text-transform:none}
 .md-content__inner.md-typeset h2{border-left:4px solid var(--md-primary-fg-color);border-bottom:2px solid var(--md-primary-fg-color);padding:.25rem .5rem}
@@ -149,6 +150,21 @@
     background-color: #7886C7;
     -webkit-mask-image: var(--md-admonition-icon--answer);
             mask-image: var(--md-admonition-icon--answer);
+}
+
+.md-typeset .admonition.code,
+.md-typeset details.code{
+    border-color: #81BFDA;
+}
+.md-typeset .code > .admonition-title,
+.md-typeset .code > summary {
+    background-color: #81BFDA19;
+}
+.md-typeset .code > .admonition-title::before,
+.md-typeset .code > summary::before {
+    background-color: #81BFDA;
+    -webkit-mask-image: var(--md-admonition-icon--code);
+            mask-image: var(--md-admonition-icon--code);
 }
 
 /* Step List */
