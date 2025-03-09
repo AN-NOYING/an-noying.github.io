@@ -9,6 +9,7 @@ theme:
   font:
     code: Roboto Mono
   language: ko
+  favicon: assets/favicon.webp
   icon:
     edit: material/pencil 
     view: material/eye
