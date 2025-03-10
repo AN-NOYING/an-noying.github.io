@@ -80,7 +80,6 @@ plugins:
         default_timezone: Asia/Seoul
   - blog:
       blog_dir: programming
-      blog_toc: true
       post_url_format: "{categories}/{file}"
       archive: false
       categories_allowed:
@@ -89,21 +88,18 @@ plugins:
         - 자료구조
   - blog:
       blog_dir: reversing
-      blog_toc: true
       post_url_format: "{categories}/{file}"
       archive: false
       categories_allowed:
         - 리버싱 핵심원리
   - blog:
       blog_dir: game
-      blog_toc: true
       post_url_format: "{categories}/{file}"
       archive: false
       categories_allowed:
         - 치트
   - blog:
       blog_dir: how-to-use
-      blog_toc: true
       post_url_format: "{categories}/{file}"
       archive: false
       categories_allowed:
@@ -111,7 +107,6 @@ plugins:
         - 하드웨어
   - blog:
       blog_dir: review
-      blog_toc: true
       post_url_format: "{categories}/{file}"
       archive: false
       categories_allowed:
