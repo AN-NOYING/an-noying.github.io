@@ -1,14 +1,11 @@
 {% extends "base.html" %}
 
-{% block extrahead %}
-    <!-- ALTERNATE -->
-    <link rel="alternate" href="https://an-noying.github.io/" hreflang="ko" type="text/html" title="K's Garage">
-    <link rel="alternate" href="https://an-noying.github.io/sitemap.xml" type="application/xml" title="K's Garage Sitemap">
-    <link rel="alternate" href="https://an-noying.github.io/feed_rss_created.xml" type="application/rss+xml" title="K's Garage RSS Feed">
+{% block site_meta %}
+    {{ super() }}
 
     <!-- META -->
     <meta name="robots" content="index, follow">
-    <meta http-equiv="author" content="어노잉">
+    <meta name="author" content="어노잉">
 
     <!-- Site Verification -->
     <meta name="google-site-verification" content="GRz7q1CfePijOZEl_h4J-v9Qtf3670jdlxoTbSY-jKY" />
@@ -17,7 +14,43 @@
     <!-- GOOGLE ADSENSE -->
     <meta name="google-adsense-account" content="ca-pub-7065893733087116">
 
+    {% if page.meta %}
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ page.title }}">
+        {% if page.meta.description %}
+        <meta property="og:description" content="{{ page.meta.description }}">
+        {% endif %}
+        {% if page.canonical_url %}
+        <meta property="og:url" content="{{ page.canonical_url }}">
+        {% endif %}
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/favicon.webp">
+    <meta property="og:site_name" content="{{ config.site_name }}"> 
+
+    <!-- Twitter(X) -->
+    <meta name="twitter:card" content="assets/favicon.webp">
+    <meta name="twitter:image" content="assets/favicon.webp">
+    <meta name="twitter:title" content="{{ page.title }}">
+        {% if page.meta.description %}
+        <meta property="twitter:description" content="{{ page.meta.description }}">
+        {% endif %}
+    {% endif %} 
+{% endblock %}
+
+{% block extrahead %}
+    {{ super() }}
+
+    <!-- ALTERNATE -->
+    <link rel="alternate" href="https://an-noying.github.io/" hreflang="ko" type="text/html" title="K's Garage">
+    <link rel="alternate" href="https://an-noying.github.io/sitemap.xml" type="application/xml" title="K's Garage Sitemap">
+    <link rel="alternate" href="https://an-noying.github.io/feed_rss_created.xml" type="application/rss+xml" title="K's Garage RSS Feed">
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+
     {% if not ("127.0.0.1" in config.site_url or "localhost" in config.site_url) %}
+    <!-- Google Ads Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7065893733087116" crossorigin="anonymous"></script>
     {% endif %}
 {% endblock %}
@@ -26,6 +59,7 @@
     {% if not ("127.0.0.1" in config.site_url or "localhost" in config.site_url) %}
     {{ super() }}
 
+    <!-- Naver Analytics Script -->
     <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
     <script type="text/javascript">if(!wcs_add) var wcs_add = {};wcs_add["wa"] = "1a2ce08ab542b00";if(window.wcs) {wcs_do();}</script>
     {% endif %}
