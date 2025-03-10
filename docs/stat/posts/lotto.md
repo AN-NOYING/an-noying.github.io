@@ -5,7 +5,6 @@ authors:
 date: 
   created: 2025-02-12T00:00:00
   updated: 2025-02-22T15:09:00
-readtime: 20
 tags:
   - 로또
   - LOTTO

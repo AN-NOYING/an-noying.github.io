@@ -7,7 +7,6 @@ categories:
 date: 
   created: 2025-01-04T00:00:00
   updated: 2025-02-19T00:00:00
-readtime: 30
 tags:
   - 쿠팡
   - 아르바이트

@@ -7,7 +7,6 @@ categories:
 date: 
   created: 2025-02-16T00:00:00
   updated: 2025-02-17T00:00:00
-readtime: 20
 tags:
   - DS4Windows
   - 소프트웨어

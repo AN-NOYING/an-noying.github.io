@@ -5,7 +5,6 @@ authors:
 categories:
     - 전자기기
 date: 2025-02-02T00:00:00
-readtime: 15
 tags:
   - 게임 컨트롤러
   - 게임패드

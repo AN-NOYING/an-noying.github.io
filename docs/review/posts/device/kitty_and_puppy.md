@@ -5,7 +5,6 @@ authors:
 categories:
     - 전자기기
 date: 2025-01-05T00:00:01
-readtime: 3
 tags:
   - 키보드 키캡
   - 테무

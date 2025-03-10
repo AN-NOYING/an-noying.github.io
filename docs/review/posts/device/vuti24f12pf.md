@@ -7,7 +7,6 @@ categories:
 date: 
   created: 2025-02-05T00:00:00
   updated: 2025-02-17T00:00:00
-readtime: 15
 tags:
   - 프리플로우
   - 모니터

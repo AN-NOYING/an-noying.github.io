@@ -5,7 +5,6 @@ authors:
 date: 
   created: 2025-01-05T00:00:00
   updated: 2025-01-13T00:00:00
-readtime: 20
 tags:
   - LH
   - 청년매입임대주택
