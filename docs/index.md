@@ -44,8 +44,8 @@ hide:
     합법적이고 정당한 저작물 이용을 위해 블로그 메인 페이지에 라이선스를 표기하고 있습니다.
 
     === "글꼴"
-        - 본문: [PAPERLOGY](https://freesentation.blog/paperlogyfont "페이저로지"){ target="_blank" }
-        - 코드: [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono "Roboto Mono"){ target="_blank" }
+        - 본문: [구름 산스](https://goorm-sans.goorm.io/ "구름산스"){ target="_blank" }
+        - 코드: [구름 산스 코드](https://goorm-sans.goorm.io/ "구름 산스 코드"){ target="_blank" }
         - [온글잎 콘콘체](https://www.ownglyph.com/trial/c9d001d1-c8ac-4e41-95fd-b4e7383160aa "온글잎 콘콘체"){ target="_blank" }
     === "색상"
         본 블로그에서 사용되는 대부분의 색상은 [ColorHunt](https://colorhunt.co/ "ColorHunt")에서 가져오고 있습니다.

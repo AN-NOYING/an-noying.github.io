@@ -6,8 +6,7 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   custom_dir: overrides
-  font:
-    code: Roboto Mono
+  font: false
   language: ko
   favicon: assets/favicon.webp
   icon:
@@ -19,6 +18,7 @@ theme:
     - navigation.tabs.sticky
     - navigation.prune
     - toc.follow
+    - toc.integrate
     - navigation.footer
     - navigation.sections
     - content.code.copy
