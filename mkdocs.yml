@@ -8,7 +8,7 @@ theme:
   custom_dir: overrides
   font: false
   language: ko
-  favicon: assets/favicon.webp
+  favicon: assets/favicon.ico
   icon:
     edit: material/pencil 
     view: material/eye
