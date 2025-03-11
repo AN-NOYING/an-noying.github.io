@@ -18,6 +18,20 @@
 <!-- Actions -->
 {% include "partials/actions.html" %}
 
+{% if page.toc and page.url != "" %}
+  <!-- TOC -->
+  <aside id="custom-toc">
+    <nav class="md-nav" aria-label="{{ lang.t("toc") }}">
+      <span>{{ lang.t("toc") }}</span>
+      <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+        {% for toc_item in page.toc %}
+          {% include "partials/toc-item.html" %}
+        {% endfor %}
+      </ul>
+    </nav>
+  </aside>
+{% endif %}
+
 <!--
   Hack: check whether the content contains a h1 headline. If it doesn't, the
   page title (or respectively site name) is used as the main headline.
