@@ -120,9 +120,9 @@ plugins:
         - 드라마
         - 전자기기
         - LH
+        - 의류
   - blog:
       blog_dir: stat
-      blog_toc: true
       post_url_format: "{categories}/{file}"
       archive: false
   - tags
