@@ -55,7 +55,7 @@
 .md-content__inner.md-typeset samp.terminal-black{background-color:#000;color:#fff;padding:.25em .5em;font-family:var(--md-text-font);display:block}
 
 /* Custom TOC */
-#custom-toc,#custom-toc li:last-child{margin-bottom:.5em}
+#custom-toc,#custom-toc li:last-child{margin-bottom:.75em}
 #custom-toc{box-shadow:var(--md-shadow-z1);border-radius:1em;overflow:auto;width:100%;max-height:20em}
 #custom-toc::-webkit-scrollbar{width:0;height:0}
 #custom-toc .md-nav>span{font-weight:700;color:#fff;padding:1em;background-color:var(--md-primary-fg-color);display:block}
