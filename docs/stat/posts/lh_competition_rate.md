@@ -204,4 +204,4 @@ LH가 공급하는 주택의 메리트와 최근 몇 년 전부터 발생한 전
 
 
 <script defer src="//cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
-<script defer src="//cdn.jsdelivr.net/gh/AN-NOYING/DataRoom/Blog/Analysis/lh-competition-rate.js"></script>
+<script defer src="//cdn.jsdelivr.net/gh/AN-NOYING/DataRoom@latest/Blog/Analysis/lh-competition-rate.js"></script>
