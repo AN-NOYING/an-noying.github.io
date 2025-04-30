@@ -45,7 +45,7 @@
 .md-content__inner.md-typeset h5{border-left:4px solid var(--md-primary-fg-color);padding:.125rem .5rem}
 .md-content__inner.md-typeset figure figcaption{font-style:normal;color:gray;margin-bottom:0}
 .md-content__inner.md-typeset mark.half-line{position:relative;background-color:transparent;}
-.md-content__inner.md-typeset mark.half-line::after{content:'';position:absolute;left:0;bottom:0;height:.35rem;width:0;background:color-mix(in srgb, var(--line-color, var(--md-primary-fg-color)), transparent 50%);transition:width .5s !important}
+.md-content__inner.md-typeset mark.half-line::after{content:'';position:absolute;left:0;bottom:0;height:.35rem;width:0;background:color-mix(in srgb, var(--line-color, var(--md-primary-fg-color)), transparent 50%);transition:width 1s !important}
 .md-content__inner.md-typeset mark.half-line.visible::after{width:100%}
 .md-content__inner.md-typeset hr.scissors{position:relative;border:0;border-top:1px dashed lightgray;width:100%;overflow:visible}
 .md-content__inner.md-typeset hr.scissors::after{position:absolute;content:'\002700';display:inline-block;top:-.85rem;left:50%;transform:translateX(-50%);padding:0 3px;background:transparent;color:lightgray;font-size:1rem}
