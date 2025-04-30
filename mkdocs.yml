@@ -59,12 +59,12 @@ extra:
 extra_css:
   - stylesheets/extra.css
 extra_javascript:
-  - javascripts/lazyload.min.js
   - javascripts/scroll-percentage.min.js
   - javascripts/drag-search.min.js
   - javascripts/back2tb.min.js
   - javascripts/improve-seo.min.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/main.js
 
 plugins:
   - markdown-exec
@@ -120,6 +120,7 @@ plugins:
         - 전자기기
         - LH
         - 의류
+        - 설명회
   - blog:
       blog_dir: stat
       post_url_format: "{categories}/{file}"

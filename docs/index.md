@@ -29,8 +29,6 @@ hide:
         [Activity Graph](https://github.com/ashutosh00710/github-readme-activity-graph "Activity Graph")를 통해 만들 수 있습니다.
 
 === "기능"
-    === "지연로딩"
-        본 블로그는 웹 페이지의 로딩 속도 향상을 위해 `#!html <img>`와 `#!html <iframe>` 태그에 대한 지연로딩 기능이 적용되어 있습니다. 뷰포트에 보이지 않으면 이미지 표시를 수행하지 않기 때문에 스크롤 시 갑자기 페이지의 크기가 늘어날 수 있습니다.
     === "스크롤 퍼센티지"
         본 블로그는 우측 중앙에 현재 스크롤의 진행도를 나타내는 스크롤 퍼센티지(Scroll Percentage) 기능이 적용되어 있습니다.
     === "드래그 서치"
