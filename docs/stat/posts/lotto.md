@@ -14,40 +14,32 @@ comments: true
 <!-- more -->
 
 <script defer src="//cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
-<script defer src="//unpkg.com/brain.js"></script>
+<!-- <script defer src="//unpkg.com/brain.js"></script> -->
 <script>
-    // 전역 변수
     lottoData = [];
-    
-    // CSV 데이터 불러오기 함수
-    async function fetchCSV() {
-        const url = "https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom@latest/Blog/Analysis/lotto.csv";
 
-        try {
-            const response = await fetch(url);
-            const csvText = await response.text();
+    const url = "https://cdn.jsdelivr.net/gh/AN-NOYING/DataRoom@latest/Blog/Analysis/lotto.csv";
 
-            // 줄 단위 나눔
-            const rows = csvText.trim().split("\n");
-            
-            // 첫 번째 줄(헤더) 추출
-            const headers = rows[0].split(",").map(header => header.trim());
+    fetch(url)
+        .then(response => response.text())
+        .then(csvText => {
+            const rows = csvText.trim().split('\n');
+            const headers = rows[0].split(',').map(header => header.trim());
 
-            // 데이터 행 처리
             lottoData = rows.slice(1).map(row => {
-                const values = row.split(",");
-                return headers.reduce((obj, key, index) => {
-                    obj[key] = values[index]?.trim();
+                const values = row.split(',');
+                
+                return headers.reduce((obj, key, idx) => {
+                    obj[key] = values[idx]?.trim();
                     return obj;
                 }, {});
             });
 
-            console.log("CSV 데이터 불러오기 성공");
-        } catch (error) {
-            console.error("CSV 데이터 불러오기 실패: ", error);
-        }
-    }
-    fetchCSV();
+            console.log('CSV 데이터 불러오기 성공!');
+        })
+        .catch(err => {
+            alert('CSV 데이터 불러오기에 실패하였습니다. 새로고침 또는 관리자 문의 바랍니다.');
+        });
 </script>
 
 # 로또 통계 및 번호 생성기
@@ -70,11 +62,8 @@ comments: true
 <canvas id="lotto-1"></canvas>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        if (lottoData.length === 0) return;
-        if (!Chart) return;
-
         const canvas = document.getElementById('lotto-1');
-        if (canvas) {
+        if (canvas && Chart) {
             new Chart(canvas, {
                 type: 'bar',
                 data: {
@@ -82,25 +71,11 @@ comments: true
                     datasets: [
                         {
                             label: '2021년',
-                            data: [
-                                2.2,
-                                8.7,
-                                29.6,
-                                40.1,
-                                7.5,
-                                11.9
-                            ]
+                            data: [ 2.2, 8.7, 29.6, 40.1, 7.5, 11.9 ]
                         },
                         {
                             label: '2022년',
-                            data: [
-                                3.3,
-                                17.7,
-                                26.5,
-                                39.0,
-                                10.9,
-                                2.6
-                            ]
+                            data: [ 3.3, 17.7, 26.5, 39.0, 10.9, 2.6 ]
                         },
                     ]
                 }
@@ -115,11 +90,8 @@ comments: true
 <canvas id="lotto-2"></canvas>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        if (lottoData.length === 0) return;
-        if (!Chart) return;
-
         const canvas = document.getElementById('lotto-2');
-        if (canvas) {
+        if (canvas && Chart) {
             new Chart(canvas, {
                 type: 'bar',
                 data: {
@@ -127,18 +99,12 @@ comments: true
                     datasets: [
                         {
                             label: '2021',
-                            data: [ 
-                                56.8,
-                                43.2
-                            ]
+                            data: [ 56.8, 43.2 ]
                         },
                         {
                             label: '2022',
-                            data: [
-                                55.2,
-                                44.8,
-                            ]
-                        },
+                            data: [ 55.2, 44.8 ]
+                        }
                     ]
                 }
             });
@@ -152,11 +118,8 @@ comments: true
 <canvas id="lotto-3"></canvas>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        if (lottoData.length === 0) return;
-        if (!Chart) return;
-
         const canvas = document.getElementById('lotto-3');
-        if (canvas) {
+        if (canvas && Chart) {
             new Chart(canvas, {
                 type: 'bar',
                 data: {
@@ -164,24 +127,12 @@ comments: true
                     datasets: [
                         {
                             label: '2021년',
-                            data: [
-                                14.4,
-                                16.2,
-                                22.5,
-                                21.5,
-                                25.4,
-                            ]
+                            data: [ 14.4, 16.2, 22.5, 21.5, 25.4 ]
                         },
                         {
                             label: '2022년',
-                            data: [
-                                12.8,
-                                15.2,
-                                22.1,
-                                22.5,
-                                27.4,
-                            ]
-                        },
+                            data: [ 12.8, 15.2, 22.1, 22.5, 27.4 ]
+                        }
                     ]
                 }
             });
@@ -195,11 +146,8 @@ comments: true
 <canvas id="lotto-4"></canvas>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        if (lottoData.length === 0) return;
-        if (!Chart) return;
-
         const canvas = document.getElementById('lotto-4');
-        if (canvas) {
+        if (canvas && Chart) {
             new Chart(canvas, {
                 type: 'bar',
                 data: {
@@ -207,28 +155,12 @@ comments: true
                     datasets: [
                         {
                             label: '2021년',
-                            data: [
-                                1.4,
-                                19.0,
-                                20.3,
-                                34.5,
-                                16.4,
-                                4.2,
-                                4.2,
-                            ]
+                            data: [ 1.4, 19.0, 20.3, 34.5, 16.4, 4.2, 4.2 ]
                         },
                         {
                             label: '2022년',
-                            data: [
-                                1.0,
-                                20.2,
-                                17.9,
-                                32.1,
-                                18.9,
-                                4.9,
-                                5.0,
-                            ]
-                        },
+                            data: [ 1.0, 20.2, 17.9, 32.1, 18.9, 4.9, 5.0 ]
+                        }
                     ]
                 }
             });
@@ -247,12 +179,9 @@ comments: true
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        if (lottoData.length === 0) return;
-        if (!Chart) return;
-
         const canvas = document.getElementById('lotto-5');
-        if (canvas) {
-            const numberOfYears = new Date().getFullYear() - (2002 - 1);        // 연도의 수
+        if (canvas && Chart) {
+            const numberOfYears = new Date().getFullYear() - (2002 - 1);        // 연도 수
             let yearTotalArr = Array(numberOfYears).fill(0);                    // 연도별 총판매금액 배열
 
             // 연도별 총판매금액 산출
@@ -261,12 +190,11 @@ comments: true
                 yearTotalArr[idx] += parseInt(lottoData[i]['total'], 10);
             }
 
-            // 차트
             new Chart(canvas, {
                 type: 'bar',
                 data: {
                     labels: Array.from({ length: numberOfYears }, (_, i) => (2002 + i).toString()),
-                    datasets: [{ 
+                    datasets: [{
                         data: yearTotalArr,
                     }]
                 },
@@ -297,57 +225,53 @@ comments: true
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-    if (lottoData.length === 0) return;
+        // 1등 인당 최고 및 최저 당첨금과 회차
+        const result = lottoData.reduce((acc, { round, '1st_winnings': winnings }) => {
+            winnings = parseInt(winnings, 10);
+            if (winnings > acc.maxWinnings) {
+                acc.maxWinnings = winnings;
+                acc.maxRound = parseInt(round, 10);
+            } else if (winnings > 0 && winnings < acc.minWinnings) {
+                acc.minWinnings = winnings;
+                acc.minRound = parseInt(round, 10);
+            }
 
-    // 1등 인당 최고 및 최저 당첨금과 회차
-    const result = lottoData.reduce((acc, { round, '1st_winnings': winnings }) => {
-        winnings = parseInt(winnings, 10);
+            return acc;
+        }, { maxWinnings: -Infinity, maxRound: null, minWinnings: Infinity, minRound: null });
 
-        if (winnings > acc.maxWinnings) {
-            acc.maxWinnings = winnings;
-            acc.maxRound = parseInt(round, 10);
-        } else if (winnings > 0 && winnings < acc.minWinnings) {
-            acc.minWinnings = winnings;
-            acc.minRound = parseInt(round, 10);
+        // 1등 최다 당첨자 수
+        const result2 = lottoData.reduce((acc, { round, '1st_num': _1stnum }) => {
+            _1stnum = parseInt(_1stnum, 10);
+            if (_1stnum > acc._1st_num) {
+                acc._1st_num = _1stnum;
+                acc.round = parseInt(round, 10);
+            }
+            
+            return acc;
+        }, { _1st_num: -Infinity, round: null });
+
+        // TBODY 업데이트
+        const tbody = document.querySelector('#lotto-table-1 tbody');
+        if (tbody) {
+            tbody.innerHTML = `
+                <tr>
+                    <td>1등 인당 최고 당첨금</td>
+                    <td>${result.maxWinnings.toLocaleString()}원</td>
+                    <td>${result.maxRound.toLocaleString()}회차</td>
+                </tr>
+                <tr>
+                    <td>1등 인당 최저 당첨금</td>
+                    <td>${result.minWinnings.toLocaleString()}원</td>
+                    <td>${result.minRound.toLocaleString()}회차</td>
+                </tr>
+                <tr>
+                    <td>1등 최다 당첨자 수</td>
+                    <td>${result2._1st_num}명</td>
+                    <td>${result2.round.toLocaleString()}회차</td>
+                </tr>
+            `;
         }
-
-        return acc;
-    }, { maxWinnings: -Infinity, maxRound: null, minWinnings: Infinity, minRound: null });
-
-    // 1등 최다 당첨자 수
-    const result2 = lottoData.reduce((acc, { round, '1st_num': _1stnum }) => {
-        _1stnum = parseInt(_1stnum, 10);
-
-        if (_1stnum > acc._1st_num) {
-            acc._1st_num = _1stnum;
-            acc.round = parseInt(round, 10);
-        }
-        
-        return acc;
-    }, { _1st_num: -Infinity, round: null });
-
-    // TBODY 업데이트
-    const tbody = document.querySelector('#lotto-table-1 tbody');
-    if (tbody) {
-        tbody.innerHTML = `
-            <tr>
-                <td>1등 인당 최고 당첨금</td>
-                <td>${result.maxWinnings.toLocaleString()}원</td>
-                <td>${result.maxRound.toLocaleString()}회차</td>
-            </tr>
-            <tr>
-                <td>1등 인당 최저 당첨금</td>
-                <td>${result.minWinnings.toLocaleString()}원</td>
-                <td>${result.minRound.toLocaleString()}회차</td>
-            </tr>
-            <tr>
-                <td>1등 최다 당첨자 수</td>
-                <td>${result2._1st_num}명</td>
-                <td>${result2.round.toLocaleString()}회차</td>
-            </tr>
-        `;
-    }
-});
+    });
 </script>
 
 최저 당첨금은 0원을 제외하고 산출했을 때를 기준으로 하고 있습니다. 0원까지 포함하면 1회차(당첨자 없음)로 나타나기 때문입니다.
@@ -358,11 +282,8 @@ comments: true
 <p id="lotto-p-1"></p>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        if (lottoData.length === 0) return;
-        if (!Chart) return;
-
         const canvas = document.getElementById('lotto-6');
-        if (canvas) {
+        if (canvas && Chart) {
             // 45개의 요소와 각 번호별 출현 횟수 (보너스 제외)
             let freqNums = Array(45).fill(0);
             for (let i = 0; i < lottoData.length; ++i) {
@@ -437,11 +358,8 @@ comments: true
 <p id="lotto-p-2"></p>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        if (lottoData.length === 0) return;
-        if (!Chart) return;
-
         const canvas = document.getElementById('lotto-7');
-        if (canvas) {
+        if (canvas && Chart) {
             // 45개의 요소와 각 번호별 출현 횟수
             let freqNums = Array(45).fill(0);
             for (let i = 0; i < lottoData.length; ++i) {
@@ -517,11 +435,8 @@ comments: true
 <p id="lotto-p-3"></p>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        if (lottoData.length === 0) return;
-        if (!Chart) return;
-
         const canvas = document.getElementById('lotto-8');
-        if (canvas) {
+        if (canvas && Chart) {
             // 45개의 요소와 각 번호별 출현 횟수
             let bonusNums = Array(45).fill(0);
             for (let i = 0; i < lottoData.length; ++i) { bonusNums[parseInt(lottoData[i]['bonus_num'], 10) - 1] += 1; }
@@ -677,9 +592,6 @@ comments: true
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        if (lottoData.length === 0) return;
-        if (!Chart) return;
-
         const para1 = document.getElementById('lotto-p-4');
         if (para1) {
             // 1등 당첨자 수 배열
@@ -782,11 +694,8 @@ comments: true
 <p id="lotto-p-9"></p>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        if (lottoData.length === 0) return;
-        if (!Chart) return;
-
         const canvas = document.getElementById('lotto-9');
-        if (canvas) {
+        if (canvas && Chart) {
             let autoCnt = 0;
             let manualCnt = 0;
             let semiAutoCnt = 0;
@@ -838,81 +747,50 @@ comments: true
 [brain.js](https://github.com/BrainJS/brain.js "brain.js")는 자바스크립트로 만들어진 신경망 라이브러리로, 머신 러닝을 웹 환경에서 사용할 수 있도록 도와줍니다. 이 라이브러리를 통해 다양한 패턴을 예측해낼 수 있습니다. 로또는 무작위성이 강하기 때문에 사실 사용하는 건 바보같은 짓이지만 재미삼아 개쌉노가다를 하며 만들어보았습니다. 학습 횟수를 직접 지정할 수 있도록 했는데요... 너무 높은 값을 사용하면 연산도 오래 걸리고 오히려 예측률이 더 낮아지기도 합니다. 사용하고 계시는 기기의 사양을 고려해 적당한 값으로 사용하기 바랍니다.
 
 <script>
+    const worker = new Worker('/javascripts/worker.js');
+    worker.onmessage = e => {
+        const data = e.data;
+
+        switch (data.dir) {
+            case 'STAT': {
+                switch (data.post) {
+                    case 'LOTTO': {
+                        // BRAINJS
+                        const output = data.payload.output;
+                        let brainJSNums = Array.from(output).map((value, index) => ({ value, index: index + 1})).sort((a, b) => b.value - a.value).slice(0, 6).map(item => item.index).sort((a, b) => a - b);
+
+                        // TBODY
+                        const tbody = document.querySelector('#lotto-table-3 tbody');
+                        if (tbody) {
+                            tbody.innerHTML = `
+                                <tr>
+                                    <td>${data.payload.cryptoNums}</td>
+                                    <td>${brainJSNums}</td>
+                                </tr>
+                            `;
+                        }
+
+                        alert('신경망 훈련 및 예측이 완료되었습니다.');
+                    } break;
+                }
+            } break;
+        }
+    };
+    
     document.addEventListener('DOMContentLoaded', () => {
         const btn = document.getElementById('lotto-generate-btn');
         if (btn) {
             btn.addEventListener('click', () => {
-                // 1 ~ 45
-                const lottoNums = Array.from({ length: 45 }, (_, i) => (i + 1));
-                let cryptoNums;
-                let brainJSNums;
+                alert('신경망 훈련 및 예측을 시작합니다. 학습 횟수가 높을 경우 시간이 꽤 소요될 수 있습니다. 백그라운드에서 연산 작업이 수행되며, 완료될 시 알림 창을 띄웁니다.');
 
-                // CRYPTO 기반
-                {
-                    let clone1 = lottoNums.slice();
-
-                    // 섞은 후 랜덤하게 선택
-                    for (let i = clone1.length - 1; i > 0; --i) {
-                        const j = Math.floor(crypto.getRandomValues(new Uint32Array(1))[0] / (Math.pow(2, 32) / (i + 1)));
-                        [clone1[i], clone1[j]] = [clone1[j], clone1[i]]; // Swap
+                worker.postMessage({ 
+                    dir: 'STAT', 
+                    post: 'LOTTO',
+                    payload: {
+                        lottoData: lottoData, 
+                        iters: parseInt(document.getElementById('brainjs-iters').value, 10), 
                     }
-
-                    cryptoNums = clone1.slice(0, 6).sort((a, b) => a - b);
-                }
-
-                // brain.js 기반
-                {
-                    const net = new brain.NeuralNetwork({activation: 'sigmoid'});
-                    
-                    // 학습 데이터
-                    const trainingData = lottoData.map(data => {
-                        const input = Array(45).fill(0); // 45개의 번호를 위한 배열 초기화
-
-                        // num1 ~ num6 값만 처리
-                        for (let i = 1; i <= 6; ++i) {
-                            const num = parseInt(data[`num${i}`], 10); // num1 ~ num6 값을 가져오기
-                            if (num >= 1 && num <= 45) {
-                                input[num - 1] = 1; // 해당 번호의 인덱스를 1로 설정
-                            }
-                        }
-
-                        // 출력 데이터는 0~1 사이의 확률 값으로 설정
-                        return { input, output: Array(45).fill(0).map(() => Math.random()) }; // 확률 기반의 무작위 출력 데이터
-                    });
-
-                    // 신경망 훈련
-                    alert('신경망 훈련을 시작합니다. 어느정도 시간이 걸리기 때문에 잠시 다른 작업을 하신 후 돌아와주세요.');
-                    
-                    const iters = parseInt(document.getElementById('brainjs-iters').value, 10);
-                    net.train(trainingData, {
-                        iterations: iters,
-                    });
-
-                    // 예측
-                    const input = Array(45).fill(0);
-
-                    // CRYPTO에서 생성된 번호를 신경망의 입력으로 사용
-                    cryptoNums.forEach(num => {
-                        input[num - 1] = 1; // 해당 번호의 인덱스를 1로 설정
-                    });
-                    
-                    const output = net.run(input);
-
-                    alert('훈련 및 예측이 완료되었습니다. 결과를 확인해주세요');
-
-                    brainJSNums = Array.from(output).map((value, index) => ({ value, index: index + 1})).sort((a, b) => b.value - a.value).slice(0, 6).map(item => item.index).sort((a, b) => a - b);
-                }
-
-                // TBODY
-                const tbody = document.querySelector('#lotto-table-3 tbody');
-                if (tbody) {
-                    tbody.innerHTML = `
-                        <tr>
-                            <td>${cryptoNums}</td>
-                            <td>${brainJSNums}</td>
-                        </tr>
-                    `;
-                }
+                });
             });
         }
     });
