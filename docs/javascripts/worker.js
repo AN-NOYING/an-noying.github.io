@@ -25,7 +25,7 @@ self.onmessage = e => {
 
                     const net = new brain.NeuralNetwork({ activation: 'sigmoid' });
                     
-                    const trainingData = data.payload.lottoData.map(data => {
+                    const trainingData = data.payload.lottoData.slice(0, -1).map(data => {
                         const input = Array(45).fill(0);
 
                         for (let i = 1; i <= 6; ++i) {
@@ -46,10 +46,16 @@ self.onmessage = e => {
                     });
 
                     const input = Array(45).fill(0);
-                    cryptoNums.forEach(num => {
-                        input[num - 1] = 1;
-                    });
-                    
+                    // cryptoNums.forEach(num => {
+                    //     input[num - 1] = 1;
+                    // });
+                    input[parseInt(data.payload.lottoData[data.payload.lottoData.length - 1]['num1'], 10) - 1] = 1;
+                    input[parseInt(data.payload.lottoData[data.payload.lottoData.length - 1]['num2'], 10) - 1] = 1;
+                    input[parseInt(data.payload.lottoData[data.payload.lottoData.length - 1]['num3'], 10) - 1] = 1;
+                    input[parseInt(data.payload.lottoData[data.payload.lottoData.length - 1]['num4'], 10) - 1] = 1;
+                    input[parseInt(data.payload.lottoData[data.payload.lottoData.length - 1]['num5'], 10) - 1] = 1;
+                    input[parseInt(data.payload.lottoData[data.payload.lottoData.length - 1]['num6'], 10) - 1] = 1;
+
                     const output = net.run(input);
                     self.postMessage({
                         dir: 'STAT',
