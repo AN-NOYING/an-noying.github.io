@@ -23,9 +23,10 @@ user:
 # Not work experience
 experience:
     arbeit:
-        - "Government agency"
-        - "Election Helper"
+        - "Government agency (공공기관)"
+        - "Election Helper (선거 도우미)"
         - "Coupang Fulfillment Services"
+        - "Poll watcher (투표참관인)"
     blood_donations: 
         - whole_blood: 3
         - apheresis: 7
