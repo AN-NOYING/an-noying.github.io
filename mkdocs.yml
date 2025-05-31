@@ -121,6 +121,7 @@ plugins:
         - LH
         - 의류
         - 설명회
+        - 소프트웨어
   - blog:
       blog_dir: stat
       post_url_format: "{categories}/{file}"
