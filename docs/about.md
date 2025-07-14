@@ -29,7 +29,7 @@ experience:
         - "Poll watcher (투표참관인)"
     blood_donations: 
         - whole_blood: 3
-        - apheresis: 9
+        - apheresis: 11
     hsc:          # hematopoietic stem cell
         - status: "Registration is in progress",
         - donate: false
