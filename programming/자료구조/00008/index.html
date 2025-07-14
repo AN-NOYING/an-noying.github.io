@@ -1,0 +1,2764 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="데이터를 효율적으로 저장하고 관리하기 위한 자료구조, 해시 테이블에 대해 알아봅시다.">
+      
+      
+      
+        <link rel="canonical" href="https://an-noying.github.io/programming/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/00008/">
+      
+      
+        <link rel="prev" href="../00007/">
+      
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS 피드 생성완료" href="../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS 피드 업데이트완료" href="../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+
+    <!-- META -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="어노잉">
+
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="GRz7q1CfePijOZEl_h4J-v9Qtf3670jdlxoTbSY-jKY" />
+    <meta name="naver-site-verification" content="0b928e78b1747f8e7bd6f6bc4e48514746e39abb" />
+
+    <!-- GOOGLE ADSENSE -->
+    <meta name="google-adsense-account" content="ca-pub-7065893733087116">
+
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="샷건치며 배우는 자료구조 with C++, 9화">
+        
+        <meta property="og:description" content="데이터를 효율적으로 저장하고 관리하기 위한 자료구조, 해시 테이블에 대해 알아봅시다.">
+        
+        
+        <meta property="og:url" content="https://an-noying.github.io/programming/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/00008/">
+        
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/favicon.webp">
+    <meta property="og:site_name" content="K's Garage"> 
+
+    <!-- Twitter(X) -->
+    <meta name="twitter:card" content="assets/favicon.webp">
+    <meta name="twitter:image" content="assets/favicon.webp">
+    <meta name="twitter:title" content="샷건치며 배우는 자료구조 with C++, 9화">
+        
+        <meta property="twitter:description" content="데이터를 효율적으로 저장하고 관리하기 위한 자료구조, 해시 테이블에 대해 알아봅시다.">
+        
+     
+
+    
+      
+        <title>샷건치며 배우는 자료구조 with C++, 9화 - K's Garage</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_markdown_exec_pyodide.css">
+    
+      <link rel="stylesheet" href="../../../assets/_markdown_exec_ansi.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+        
+    
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WD2K7BQBQZ"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WD2K7BQBQZ",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WD2K7BQBQZ",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+
+    <!-- Naver Analytics Script -->
+    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">if(!wcs_add) var wcs_add = {};wcs_add["wa"] = "1a2ce08ab542b00";if(window.wcs) {wcs_do();}</script>
+    
+
+    
+    
+    
+
+    <!-- ALTERNATE -->
+    <link rel="alternate" href="https://an-noying.github.io/" hreflang="ko" type="text/html" title="K's Garage">
+    <link rel="alternate" href="https://an-noying.github.io/sitemap.xml" type="application/xml" title="K's Garage Sitemap">
+    <link rel="alternate" href="https://an-noying.github.io/feed_rss_created.xml" type="application/rss+xml" title="K's Garage RSS Feed">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#with-c-9" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../../.." title="K&#39;s Garage" class="md-header__button md-logo" aria-label="K's Garage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            K's Garage
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              샷건치며 배우는 자료구조 with C++, 9화
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="다크 모드 전환"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="다크 모드 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="라이트 모드 전환"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="라이트 모드 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AN-NOYING/an-noying.github.io" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    블로그의 소스코드 보기
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  HOME
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About Me
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../reversing/" class="md-tabs__link">
+          
+  
+  
+  리버스 엔지니어링
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  프로그래밍
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../game/" class="md-tabs__link">
+          
+  
+  
+  게임
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../how-to-use/" class="md-tabs__link">
+          
+  
+  
+  사용법
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../review/" class="md-tabs__link">
+          
+  
+  
+  후기
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../stat/" class="md-tabs__link">
+          
+  
+  
+  통계 및 분석
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="K&#39;s Garage" class="md-nav__button md-logo" aria-label="K's Garage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    K's Garage
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AN-NOYING/an-noying.github.io" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    블로그의 소스코드 보기
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HOME
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About Me
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../reversing/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    리버스 엔지니어링
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    프로그래밍
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            프로그래밍
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    프로그래밍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    카테고리
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            카테고리
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../category/%EA%BF%80%ED%8C%81/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    꿀팁
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../category/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    자료구조
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../game/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    게임
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../how-to-use/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    사용법
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../review/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    후기
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../stat/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    통계 및 분석
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      해시 테이블
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="해시 테이블">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      기본 구조
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      해시 함수
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      충돌 처리
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      로드 팩터
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="로드 팩터">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      재해싱
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      구현
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="구현">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      기본 구성
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      삽입
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      제거
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      전체 코드
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Index로 돌아가기
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/u/36888398" alt="AnNoying">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          <a href="https://github.com/an-noying">AnNoying</a>
+                        
+                      </strong>
+                      <br>
+                      Blogger
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    메타데이터
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2025-04-09 00:00:00+00:00" class="md-ellipsis">2025년 4월 9일</time>
+                      </div>
+                    </li>
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></svg>
+                          <time datetime="2025-04-12 00:00:00+00:00" class="md-ellipsis">2025년 4월 12일</time>
+                        </div>
+                      </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            카테고리
+                            
+                              <a href="../../category/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              읽는시간 12분
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        <!-- Google Adsense - 1 -->
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7065893733087116" crossorigin="anonymous"></script>
+<div class="gAds" style="width:100%;min-width:250px;margin-bottom:1rem">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;width:100%"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-7065893733087116"
+         data-ad-slot="8592136030"></ins>
+</div>
+<script>window.addEventListener('load', () => { setTimeout(() => { (adsbygoogle = window.adsbygoogle || []).push({}); }, 1000); })</script>
+
+
+<!-- Tags -->
+
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <span class="md-tag">딕셔너리</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">맵</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">자료구조</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">해시 테이블</span>
+      
+    
+  </nav>
+
+
+<!-- Actions -->
+<!-- Actions -->
+
+  <!-- Repoting button -->
+  <a href="https://forms.gle/1gcnTUPV6e9S7HFh7" title="Reporting" class="md-content__button md-icon" target="_blank" rel="noopener noreferrer">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 6.9 3.87 4.78l1.41-1.41L7.4 5.5zM13 1v3h-2V1zm7.13 3.78L18 6.9l-1.4-1.4 2.12-2.13zM4.5 10.5v2h-3v-2zm15 0h3v2h-3zM6 20h12a2 2 0 0 1 2 2H4a2 2 0 0 1 2-2m6-15a6 6 0 0 1 6 6v8H6v-8a6 6 0 0 1 6-6"/></svg>
+  </a>
+
+  <!-- Edit button -->
+  
+    <a
+      href="https://github.com/AN-NOYING/an-noying.github.io/edit/main/docs/programming/posts/data-structure/00008.md"
+      title="이 페이지를 편집"
+      class="md-content__button md-icon"
+    >
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+
+  <!-- View button -->
+  
+    
+      
+    
+    <a
+      href="https://github.com/AN-NOYING/an-noying.github.io/raw/main/docs/programming/posts/data-structure/00008.md"
+      title="페이지소스 보기"
+      class="md-content__button md-icon"
+    >
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
+    </a>
+  
+
+
+
+  <!-- TOC -->
+  <aside id="custom-toc">
+    <nav class="md-nav" aria-label="목차">
+      <span>목차</span>
+      <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+        
+          <li class="md-nav__item">
+  <a href="#with-c-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      샷건치며 배우는 자료구조 with C++, 9화
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="샷건치며 배우는 자료구조 with C++, 9화">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      해시 테이블
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="해시 테이블">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      기본 구조
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      해시 함수
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      충돌 처리
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      로드 팩터
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="로드 팩터">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      재해싱
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      구현
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="구현">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      기본 구성
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      삽입
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      제거
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      전체 코드
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  </aside>
+
+
+<!--
+  Hack: check whether the content contains a h1 headline. If it doesn't, the
+  page title (or respectively site name) is used as the main headline.
+-->
+
+
+<!-- Page content -->
+<h1 id="with-c-9">샷건치며 배우는 자료구조 with C++, 9화</h1>
+<p>데이터를 효율적으로 저장하고 관리하기 위한 자료구조, 해시 테이블에 대해 알아봅시다.</p>
+<!-- more -->
+
+<div class="admonition announcement">
+<p class="admonition-title">읽어주세요</p>
+<p>자료구조를 배우기 위해 <a href="https://namu.wiki/w/%EC%9C%84%EB%8C%80%ED%95%9C%20%ED%95%AD%EB%A1%9C" title="위대한 항로">위대한 항로</a>(?)를 넘어 여기까지 오신 분들 환영합니다. 본 게시글은 자료구조를 공부하면서 복습 겸 정리하기 위해 작성하였습니다. 개인적으로 강좌 형식 및 장난을 섞어가며 작성하는 걸 좋아하기 때문에 진지한 게시글을 원하신다면 뒤로 가기를 눌러주세요.</p>
+<p>C++ 언어를 기반으로 하고 있습니다. 다른 프로그래밍 언어를 사용 중이신 경우 개념(이론)을 배우는 데 큰 문제는 없지만, 실제 코드로 구현할 땐 생각보다 차이가 있을 수 있습니다.</p>
+<details class="note">
+<summary>업데이트</summary>
+<ol>
+<li>C 언어 구현 내용 제거<ul>
+<li>게시글의 내용이 너무 복잡해져 제거하였습니다. </li>
+</ul>
+</li>
+</ol>
+</details>
+</div>
+<details class="hidden">
+<summary>게시글 개선을 위해 임시 숨김 처리</summary>
+<h2 id="_1">해시 테이블</h2>
+<p>해시 테이블에 대해 알아보기 전에 연관 배열에 대해 알아봅시다.</p>
+<p>연관 배열<sup style="color:gray">Associative Array</sup>은 키<sup style="color:gray">Key</sup>와 값<sup style="color:gray">Value</sup>의 쌍을 저장하고, 키를 사용해 값을 빠르게 찾아내는 자료구조입니다. 이는 일상생활 속 사용하는 사전과 비슷하다고 볼 수 있습니다. 예를 들어, 사전에서 단어(키)를 찾으면 해당 단어의 정의(값)를 바로 확인할 수 있죠. 이처럼 <mark class="half-line">키를 사용해 값을 빠르게 찾는 것</mark>이 이 연관 배열의 <strong>핵심</strong>입니다.</p>
+<p><figure markdown="span">
+    <a href="https://postimg.cc/DJDS2sNx"><img alt="image.png" src="https://i.postimg.cc/6q6nfffx/image.png" /></a>
+    <figcaption>단어를 검색하여 정의를 알아낸다</figcaption>
+</figure></p>
+<p>자, 오늘 우리가 배울 해시 테이블은 이 연관 배열을 구현하는 방법 중 하나입니다. 해시 테이블<sup style="color:gray">Hash Table</sup>은 키를 해시 함수<sup style="color:gray">Hash Function</sup>에 넣어 해시 값을 계산하고, 이 값을 인덱스로 사용하여 데이터를 저장하거나 조회할 수 있습니다.</p>
+<p>일반적인 배열이나 리스트처럼 데이터를 순차적으로 탐색하지 않고, 해시 함수를 통해 얻은 인덱스를 사용하여 <strong>직접 접근</strong>하기 때문에 데이터의 검색 속도가 매우 빠릅니다. 평균적으로 <span class="arithmatex">\(O(1)\)</span>의 시간 복잡도로 데이터를 저장 및 검색할 수 있습니다.</p>
+<h3 id="_2">기본 구조</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">키</label><label for="__tabbed_1_2">배열</label><label for="__tabbed_1_3">해시 함수</label><label for="__tabbed_1_4">버킷</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>키<sup style="color:gray">Key</sup>는 해시 테이블에서 데이터를 식별하고 접근하기 위한 <strong>고유한 식별자</strong>입니다. 키를 통해 값을 저장하거나 빠르게 탐색할 수 있죠. 쉽게 말해, 키는 해시 테이블에서 값을 꺼내기 위한 '열쇠'와 같은 역할을 합니다.</p>
+<p>사용자가 데이터를 추가, 제거, 탐색할 때마다 키를 입력 값으로 사용하며, 이 키는 해시 함수에 의해 배열의 인덱스로 변환됩니다.</p>
+<p>키는 정수, 문자열, 사용자 정의 타입 등 다양한 데이터 타입으로 표현할 수 있어 유연성을 제공합니다. 예를 들어, 전화번호부에서 이름(키)으로 전화번호(값)를 찾거나, 학생 관리 시스템에서 학번(키)으로 이름(값)을 찾는 것처럼 말이죠.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>고유성</strong></p>
+<hr />
+<p>이상적인 해시 테이블에선 키가 <strong>중복되지 않아야</strong>합니다. 같은 키가 여러 값을 가리키면 어떤 값을 반환해야 할 지 모호해집니다. 예를 들어, <code class="language-c highlight"><span class="s">&quot;director&quot;</span></code>라는 키에 <code class="language-c highlight"><span class="s">&quot;신창섭&quot;</span></code>과 <code class="language-c highlight"><span class="s">&quot;강원기&quot;</span></code>의 값이 있다면 무엇을 반환해야 할 지 애매합니다.</p>
+<p>대부분의 해시 테이블은 같은 키로 새 값을 추가하면 기존의 값을 덮어씁니다. 키의 중복을 허용하는 <code>multimap</code>이 있지만, 표준 해시 테이블의 변형이기 때문에 본문에서는 다루지 않습니다.</p>
+</li>
+<li>
+<p><strong>다양성</strong></p>
+<hr />
+<p>키는 정수, 문자열, 사용자 정의 타입 등 다양한 데이터 타입으로 표현될 수 있습니다. 해시 테이블의 활용 범위가 무궁무진해지는 순간이죠.</p>
+<p>도서관에서 책의 관리 번호가 단순 숫자(1234)일 수 있고, 주제 코드(K-1234)일 수 있듯이 키도 상황에 따라 다양한 데이터 타입을 사용할 수 있습니다.</p>
+</li>
+<li>
+<p><strong>해시 가능성</strong></p>
+<hr />
+<p>키는 해시 함수로 처리할 수 있어야 합니다. 즉, 키를 숫자 형태의 해시 값으로 변환할 수 있어야합니다.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="tabbed-block">
+<p>해시 테이블은 고정된 크기를 갖는 배열을 기반으로 합니다. 이 배열은 모든 키-값 쌍을 저장하는 역할을 하고 해시 테이블의 빠른 속도를 가능하게 하는 기본 뼈대입니다.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>고정 크기</strong></p>
+<hr />
+<p>해시 테이블 설계 시 배열은 미리 정해진 크기를 갖습니다. 다만, 크기가 작으면 충돌이 잦아지고... 너무 크면 메모리 낭비가 될 수 있습니다. 보통은 동적 할당 후 크기 조정 방식으로 합니다.</p>
+</li>
+<li>
+<p><strong>랜덤 액세스</strong></p>
+<hr />
+<p>배열은 인덱스를 통한 직접 접근이 가능합니다. 해시 테이블의 장점인 <span class="arithmatex">\(O(1)\)</span> 시간 복잡도를 나타내는 큰 이유죠.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="tabbed-block">
+<p>해시 함수<sup style="color:gray">Hash Function</sup>는 키를 배열의 인덱스로 변환하는 <strong>핵심 함수</strong>입니다. 키를 입력 값으로 받아 배열 내 유효한 인덱스로 변환하죠. 이 함수 덕분에 해시 테이블은 순차 탐색없이 빠르게 데이터 접근이 가능해집니다. 해시 함수를 얼마나 잘 설계하느냐에 따라 해시 테이블의 성능을 좌우한다고 볼 수 있습니다.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>결정성</strong></p>
+<hr />
+<p>해시 함수는 같은 키에 대해 같은 해시 값을 반환해야 합니다. <code class="language-c highlight"><span class="s">&quot;sibal&quot;</span></code>을 <code>6974</code>로 변환했다면, 다음에도 <code>6974</code>로 변환이 되어야 합니다.</p>
+</li>
+<li>
+<p><strong>효율성</strong></p>
+<hr />
+<p>해시 함수는 빠르게 연산이 되어야 합니다. 복잡하고 오래 걸리는 연산은 해시 테이블의 장점 중 하나인 시간 복잡도 <span class="arithmatex">\(O(1)\)</span>가 무색해집니다.</p>
+</li>
+<li>
+<p><strong>균등 분포</strong></p>
+<hr />
+<p>해시 함수는 키를 배열의 모든 버킷에 균등하게 분포시켜야 합니다. 특정 버킷에 데이터에 몰리면 충돌이 발생합니다.</p>
+<p>서로 다른 키가 같은 인덱스를 가리키는 충돌을 줄이는 것이 이상적이지만 완벽히 피할 수는 없습니다. 이를 최소화하는 것이 목표입니다.</p>
+<p>두 사람의 사물함 번호가 겹치면 같은 사물함을 쓰려고 하듯이 충돌은 어쩔 수 없습니다. </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="tabbed-block">
+<p>버킷<sup style="color:gray">Bucket</sup>은 해시 테이블에서 데이터를 저장하는 기본 단위 공간입니다. 해시 함수가 키를 입력 받아 반환한 인덱스는 바로 이 버킷의 위치를 의미합니다. 그리고 실제 데이터는 해당 버킷에 저장되죠.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>저장 공간</strong></p>
+<hr />
+<p>해시 테이블의 배열에서 각 칸을 버킷이라 합니다. 이 버킷은 하나의 키-값 쌍을 저장하거나, 충돌 처리를 수행하기 위해 여러 개의 쌍을 저장하기도 합니다.</p>
+</li>
+<li>
+<p><strong>충돌 처리</strong></p>
+<hr />
+<p>하나의 버킷에 여러 키가 같은 인덱스를 가리킬 수 있습니다. 이를 해시 충돌<sup style="color:gray">Hash Collision</sup>이라합니다. 보통 아래의 방식으로 해결합니다.</p>
+<ul>
+<li><strong>체이닝(Chaining)</strong>: 버킷을 연결 리스트나 동적 배열 등으로 구성하여 여러 키-값 쌍을 하나의 버킷에 저장</li>
+<li><strong>오픈 어드레싱(Open Addressing)</strong>: 충돌 발생 시 빈 버킷을 찾아 순차적으로 저장</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<h3 id="_3">해시 함수</h3>
+<p>기본 구조에서 설명했지만, 해시 함수는 키를 입력 받아 해시 값<sup style="color: gray">Hash Value</sup>을 반환합니다. 즉 배열의 인덱스를 반환하며, 이 덕분에 해시 테이블은 순차 탐색 없이 빠르게 데이터에 접근할 수 있습니다.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">정수</label><label for="__tabbed_2_2">문자열</label><label for="__tabbed_2_3"><code>std::hasher</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hashfunc_int.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">hash</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">TABLE_SIZE</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>정수를 키로 사용할 경우 해시 함수는 간단하면서 매우 빠르게 작동합니다. 다만, 충돌을 방지하고 고르게 분포시키기 위해 <code>TABLE_SIZE</code>의 값은 소수<sup style="color:gray">Prime Number</sup>로 설정하는 편입니다.</p>
+<details class="info">
+<summary>소수를 사용하는 이유</summary>
+<p>해시 함수의 목표 중 하나는 키를 가능한 균등하게 분포시키는 것입니다. 소수를 사용하면 충돌을 줄이고, 데이터가 특정 위치에 몰리는 현상을 방지할 수 있죠.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">불균등한 분포</label><label for="__tabbed_3_2">공약수 최소화</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>키가 일정한 패턴을 갖고 있을 경우, 테이블 크기가 그 패턴과 공약수를 가지면 해시 값이 몰릴 수 있습니다.</p>
+<p class="annotate">예를 들어, 테이블(1)의 크기가 <code>10</code>이고 키가 <code>10</code>, <code>20</code>, <code>30</code>이면, 해시 함수(<code>key % 10</code>)는 모두 <code>0</code>을 반환합니다. 이렇게 되면 대부분의 값이 인덱스 <code>0</code>에 저장되어, 균등 분포를 해칩니다. 이러한 현상을 클러스터링<sup style="color:gray">Clustering</sup>이라 합니다.</p>
+<ol>
+<li>물리적으론 배열이지만, 데이터를 구조화된 방식으로 매핑하기 때문에 테이블이라 부른다.</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p>소수는 1과 자기 자신 외에는 나누어 떨어지지 않기 때문에 키와 공약수를 가지지 않을 확률이 높습니다. 따라서 키 값이 어떤 패턴을 갖고 있어도 해시 결과는 서로 다른 인덱스에 분산될 가능성이 높습니다.</p>
+<p>예를 들어 테이블의 크기를 <code>13</code>으로 하면, <code>12 % 13 = 12</code>, <code>24 % 13 = 11</code>, <code>36 % 13 = 10</code>처럼 충돌이 줄고 균등 분포를 이룰 수 있습니다.</p>
+</div>
+</div>
+</div>
+</details>
+</div>
+<div class="tabbed-block">
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hashfunc_str.cpp</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kt">uint32_t</span><span class="w"> </span><span class="nf">hash</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="n">str</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5381u</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">str</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">        </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">h</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">h</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ch</span><span class="p">;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">TABLE_SIZE</span><span class="p">;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>문자열을 해시로 사용할 경우 보통 위 코드의 해시 함수를 사용합니다. "djb2" 알고리즘으로 부릅니다. 단순하지만 효율적이고 충돌이 적은 편으로 평가 받고 있습니다.</p>
+<p><code class="language-c highlight"><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">33</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ch</span></code>는 <code class="language-c highlight"><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">h</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">h</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ch</span><span class="p">;</span></code> 코드와 같으며, 조금 더 빠른 연산을 위해 비트 연산자를 이용해 최적화 한 코드입니다.</p>
+</div>
+<div class="tabbed-block">
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hash.cpp</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;functional&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;sibal&quot;</span><span class="p">;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">hash</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">hasher</span><span class="p">;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">hashValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hasher</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hash of &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">hashValue</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>C++은 <code>functional</code> 헤더에서 <code>std::hash</code>라는 기본 해시 함수 객체를 제공하고 있습니다. <code>std::unordered_map</code> 등 헤시 기반 컨테이너에서 내부적으로 사용되고 있습니다.</p>
+<p>기본 데이터 타입(<code>int</code>, <code>std::string</code> 등)에 대한 기본 해시가 구현되어 있고, 사용자 정의 타입은 별도로 구현해야 합니다.</p>
+</div>
+</div>
+</div>
+<h3 id="_4">충돌 처리</h3>
+<p>같은 해시 값(인덱스)을 가지는 서로 다른 키들이 존재할 수 있습니다. 이를 위해 충돌을 대비하는 방법이 필요하며, 크게 두 가지가 있습니다.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">체이닝</label><label for="__tabbed_4_2">오픈 어드레싱</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>체이닝<sup style="color:gray">Chaining</sup>은 동일한 해시 값을 가진 키들이 하나의 버킷에 링크드 리스트나 기타 다른 자료구조 형태로 저장되는 기법을 말합니다.</p>
+<p>충돌이 발생하면 각 버킷에 있는 특정 자료 구조에 데이터를 추가해나가는 방식입니다.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>간단하고 유연한 구조</strong></p>
+<hr />
+<p>링크드 리스트를 이용하면 구현이 쉽고, 각 노드에 데이터를 추가하기 때문에 사용도 쉽습니다.</p>
+<p>다만, 노드가 추가될 때마다 메모리 사용량이 증가하기 때문에 주의가 필요합니다.</p>
+</li>
+<li>
+<p><strong>탐색 시간 증가</strong></p>
+<hr />
+<p>충돌이 잦아지면 한 버킷 내에 추가되는 데이터가 많아져 선형 탐색 시 굉장히 오래 걸릴 수 있습니다. 최악의 경우 <span class="arithmatex">\(O(n)\)</span>입니다.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="tabbed-block">
+<p>오픈 어드레싱<sup style="color:gray">Open Addressing</sup>은 해시 충돌이 발생하면 해시 테이블 내에서 다른 빈 공간(버킷)을 찾아 데이터를 저장하는 방식입니다. 추가적인 자료구조 없이 테이블 배열 내에서 충돌을 해결합니다.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">탐색 전략</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">선형 탐사</label><label for="__tabbed_6_2">제곱 탐사</label><label for="__tabbed_6_3">이중 해싱</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>충돌 발생 시 인접한 버킷으로 이동하여 빈 공간을 찾습니다.</p>
+<p>구현이 간단하지만, 빈 공간이 부족해지면 성능 저하 문제가 발생합니다.</p>
+</div>
+<div class="tabbed-block">
+<p>충돌 발생 시 일정한 제곱수 간격으로 이동하면서 빈 공간을 찾습니다.</p>
+<p>선형 탐사에 비해 빈 공간이 부족해지는 문제를 최소화할 수 있지만 완벽하진 않습니다.</p>
+</div>
+<div class="tabbed-block">
+<p>두 번째 해시 함수를 사용해 충돌이 발생하면 고정된 간격이 아닌 동적인 간격으로 빈 공간을 찾습니다.</p>
+<p>균등 분포의 장점이 있지만, 해시 함수의 설계가 복잡해지거나 성능에 영향을 줄 수 있습니다.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="_5">로드 팩터</h3>
+<p>로드 팩터<sup style="color:gray">Load Factor</sup>는 해시 테이블의 밀도를 나타내는 지표로, 얼마나 가득 찼는 지를 나타내는 비율입니다. <span class="arithmatex">\(n &divide; m\)</span>식으로 구할 수 있고, <span class="arithmatex">\(n\)</span>과 <span class="arithmatex">\(m\)</span>은 각각 저장된 키-값의 개수와 테이블의 크기입니다.</p>
+<p>이 로드 팩터는 해시 테이블의 성능과 메모리 효율성을 측정하고 조율하는 핵심 요소 중 하나입니다.</p>
+<h4 id="_6">재해싱</h4>
+<p>재해싱<sup style="color:gray">Rehashing</sup>은 해시 테이블의 크기를 조정하고 데이터를 재배치하는 과정입니다. 로드 팩터가 특정 임계값을 초과하면 해시 테이블의 성능 저하를 방지하기 위해 재해싱 과정을 수행합니다.</p>
+<p>체이닝 방식의 경우, 로드 팩터가 1.0을 초과해도 동작은 가능하지만 성능을 위해 1.0 ~ 2.0 사이의 범위일 때 재해싱을 수행합니다.</p>
+<p>오픈 어드레싱의 경우, 로드 팩터의 값이 1.0이면 더 이상 삽입 불가함을 의미합니다. 그래서 0.7 ~ 0.75 정도가 되면 재해싱을 고려합니다.</p>
+<p>재해싱은 비용이 많이 드는 작업이기 때문에 적절한 테이블의 크기와 임계값 설정이 필요합니다.</p>
+<h2 id="_7">구현</h2>
+<h3 id="_8">기본 구성</h3>
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hashtable.cpp</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span>
+<span class="normal"><a href="#__codelineno-3-31">31</a></span>
+<span class="normal"><a href="#__codelineno-3-32">32</a></span>
+<span class="normal"><a href="#__codelineno-3-33">33</a></span>
+<span class="normal"><a href="#__codelineno-3-34">34</a></span>
+<span class="normal"><a href="#__codelineno-3-35">35</a></span>
+<span class="normal"><a href="#__codelineno-3-36">36</a></span>
+<span class="normal"><a href="#__codelineno-3-37">37</a></span>
+<span class="normal"><a href="#__codelineno-3-38">38</a></span>
+<span class="normal"><a href="#__codelineno-3-39">39</a></span>
+<span class="normal"><a href="#__codelineno-3-40">40</a></span>
+<span class="normal"><a href="#__codelineno-3-41">41</a></span>
+<span class="normal"><a href="#__codelineno-3-42">42</a></span>
+<span class="normal"><a href="#__codelineno-3-43">43</a></span>
+<span class="normal"><a href="#__codelineno-3-44">44</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;functional&gt;</span><span class="c1">       // (1)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;list&gt;</span><span class="c1">             // (2)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string_view&gt;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="c1">//! @brief 테이블 크기 (소수 설정)</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="k">constexpr</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">TABLE_SIZE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">101</span><span class="p">;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="c1">//! @brief 해시 테이블</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="k">class</span><span class="w"> </span><span class="nc">HashTable</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="k">private</span><span class="o">:</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">    </span><span class="c1">//! @brief 엔트리</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">    </span><span class="c1">//! @note 키-값 쌍을 저장하는 구조체</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">Entry</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">key</span><span class="p">;</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="w">    </span><span class="p">};</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19"></a>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">Entry</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">m_Buckets</span><span class="p">;</span><span class="w">        </span><span class="c1">//!&lt; 버킷 배열</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">m_Size</span><span class="p">;</span><span class="w">                                  </span><span class="c1">//!&lt; 저장된 엔트리의 수</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22"></a>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="w">    </span><span class="c1">//! @brief 해시 메서드</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="w">    </span><span class="c1">//! @param key 키</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="w">    </span><span class="c1">//! @param size 테이블 크기</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="w">    </span><span class="c1">//! @return 해시 값</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="nf">hash</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">hash</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="o">&gt;</span><span class="p">{}(</span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">TABLE_SIZE</span><span class="p">;</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30"></a>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="k">public</span><span class="o">:</span>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32"></a><span class="w">    </span><span class="c1">//! @brief 생성자</span>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33"></a><span class="w">    </span><span class="n">HashTable</span><span class="p">()</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34"></a><span class="w">        </span><span class="n">m_Buckets</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">TABLE_SIZE</span><span class="p">);</span>
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35"></a><span class="w">        </span><span class="n">m_Size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37"></a>
+</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38"></a><span class="w">    </span><span class="c1">//! @brief 소멸자</span>
+</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39"></a><span class="w">    </span><span class="o">~</span><span class="n">HashTable</span><span class="p">()</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">bucket</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_Buckets</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41"></a><span class="w">            </span><span class="n">bucket</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44"></a><span class="p">};</span>
+</span></code></pre></div></td></tr></table></div>
+<ol>
+<li><code>std::hash</code> 사용을 위해 포함</li>
+<li>체이닝을 위해 연결 리스트 사용</li>
+</ol>
+<p><code>Entry</code>는 하나의 데이터를 나타내는 구조체로, 키와 값을 가집니다. 엔트리는 해시 테이블에서 관습적으로 사용되는 용어로, 테이블 안의 데이터를 의미합니다.</p>
+<p><code>m_Buckets</code>는 버킷 배열로, 각 요소는 <code>std::list</code> 컨테이너를 사용하고 있습니다. 링크드 리스트로, 체이닝 구조를 기반으로 합니다.</p>
+<p><code>m_Size</code>는 실제 저장된 키-값(엔트리)의 개수입니다. 리사이징을 고려해서 추가한 멤버 변수인데, 복잡해질까봐 리사이징은 생략했습니다.</p>
+<p><code>hash()</code> 메서드는 C++의 표준 해시 함수를 사용했습니다.</p>
+<h3 id="_9">삽입</h3>
+<p>해시 테이블에 버킷을 추가합니다.</p>
+<p>본 예제의 코드는 체이닝과 고정 크기를 기반으로 하기 때문에 평균 시간 복잡도는 <span class="arithmatex">\(O(1)\)</span>이고, 최악은 <span class="arithmatex">\(O(n)\)</span>입니다.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1"><code class="language-cpp highlight"><span class="k">class</span></code></label><label for="__tabbed_7_2"><code>stl</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">insert.cpp</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span>
+<span class="normal"><a href="#__codelineno-4-30">30</a></span>
+<span class="normal"><a href="#__codelineno-4-31">31</a></span>
+<span class="normal"><a href="#__codelineno-4-32">32</a></span>
+<span class="normal"><a href="#__codelineno-4-33">33</a></span>
+<span class="normal"><a href="#__codelineno-4-34">34</a></span>
+<span class="normal"><a href="#__codelineno-4-35">35</a></span>
+<span class="normal"><a href="#__codelineno-4-36">36</a></span>
+<span class="normal"><a href="#__codelineno-4-37">37</a></span>
+<span class="normal"><a href="#__codelineno-4-38">38</a></span>
+<span class="normal"><a href="#__codelineno-4-39">39</a></span>
+<span class="normal"><a href="#__codelineno-4-40">40</a></span>
+<span class="normal"><a href="#__codelineno-4-41">41</a></span>
+<span class="normal"><a href="#__codelineno-4-42">42</a></span>
+<span class="normal"><a href="#__codelineno-4-43">43</a></span>
+<span class="normal"><a href="#__codelineno-4-44">44</a></span>
+<span class="normal"><a href="#__codelineno-4-45">45</a></span>
+<span class="normal"><a href="#__codelineno-4-46">46</a></span>
+<span class="normal"><a href="#__codelineno-4-47">47</a></span>
+<span class="normal"><a href="#__codelineno-4-48">48</a></span>
+<span class="normal"><a href="#__codelineno-4-49">49</a></span>
+<span class="normal"><a href="#__codelineno-4-50">50</a></span>
+<span class="normal"><a href="#__codelineno-4-51">51</a></span>
+<span class="normal"><a href="#__codelineno-4-52">52</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">// ...</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">HashTable</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="c1">// ...</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="c1">//! @brief 엔트리 데이터를 추가하는 메서드</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">    </span><span class="c1">//! @param key 키</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">    </span><span class="c1">//! @param value 값</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">Insert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">        </span><span class="c1">// (1) 오류 검사</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">key</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">        </span><span class="c1">// (2) 해시 값 (인덱스)</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">        </span><span class="kt">size_t</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hash</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">        </span><span class="c1">// (3) 엔트리 조회</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_Buckets</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">            </span><span class="c1">// 키가 같다면, 값만 갱신하고 종료</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">entry</span><span class="p">.</span><span class="n">key</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">                </span><span class="n">entry</span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">                </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24"></a>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="w">        </span><span class="c1">// (4) 엔트리 추가 (체이닝)</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">        </span><span class="n">m_Buckets</span><span class="p">[</span><span class="n">idx</span><span class="p">].</span><span class="n">push_back</span><span class="p">({</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">key</span><span class="p">),</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="p">});</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27"></a>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="w">        </span><span class="c1">// (5) 크기 증가</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="w">        </span><span class="n">m_Size</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31"></a>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="w">    </span><span class="c1">//! @brief 인덱스 연산자 오버로딩</span>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="w">    </span><span class="c1">//! @param key 키</span>
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34"></a><span class="w">    </span><span class="c1">//! @return 값</span>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="w">    </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36"></a><span class="w">        </span><span class="c1">// (1) 해시 값 (인덱스)</span>
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37"></a><span class="w">        </span><span class="kt">size_t</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hash</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38"></a>
+</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39"></a><span class="w">        </span><span class="c1">// (2) 엔트리 조회 - 존재하는 키라면 해당 값을 반환</span>
+</span><span id="__span-4-40"><a id="__codelineno-4-40" name="__codelineno-4-40"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_Buckets</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-41"><a id="__codelineno-4-41" name="__codelineno-4-41"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">entry</span><span class="p">.</span><span class="n">key</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-42"><a id="__codelineno-4-42" name="__codelineno-4-42"></a><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
+</span><span id="__span-4-43"><a id="__codelineno-4-43" name="__codelineno-4-43"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-4-44"><a id="__codelineno-4-44" name="__codelineno-4-44"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-4-45"><a id="__codelineno-4-45" name="__codelineno-4-45"></a>
+</span><span id="__span-4-46"><a id="__codelineno-4-46" name="__codelineno-4-46"></a><span class="w">        </span><span class="c1">// (3) 엔트리 추가 및 반환</span>
+</span><span id="__span-4-47"><a id="__codelineno-4-47" name="__codelineno-4-47"></a><span class="w">        </span><span class="n">m_Buckets</span><span class="p">[</span><span class="n">idx</span><span class="p">].</span><span class="n">push_back</span><span class="p">({</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">key</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">});</span>
+</span><span id="__span-4-48"><a id="__codelineno-4-48" name="__codelineno-4-48"></a><span class="w">        </span><span class="n">m_Size</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-4-49"><a id="__codelineno-4-49" name="__codelineno-4-49"></a>
+</span><span id="__span-4-50"><a id="__codelineno-4-50" name="__codelineno-4-50"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">m_Buckets</span><span class="p">[</span><span class="n">idx</span><span class="p">].</span><span class="n">back</span><span class="p">().</span><span class="n">value</span><span class="p">;</span>
+</span><span id="__span-4-51"><a id="__codelineno-4-51" name="__codelineno-4-51"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-52"><a id="__codelineno-4-52" name="__codelineno-4-52"></a><span class="p">};</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1"><code>Insert</code></label><label for="__tabbed_8_2">연산자 오버로딩</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="steps" markdown>
+<ol>
+<li>
+<p><strong>오류 검사</strong></p>
+<p>문자열의 값이 비어 있으면 아래의 코드를 수행하지 않도록 합니다.</p>
+</li>
+<li>
+<p><strong>해시 값 (인덱스)</strong></p>
+<p>해시 메서드를 통해 인덱스를 취득합니다.</p>
+</li>
+<li>
+<p><strong>엔트리 조회</strong></p>
+<p>이미 해당 키가 존재한다면 값만 변경한 후 종료하도록 합니다.</p>
+</li>
+<li>
+<p><strong>엔트리 추가 (체이닝)</strong></p>
+<p>같은 키가 없으면 엔트리를 추가합니다.</p>
+</li>
+<li>
+<p><strong>크기 증가</strong></p>
+<p>엔트리가 추가되었으니 크기를 <code>1</code> 증가시킵니다.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="steps" markdown>
+<ol>
+<li>
+<p><strong>해시 값 (인덱스)</strong></p>
+<p>해시 메서드를 통해 인덱스를 취득합니다.</p>
+</li>
+<li>
+<p><strong>엔트리 조회</strong></p>
+<p>키가 이미 존재하는 지 순회하여 찾은 후 값을 반환합니다.</p>
+</li>
+<li>
+<p><strong>엔트리 추가 및 반환</strong></p>
+<p>존재하지 않은 키라면 추가한 후, 해당 값을 반환하도록 합니다.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1"><code>std::map</code></label><label for="__tabbed_9_2"><code>std::unordered_map</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">map_insert.cpp</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;map&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="c1">// map</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="p">;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">    </span><span class="c1">// insert 1</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">    </span><span class="n">map</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="w"> </span><span class="s">&quot;dog&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">});</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">    </span><span class="n">map</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="w"> </span><span class="s">&quot;cat&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">});</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">    </span><span class="c1">// insert 2</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">    </span><span class="n">map</span><span class="p">[</span><span class="s">&quot;rabbit&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p><code>std::map</code>은 레드-블랙 트리 기반 연관 컨테이너로, 키를 기준으로 데이터를 정렬합니다. 키 정렬이 필요하거나 범위 쿼리를 사용할 때 적합합니다. 해시 테이블은 아니지만, 키-값 쌍을 저장한다는 점에서 연관 자료구조로 언급됩니다. 이 컨테이너는 키를 기반으로 데이터를 정렬하기 때문에 조금의 오버헤드가 있습니다.</p>
+<p><code>std::map</code>에서 <code>insert()</code> 메서드를 사용해 데이터를 추가할 수 있습니다.</p>
+</div>
+<div class="tabbed-block">
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">unordered_map_insert.cpp</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span>
+<span class="normal"><a href="#__codelineno-6-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unordered_map&gt;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="c1">// unordered_map</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">umap</span><span class="p">;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="c1">// insert 1</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">    </span><span class="n">umap</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="w"> </span><span class="s">&quot;dog&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">});</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">    </span><span class="n">umap</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="w"> </span><span class="s">&quot;cat&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">});</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">    </span><span class="c1">// insert 2</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">    </span><span class="n">umap</span><span class="p">[</span><span class="s">&quot;rabbit&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p><code>std::unordered_map</code>은 연관 배열을 구현한 STL 컨테이너 중 하나로, <code>std::map</code> 컨테이너와는 다르게 정렬을 수행하지 않습니다. C++ STL에서 제공하는 해시 테이블입니다. 키를 해시 함수로 매핑하여 값을 찾을 수 있도록 합니다.</p>
+<p><code>std::map</code>과 동일하게 <code>insert()</code> 메서드를 사용해 데이터를 추가할 수 있습니다.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="_10">제거</h3>
+<p>해시 테이블의 특정 버킷을 제거합니다.</p>
+<p>본 예제의 코드는 체이닝과 고정 크기를 기반으로 하기 때문에 평균 시간 복잡도는 <span class="arithmatex">\(O(1)\)</span>이고, 최악은 <span class="arithmatex">\(O(n)\)</span>입니다.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1"><code class="language-cpp highlight"><span class="k">class</span></code></label><label for="__tabbed_10_2"><code>stl</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">remove.cpp</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span>
+<span class="normal"><a href="#__codelineno-7-16">16</a></span>
+<span class="normal"><a href="#__codelineno-7-17">17</a></span>
+<span class="normal"><a href="#__codelineno-7-18">18</a></span>
+<span class="normal"><a href="#__codelineno-7-19">19</a></span>
+<span class="normal"><a href="#__codelineno-7-20">20</a></span>
+<span class="normal"><a href="#__codelineno-7-21">21</a></span>
+<span class="normal"><a href="#__codelineno-7-22">22</a></span>
+<span class="normal"><a href="#__codelineno-7-23">23</a></span>
+<span class="normal"><a href="#__codelineno-7-24">24</a></span>
+<span class="normal"><a href="#__codelineno-7-25">25</a></span>
+<span class="normal"><a href="#__codelineno-7-26">26</a></span>
+<span class="normal"><a href="#__codelineno-7-27">27</a></span>
+<span class="normal"><a href="#__codelineno-7-28">28</a></span>
+<span class="normal"><a href="#__codelineno-7-29">29</a></span>
+<span class="normal"><a href="#__codelineno-7-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1">// ...</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">HashTable</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">    </span><span class="c1">// ...</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">    </span><span class="c1">//! @brief 엔트리 데이터를 제거하는 메서드</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">    </span><span class="c1">//! @param key 키</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">    </span><span class="c1">//! @return 성공(true), 실패(false)</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Remove</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="w">        </span><span class="c1">// (1) 오류 검사</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">key</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="w">        </span><span class="c1">// (2) 해시 값 (인덱스)</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="w">        </span><span class="kt">size_t</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hash</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15"></a>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="w">        </span><span class="c1">// (3) 버킷</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">        </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">bucket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_Buckets</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18"></a>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="w">        </span><span class="c1">// (4) 순회</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bucket</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">bucket</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">key</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22"></a><span class="w">                </span><span class="n">bucket</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="w">                </span><span class="n">m_Size</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27"></a>
+</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-30"><a id="__codelineno-7-30" name="__codelineno-7-30"></a><span class="p">};</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="steps" markdown>
+<ol>
+<li>
+<p><strong>오류 검사</strong></p>
+<p>올바르지 않은 키는 실패를 반환하도록 합니다.</p>
+</li>
+<li>
+<p><strong>해시 값 (인덱스)</strong></p>
+<p>해시 메서드를 통해 인덱스를 취득합니다.</p>
+</li>
+<li>
+<p><strong>버킷</strong></p>
+<p>인덱스에 해당하는 버킷을 취득합니다.</p>
+</li>
+<li>
+<p><strong>순회</strong></p>
+<p>링크드 리스트를 사용했기 때문에 순회하여 키가 같으면 제거한 후, <code class="language-c highlight"><span class="nb">true</span></code>를 반환합니다.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1"><code>std::map</code></label><label for="__tabbed_11_2"><code>std::unordered_map</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">remove_map.cpp</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="c1">// ...</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="c1">// ...</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span><span class="c1">// 제거 1</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span><span class="n">map</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="s">&quot;dog&quot;</span><span class="p">);</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span><span class="c1">// 제거 2 - 전체 제거 (clear()로 대체 가능)</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">    </span><span class="n">map</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">map</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">map</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p><code>erase()</code> 메서드를 통해 특정 키를 가진 데이터를 삭제할 수 있습니다. 또는 범위를 지정해서 제거하는 것도 가능합니다.</p>
+</div>
+<div class="tabbed-block">
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">remove_umap.cpp</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1">// ...</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">    </span><span class="c1">// ...</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">    </span><span class="c1">// 제거 1</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">    </span><span class="n">umap</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="s">&quot;dog&quot;</span><span class="p">);</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w">    </span><span class="c1">// 제거 2 - 전체 제거 (clear()로 대체 가능)</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">    </span><span class="n">umap</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">umap</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">umap</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11"></a>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p><code>erase()</code> 메서드를 통해 특정 키를 가진 데이터를 삭제할 수 있습니다. 또는 범위를 지정해서 제거하는 것도 가능합니다.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="_11">전체 코드</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1"><code class="language-cpp highlight"><span class="k">class</span></code></label><label for="__tabbed_12_2">stl</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hashtable.cpp</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">  1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">  2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">  3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">  4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">  5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">  6</a></span>
+<span class="normal"><a href="#__codelineno-10-7">  7</a></span>
+<span class="normal"><a href="#__codelineno-10-8">  8</a></span>
+<span class="normal"><a href="#__codelineno-10-9">  9</a></span>
+<span class="normal"><a href="#__codelineno-10-10"> 10</a></span>
+<span class="normal"><a href="#__codelineno-10-11"> 11</a></span>
+<span class="normal"><a href="#__codelineno-10-12"> 12</a></span>
+<span class="normal"><a href="#__codelineno-10-13"> 13</a></span>
+<span class="normal"><a href="#__codelineno-10-14"> 14</a></span>
+<span class="normal"><a href="#__codelineno-10-15"> 15</a></span>
+<span class="normal"><a href="#__codelineno-10-16"> 16</a></span>
+<span class="normal"><a href="#__codelineno-10-17"> 17</a></span>
+<span class="normal"><a href="#__codelineno-10-18"> 18</a></span>
+<span class="normal"><a href="#__codelineno-10-19"> 19</a></span>
+<span class="normal"><a href="#__codelineno-10-20"> 20</a></span>
+<span class="normal"><a href="#__codelineno-10-21"> 21</a></span>
+<span class="normal"><a href="#__codelineno-10-22"> 22</a></span>
+<span class="normal"><a href="#__codelineno-10-23"> 23</a></span>
+<span class="normal"><a href="#__codelineno-10-24"> 24</a></span>
+<span class="normal"><a href="#__codelineno-10-25"> 25</a></span>
+<span class="normal"><a href="#__codelineno-10-26"> 26</a></span>
+<span class="normal"><a href="#__codelineno-10-27"> 27</a></span>
+<span class="normal"><a href="#__codelineno-10-28"> 28</a></span>
+<span class="normal"><a href="#__codelineno-10-29"> 29</a></span>
+<span class="normal"><a href="#__codelineno-10-30"> 30</a></span>
+<span class="normal"><a href="#__codelineno-10-31"> 31</a></span>
+<span class="normal"><a href="#__codelineno-10-32"> 32</a></span>
+<span class="normal"><a href="#__codelineno-10-33"> 33</a></span>
+<span class="normal"><a href="#__codelineno-10-34"> 34</a></span>
+<span class="normal"><a href="#__codelineno-10-35"> 35</a></span>
+<span class="normal"><a href="#__codelineno-10-36"> 36</a></span>
+<span class="normal"><a href="#__codelineno-10-37"> 37</a></span>
+<span class="normal"><a href="#__codelineno-10-38"> 38</a></span>
+<span class="normal"><a href="#__codelineno-10-39"> 39</a></span>
+<span class="normal"><a href="#__codelineno-10-40"> 40</a></span>
+<span class="normal"><a href="#__codelineno-10-41"> 41</a></span>
+<span class="normal"><a href="#__codelineno-10-42"> 42</a></span>
+<span class="normal"><a href="#__codelineno-10-43"> 43</a></span>
+<span class="normal"><a href="#__codelineno-10-44"> 44</a></span>
+<span class="normal"><a href="#__codelineno-10-45"> 45</a></span>
+<span class="normal"><a href="#__codelineno-10-46"> 46</a></span>
+<span class="normal"><a href="#__codelineno-10-47"> 47</a></span>
+<span class="normal"><a href="#__codelineno-10-48"> 48</a></span>
+<span class="normal"><a href="#__codelineno-10-49"> 49</a></span>
+<span class="normal"><a href="#__codelineno-10-50"> 50</a></span>
+<span class="normal"><a href="#__codelineno-10-51"> 51</a></span>
+<span class="normal"><a href="#__codelineno-10-52"> 52</a></span>
+<span class="normal"><a href="#__codelineno-10-53"> 53</a></span>
+<span class="normal"><a href="#__codelineno-10-54"> 54</a></span>
+<span class="normal"><a href="#__codelineno-10-55"> 55</a></span>
+<span class="normal"><a href="#__codelineno-10-56"> 56</a></span>
+<span class="normal"><a href="#__codelineno-10-57"> 57</a></span>
+<span class="normal"><a href="#__codelineno-10-58"> 58</a></span>
+<span class="normal"><a href="#__codelineno-10-59"> 59</a></span>
+<span class="normal"><a href="#__codelineno-10-60"> 60</a></span>
+<span class="normal"><a href="#__codelineno-10-61"> 61</a></span>
+<span class="normal"><a href="#__codelineno-10-62"> 62</a></span>
+<span class="normal"><a href="#__codelineno-10-63"> 63</a></span>
+<span class="normal"><a href="#__codelineno-10-64"> 64</a></span>
+<span class="normal"><a href="#__codelineno-10-65"> 65</a></span>
+<span class="normal"><a href="#__codelineno-10-66"> 66</a></span>
+<span class="normal"><a href="#__codelineno-10-67"> 67</a></span>
+<span class="normal"><a href="#__codelineno-10-68"> 68</a></span>
+<span class="normal"><a href="#__codelineno-10-69"> 69</a></span>
+<span class="normal"><a href="#__codelineno-10-70"> 70</a></span>
+<span class="normal"><a href="#__codelineno-10-71"> 71</a></span>
+<span class="normal"><a href="#__codelineno-10-72"> 72</a></span>
+<span class="normal"><a href="#__codelineno-10-73"> 73</a></span>
+<span class="normal"><a href="#__codelineno-10-74"> 74</a></span>
+<span class="normal"><a href="#__codelineno-10-75"> 75</a></span>
+<span class="normal"><a href="#__codelineno-10-76"> 76</a></span>
+<span class="normal"><a href="#__codelineno-10-77"> 77</a></span>
+<span class="normal"><a href="#__codelineno-10-78"> 78</a></span>
+<span class="normal"><a href="#__codelineno-10-79"> 79</a></span>
+<span class="normal"><a href="#__codelineno-10-80"> 80</a></span>
+<span class="normal"><a href="#__codelineno-10-81"> 81</a></span>
+<span class="normal"><a href="#__codelineno-10-82"> 82</a></span>
+<span class="normal"><a href="#__codelineno-10-83"> 83</a></span>
+<span class="normal"><a href="#__codelineno-10-84"> 84</a></span>
+<span class="normal"><a href="#__codelineno-10-85"> 85</a></span>
+<span class="normal"><a href="#__codelineno-10-86"> 86</a></span>
+<span class="normal"><a href="#__codelineno-10-87"> 87</a></span>
+<span class="normal"><a href="#__codelineno-10-88"> 88</a></span>
+<span class="normal"><a href="#__codelineno-10-89"> 89</a></span>
+<span class="normal"><a href="#__codelineno-10-90"> 90</a></span>
+<span class="normal"><a href="#__codelineno-10-91"> 91</a></span>
+<span class="normal"><a href="#__codelineno-10-92"> 92</a></span>
+<span class="normal"><a href="#__codelineno-10-93"> 93</a></span>
+<span class="normal"><a href="#__codelineno-10-94"> 94</a></span>
+<span class="normal"><a href="#__codelineno-10-95"> 95</a></span>
+<span class="normal"><a href="#__codelineno-10-96"> 96</a></span>
+<span class="normal"><a href="#__codelineno-10-97"> 97</a></span>
+<span class="normal"><a href="#__codelineno-10-98"> 98</a></span>
+<span class="normal"><a href="#__codelineno-10-99"> 99</a></span>
+<span class="normal"><a href="#__codelineno-10-100">100</a></span>
+<span class="normal"><a href="#__codelineno-10-101">101</a></span>
+<span class="normal"><a href="#__codelineno-10-102">102</a></span>
+<span class="normal"><a href="#__codelineno-10-103">103</a></span>
+<span class="normal"><a href="#__codelineno-10-104">104</a></span>
+<span class="normal"><a href="#__codelineno-10-105">105</a></span>
+<span class="normal"><a href="#__codelineno-10-106">106</a></span>
+<span class="normal"><a href="#__codelineno-10-107">107</a></span>
+<span class="normal"><a href="#__codelineno-10-108">108</a></span>
+<span class="normal"><a href="#__codelineno-10-109">109</a></span>
+<span class="normal"><a href="#__codelineno-10-110">110</a></span>
+<span class="normal"><a href="#__codelineno-10-111">111</a></span>
+<span class="normal"><a href="#__codelineno-10-112">112</a></span>
+<span class="normal"><a href="#__codelineno-10-113">113</a></span>
+<span class="normal"><a href="#__codelineno-10-114">114</a></span>
+<span class="normal"><a href="#__codelineno-10-115">115</a></span>
+<span class="normal"><a href="#__codelineno-10-116">116</a></span>
+<span class="normal"><a href="#__codelineno-10-117">117</a></span>
+<span class="normal"><a href="#__codelineno-10-118">118</a></span>
+<span class="normal"><a href="#__codelineno-10-119">119</a></span>
+<span class="normal"><a href="#__codelineno-10-120">120</a></span>
+<span class="normal"><a href="#__codelineno-10-121">121</a></span>
+<span class="normal"><a href="#__codelineno-10-122">122</a></span>
+<span class="normal"><a href="#__codelineno-10-123">123</a></span>
+<span class="normal"><a href="#__codelineno-10-124">124</a></span>
+<span class="normal"><a href="#__codelineno-10-125">125</a></span>
+<span class="normal"><a href="#__codelineno-10-126">126</a></span>
+<span class="normal"><a href="#__codelineno-10-127">127</a></span>
+<span class="normal"><a href="#__codelineno-10-128">128</a></span>
+<span class="normal"><a href="#__codelineno-10-129">129</a></span>
+<span class="normal"><a href="#__codelineno-10-130">130</a></span>
+<span class="normal"><a href="#__codelineno-10-131">131</a></span>
+<span class="normal"><a href="#__codelineno-10-132">132</a></span>
+<span class="normal"><a href="#__codelineno-10-133">133</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;functional&gt;</span><span class="c1">       // </span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;list&gt;</span><span class="c1">             // </span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string_view&gt;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="c1">//! @brief 테이블 크기 (소수 설정)</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="k">constexpr</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">TABLE_SIZE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">101</span><span class="p">;</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="c1">//! @brief 해시 테이블</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="k">class</span><span class="w"> </span><span class="nc">HashTable</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="k">private</span><span class="o">:</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="w">    </span><span class="c1">//! @brief 엔트리</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="w">    </span><span class="c1">//! @note 키-값 쌍을 저장하는 구조체</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">Entry</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">key</span><span class="p">;</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="w">    </span><span class="p">};</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19"></a>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">Entry</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">m_Buckets</span><span class="p">;</span><span class="w">        </span><span class="c1">//!&lt; 버킷 배열</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21"></a><span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">m_Size</span><span class="p">;</span><span class="w">                                  </span><span class="c1">//!&lt; 저장된 엔트리의 수</span>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22"></a>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23"></a><span class="w">    </span><span class="c1">//! @brief 해시 메서드</span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24"></a><span class="w">    </span><span class="c1">//! @param key 키</span>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25"></a><span class="w">    </span><span class="c1">//! @param size 테이블 크기</span>
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26"></a><span class="w">    </span><span class="c1">//! @return 해시 값</span>
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27"></a><span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="nf">hash</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">hash</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="o">&gt;</span><span class="p">{}(</span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">TABLE_SIZE</span><span class="p">;</span>
+</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30"></a>
+</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31"></a><span class="k">public</span><span class="o">:</span>
+</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32"></a><span class="w">    </span><span class="c1">//! @brief 생성자</span>
+</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33"></a><span class="w">    </span><span class="n">HashTable</span><span class="p">()</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34"></a><span class="w">        </span><span class="n">m_Buckets</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">TABLE_SIZE</span><span class="p">);</span>
+</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35"></a><span class="w">        </span><span class="n">m_Size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37"></a>
+</span><span id="__span-10-38"><a id="__codelineno-10-38" name="__codelineno-10-38"></a><span class="w">    </span><span class="c1">//! @brief 소멸자</span>
+</span><span id="__span-10-39"><a id="__codelineno-10-39" name="__codelineno-10-39"></a><span class="w">    </span><span class="o">~</span><span class="n">HashTable</span><span class="p">()</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-40"><a id="__codelineno-10-40" name="__codelineno-10-40"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">bucket</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_Buckets</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-41"><a id="__codelineno-10-41" name="__codelineno-10-41"></a><span class="w">            </span><span class="n">bucket</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+</span><span id="__span-10-42"><a id="__codelineno-10-42" name="__codelineno-10-42"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-10-43"><a id="__codelineno-10-43" name="__codelineno-10-43"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-44"><a id="__codelineno-10-44" name="__codelineno-10-44"></a>
+</span><span id="__span-10-45"><a id="__codelineno-10-45" name="__codelineno-10-45"></a><span class="w">    </span><span class="c1">//! @brief 엔트리 데이터를 추가하는 메서드</span>
+</span><span id="__span-10-46"><a id="__codelineno-10-46" name="__codelineno-10-46"></a><span class="w">    </span><span class="c1">//! @param key 키</span>
+</span><span id="__span-10-47"><a id="__codelineno-10-47" name="__codelineno-10-47"></a><span class="w">    </span><span class="c1">//! @param value 값</span>
+</span><span id="__span-10-48"><a id="__codelineno-10-48" name="__codelineno-10-48"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">Insert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-49"><a id="__codelineno-10-49" name="__codelineno-10-49"></a><span class="w">        </span><span class="c1">// (1) 오류 검사</span>
+</span><span id="__span-10-50"><a id="__codelineno-10-50" name="__codelineno-10-50"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">key</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-10-51"><a id="__codelineno-10-51" name="__codelineno-10-51"></a>
+</span><span id="__span-10-52"><a id="__codelineno-10-52" name="__codelineno-10-52"></a><span class="w">        </span><span class="c1">// (2) 해시 값 (인덱스)</span>
+</span><span id="__span-10-53"><a id="__codelineno-10-53" name="__codelineno-10-53"></a><span class="w">        </span><span class="kt">size_t</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hash</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+</span><span id="__span-10-54"><a id="__codelineno-10-54" name="__codelineno-10-54"></a>
+</span><span id="__span-10-55"><a id="__codelineno-10-55" name="__codelineno-10-55"></a><span class="w">        </span><span class="c1">// (3) 엔트리 조회</span>
+</span><span id="__span-10-56"><a id="__codelineno-10-56" name="__codelineno-10-56"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_Buckets</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-57"><a id="__codelineno-10-57" name="__codelineno-10-57"></a><span class="w">            </span><span class="c1">// 키가 같다면, 값만 갱신하고 종료</span>
+</span><span id="__span-10-58"><a id="__codelineno-10-58" name="__codelineno-10-58"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">entry</span><span class="p">.</span><span class="n">key</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-59"><a id="__codelineno-10-59" name="__codelineno-10-59"></a><span class="w">                </span><span class="n">entry</span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+</span><span id="__span-10-60"><a id="__codelineno-10-60" name="__codelineno-10-60"></a><span class="w">                </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-10-61"><a id="__codelineno-10-61" name="__codelineno-10-61"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-10-62"><a id="__codelineno-10-62" name="__codelineno-10-62"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-10-63"><a id="__codelineno-10-63" name="__codelineno-10-63"></a>
+</span><span id="__span-10-64"><a id="__codelineno-10-64" name="__codelineno-10-64"></a><span class="w">        </span><span class="c1">// (4) 엔트리 추가 (체이닝)</span>
+</span><span id="__span-10-65"><a id="__codelineno-10-65" name="__codelineno-10-65"></a><span class="w">        </span><span class="n">m_Buckets</span><span class="p">[</span><span class="n">idx</span><span class="p">].</span><span class="n">push_back</span><span class="p">({</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">key</span><span class="p">),</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="p">});</span>
+</span><span id="__span-10-66"><a id="__codelineno-10-66" name="__codelineno-10-66"></a>
+</span><span id="__span-10-67"><a id="__codelineno-10-67" name="__codelineno-10-67"></a><span class="w">        </span><span class="c1">// (5) 크기 증가</span>
+</span><span id="__span-10-68"><a id="__codelineno-10-68" name="__codelineno-10-68"></a><span class="w">        </span><span class="n">m_Size</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-10-69"><a id="__codelineno-10-69" name="__codelineno-10-69"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-70"><a id="__codelineno-10-70" name="__codelineno-10-70"></a>
+</span><span id="__span-10-71"><a id="__codelineno-10-71" name="__codelineno-10-71"></a><span class="w">    </span><span class="c1">//! @brief 인덱스 연산자 오버로딩</span>
+</span><span id="__span-10-72"><a id="__codelineno-10-72" name="__codelineno-10-72"></a><span class="w">    </span><span class="c1">//! @param key 키</span>
+</span><span id="__span-10-73"><a id="__codelineno-10-73" name="__codelineno-10-73"></a><span class="w">    </span><span class="c1">//! @return 값</span>
+</span><span id="__span-10-74"><a id="__codelineno-10-74" name="__codelineno-10-74"></a><span class="w">    </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-75"><a id="__codelineno-10-75" name="__codelineno-10-75"></a><span class="w">        </span><span class="c1">// (1) 해시 값 (인덱스)</span>
+</span><span id="__span-10-76"><a id="__codelineno-10-76" name="__codelineno-10-76"></a><span class="w">        </span><span class="kt">size_t</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hash</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+</span><span id="__span-10-77"><a id="__codelineno-10-77" name="__codelineno-10-77"></a>
+</span><span id="__span-10-78"><a id="__codelineno-10-78" name="__codelineno-10-78"></a><span class="w">        </span><span class="c1">// (2) 엔트리 조회 - 존재하는 키라면 해당 값을 반환</span>
+</span><span id="__span-10-79"><a id="__codelineno-10-79" name="__codelineno-10-79"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_Buckets</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-80"><a id="__codelineno-10-80" name="__codelineno-10-80"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">entry</span><span class="p">.</span><span class="n">key</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-81"><a id="__codelineno-10-81" name="__codelineno-10-81"></a><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
+</span><span id="__span-10-82"><a id="__codelineno-10-82" name="__codelineno-10-82"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-10-83"><a id="__codelineno-10-83" name="__codelineno-10-83"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-10-84"><a id="__codelineno-10-84" name="__codelineno-10-84"></a>
+</span><span id="__span-10-85"><a id="__codelineno-10-85" name="__codelineno-10-85"></a><span class="w">        </span><span class="c1">// (3) 엔트리 추가 및 반환</span>
+</span><span id="__span-10-86"><a id="__codelineno-10-86" name="__codelineno-10-86"></a><span class="w">        </span><span class="n">m_Buckets</span><span class="p">[</span><span class="n">idx</span><span class="p">].</span><span class="n">push_back</span><span class="p">({</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">key</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">});</span>
+</span><span id="__span-10-87"><a id="__codelineno-10-87" name="__codelineno-10-87"></a><span class="w">        </span><span class="n">m_Size</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-10-88"><a id="__codelineno-10-88" name="__codelineno-10-88"></a>
+</span><span id="__span-10-89"><a id="__codelineno-10-89" name="__codelineno-10-89"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">m_Buckets</span><span class="p">[</span><span class="n">idx</span><span class="p">].</span><span class="n">back</span><span class="p">().</span><span class="n">value</span><span class="p">;</span>
+</span><span id="__span-10-90"><a id="__codelineno-10-90" name="__codelineno-10-90"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-91"><a id="__codelineno-10-91" name="__codelineno-10-91"></a>
+</span><span id="__span-10-92"><a id="__codelineno-10-92" name="__codelineno-10-92"></a><span class="w">    </span><span class="c1">//! @brief 엔트리 데이터를 제거하는 메서드</span>
+</span><span id="__span-10-93"><a id="__codelineno-10-93" name="__codelineno-10-93"></a><span class="w">    </span><span class="c1">//! @param key 키</span>
+</span><span id="__span-10-94"><a id="__codelineno-10-94" name="__codelineno-10-94"></a><span class="w">    </span><span class="c1">//! @return 성공(true), 실패(false)</span>
+</span><span id="__span-10-95"><a id="__codelineno-10-95" name="__codelineno-10-95"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">Remove</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-96"><a id="__codelineno-10-96" name="__codelineno-10-96"></a><span class="w">        </span><span class="c1">// (1) 오류 검사</span>
+</span><span id="__span-10-97"><a id="__codelineno-10-97" name="__codelineno-10-97"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">key</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-10-98"><a id="__codelineno-10-98" name="__codelineno-10-98"></a>
+</span><span id="__span-10-99"><a id="__codelineno-10-99" name="__codelineno-10-99"></a><span class="w">        </span><span class="c1">// (2) 해시 값 (인덱스)</span>
+</span><span id="__span-10-100"><a id="__codelineno-10-100" name="__codelineno-10-100"></a><span class="w">        </span><span class="kt">size_t</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hash</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+</span><span id="__span-10-101"><a id="__codelineno-10-101" name="__codelineno-10-101"></a>
+</span><span id="__span-10-102"><a id="__codelineno-10-102" name="__codelineno-10-102"></a><span class="w">        </span><span class="c1">// (3) 버킷</span>
+</span><span id="__span-10-103"><a id="__codelineno-10-103" name="__codelineno-10-103"></a><span class="w">        </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">bucket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_Buckets</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+</span><span id="__span-10-104"><a id="__codelineno-10-104" name="__codelineno-10-104"></a>
+</span><span id="__span-10-105"><a id="__codelineno-10-105" name="__codelineno-10-105"></a><span class="w">        </span><span class="c1">// (4) 순회</span>
+</span><span id="__span-10-106"><a id="__codelineno-10-106" name="__codelineno-10-106"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bucket</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">bucket</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-107"><a id="__codelineno-10-107" name="__codelineno-10-107"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">key</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-108"><a id="__codelineno-10-108" name="__codelineno-10-108"></a><span class="w">                </span><span class="n">bucket</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
+</span><span id="__span-10-109"><a id="__codelineno-10-109" name="__codelineno-10-109"></a><span class="w">                </span><span class="n">m_Size</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-10-110"><a id="__codelineno-10-110" name="__codelineno-10-110"></a><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+</span><span id="__span-10-111"><a id="__codelineno-10-111" name="__codelineno-10-111"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-10-112"><a id="__codelineno-10-112" name="__codelineno-10-112"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-10-113"><a id="__codelineno-10-113" name="__codelineno-10-113"></a>
+</span><span id="__span-10-114"><a id="__codelineno-10-114" name="__codelineno-10-114"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+</span><span id="__span-10-115"><a id="__codelineno-10-115" name="__codelineno-10-115"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-116"><a id="__codelineno-10-116" name="__codelineno-10-116"></a><span class="p">};</span>
+</span><span id="__span-10-117"><a id="__codelineno-10-117" name="__codelineno-10-117"></a>
+</span><span id="__span-10-118"><a id="__codelineno-10-118" name="__codelineno-10-118"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-119"><a id="__codelineno-10-119" name="__codelineno-10-119"></a><span class="w">    </span><span class="c1">// 해시 테이블</span>
+</span><span id="__span-10-120"><a id="__codelineno-10-120" name="__codelineno-10-120"></a><span class="w">    </span><span class="n">HashTable</span><span class="w"> </span><span class="n">ht</span><span class="p">;</span>
+</span><span id="__span-10-121"><a id="__codelineno-10-121" name="__codelineno-10-121"></a>
+</span><span id="__span-10-122"><a id="__codelineno-10-122" name="__codelineno-10-122"></a><span class="w">    </span><span class="c1">// 데이터 추가</span>
+</span><span id="__span-10-123"><a id="__codelineno-10-123" name="__codelineno-10-123"></a><span class="w">    </span><span class="n">ht</span><span class="p">[</span><span class="s">&quot;dog&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-10-124"><a id="__codelineno-10-124" name="__codelineno-10-124"></a><span class="w">    </span><span class="n">ht</span><span class="p">[</span><span class="s">&quot;cat&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-10-125"><a id="__codelineno-10-125" name="__codelineno-10-125"></a><span class="w">    </span><span class="n">ht</span><span class="p">[</span><span class="s">&quot;rabbit&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+</span><span id="__span-10-126"><a id="__codelineno-10-126" name="__codelineno-10-126"></a>
+</span><span id="__span-10-127"><a id="__codelineno-10-127" name="__codelineno-10-127"></a><span class="w">    </span><span class="c1">// 출력</span>
+</span><span id="__span-10-128"><a id="__codelineno-10-128" name="__codelineno-10-128"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ht</span><span class="p">[</span><span class="s">&quot;dog&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-10-129"><a id="__codelineno-10-129" name="__codelineno-10-129"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ht</span><span class="p">[</span><span class="s">&quot;cat&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-10-130"><a id="__codelineno-10-130" name="__codelineno-10-130"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ht</span><span class="p">[</span><span class="s">&quot;rabbit&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-10-131"><a id="__codelineno-10-131" name="__codelineno-10-131"></a>
+</span><span id="__span-10-132"><a id="__codelineno-10-132" name="__codelineno-10-132"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-10-133"><a id="__codelineno-10-133" name="__codelineno-10-133"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1"><code>std::map</code></label><label for="__tabbed_13_2"><code>std::unordered_map</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">map.cpp</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span>
+<span class="normal"><a href="#__codelineno-11-13">13</a></span>
+<span class="normal"><a href="#__codelineno-11-14">14</a></span>
+<span class="normal"><a href="#__codelineno-11-15">15</a></span>
+<span class="normal"><a href="#__codelineno-11-16">16</a></span>
+<span class="normal"><a href="#__codelineno-11-17">17</a></span>
+<span class="normal"><a href="#__codelineno-11-18">18</a></span>
+<span class="normal"><a href="#__codelineno-11-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;map&gt;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">    </span><span class="c1">// map</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="p">;</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">    </span><span class="c1">// 데이터 추가</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">    </span><span class="n">map</span><span class="p">[</span><span class="s">&quot;dog&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="w">    </span><span class="n">map</span><span class="p">[</span><span class="s">&quot;cat&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="w">    </span><span class="n">map</span><span class="p">[</span><span class="s">&quot;rabbit&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12"></a>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="w">    </span><span class="c1">// 출력</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">map</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">second</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17"></a>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p><samp class="terminal-black">3<br>4<br>6</samp></p>
+<p>키를 기반으로 정렬을 수행하기 때문에 결과는 위와 같이 나타납니다.</p>
+</div>
+<div class="tabbed-block">
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">umap.cpp</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span>
+<span class="normal"><a href="#__codelineno-12-11">11</a></span>
+<span class="normal"><a href="#__codelineno-12-12">12</a></span>
+<span class="normal"><a href="#__codelineno-12-13">13</a></span>
+<span class="normal"><a href="#__codelineno-12-14">14</a></span>
+<span class="normal"><a href="#__codelineno-12-15">15</a></span>
+<span class="normal"><a href="#__codelineno-12-16">16</a></span>
+<span class="normal"><a href="#__codelineno-12-17">17</a></span>
+<span class="normal"><a href="#__codelineno-12-18">18</a></span>
+<span class="normal"><a href="#__codelineno-12-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unordered_map&gt;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w">    </span><span class="c1">// unordered_map</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">umap</span><span class="p">;</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="w">    </span><span class="c1">// 데이터 추가</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="w">    </span><span class="n">umap</span><span class="p">[</span><span class="s">&quot;dog&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="w">    </span><span class="n">umap</span><span class="p">[</span><span class="s">&quot;cat&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="w">    </span><span class="n">umap</span><span class="p">[</span><span class="s">&quot;rabbit&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12"></a>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="w">    </span><span class="c1">// 출력</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">umap</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">second</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17"></a>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details>
+
+<!-- Google Adsense - 2 -->
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7065893733087116" crossorigin="anonymous"></script>
+<div class="gAds" style="width:100%;min-width:250px;margin-bottom:1rem">
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;width:100%"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-7065893733087116"
+     data-ad-slot="2638716179"></ins>
+</div>
+<script>window.addEventListener('load', () => { setTimeout(() => { (adsbygoogle = window.adsbygoogle || []).push({}); }, 1000); })</script>
+
+
+<!-- HITS -->
+<!-- 
+  <a style="display:flex;justify-content:center;align-items:center;margin-bottom:1em" href="https://hits.seeyoufarm.com">
+    <img data-loaded="true" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fan-noying.github.io&count_bg=%23F67280&title_bg=%23888888&icon=&icon_color=%23E7E7E7&title=TOTAL&edge_flat=false"/>
+  </a>
+ -->
+
+<!-- Source file information -->
+
+
+
+
+
+
+
+  
+  
+
+
+
+<!-- Was this page helpful? -->
+
+  
+
+
+  
+
+
+
+<!-- Comment system -->
+
+  
+    <!-- <h2 id="__comments">댓글</h2> -->
+    <!-- Insert generated snippet here -->
+    <script src="https://giscus.app/client.js"
+      data-repo="AN-NOYING/an-noying.github.io"
+      data-repo-id="R_kgDONkkrRg"
+      data-category="Announcements"
+      data-category-id="DIC_kwDONkkrRs4ClpqF"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="preferred_color_scheme"
+      data-lang="ko"
+      crossorigin="anonymous"
+      async>
+    </script>
+
+    <!-- Synchronize Giscus theme with palette -->
+    <script>
+      var giscus = document.querySelector("script[src*=giscus]")
+
+      // Set palette on initial load
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate"
+          ? "transparent_dark"
+          : "light"
+
+        // Instruct Giscus to set theme
+        giscus.setAttribute("data-theme", theme) 
+      }
+
+      // Register event handlers after documented loaded
+      document.addEventListener("DOMContentLoaded", function() {
+        var ref = document.querySelector("[data-md-component=palette]")
+        ref.addEventListener("change", function() {
+          var palette = __md_get("__palette")
+          if (palette && typeof palette.color === "object") {
+            var theme = palette.color.scheme === "slate"
+              ? "transparent_dark"
+              : "light"
+
+            // Instruct Giscus to change theme
+            var frame = document.querySelector(".giscus-frame")
+            frame.contentWindow.postMessage(
+              { giscus: { setConfig: { theme } } },
+              "https://giscus.app"
+            )
+          }
+        })
+      })
+    </script>
+  
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="하단/푸터" >
+        
+          
+          <a href="../00007/" class="md-footer__link md-footer__link--prev" aria-label="이전: 샷건치며 배우는 자료구조 with C++, 8화">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                이전
+              </span>
+              <div class="md-ellipsis">
+                샷건치며 배우는 자료구조 with C++, 8화
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/AN-NOYING" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="/feed_rss_created.xml" target="_blank" rel="noopener" title="RSS" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64m0 352a64 64 0 1 1 128 0 64 64 0 1 1-128 0m32-256c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.prune", "toc.follow", "navigation.footer", "navigation.sections", "content.code.copy", "content.code.annotate", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+    
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../../javascripts/scroll-percentage.min.js"></script>
+      
+        <script src="../../../javascripts/drag-search.min.js"></script>
+      
+        <script src="../../../javascripts/back2tb.min.js"></script>
+      
+        <script src="../../../javascripts/improve-seo.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/main.js"></script>
+      
+    
+
+    
+    <!-- Google Ads Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7065893733087116" crossorigin="anonymous"></script>
+    
+
+  </body>
+</html>

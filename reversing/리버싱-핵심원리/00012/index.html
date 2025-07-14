@@ -1,0 +1,1944 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://an-noying.github.io/reversing/%EB%A6%AC%EB%B2%84%EC%8B%B1-%ED%95%B5%EC%8B%AC%EC%9B%90%EB%A6%AC/00012/">
+      
+      
+        <link rel="prev" href="../00011/">
+      
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS 피드 생성완료" href="../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS 피드 업데이트완료" href="../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+
+    <!-- META -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="어노잉">
+
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="GRz7q1CfePijOZEl_h4J-v9Qtf3670jdlxoTbSY-jKY" />
+    <meta name="naver-site-verification" content="0b928e78b1747f8e7bd6f6bc4e48514746e39abb" />
+
+    <!-- GOOGLE ADSENSE -->
+    <meta name="google-adsense-account" content="ca-pub-7065893733087116">
+
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="리버싱 핵심원리 2부 1장 정리 2">
+        
+        
+        <meta property="og:url" content="https://an-noying.github.io/reversing/%EB%A6%AC%EB%B2%84%EC%8B%B1-%ED%95%B5%EC%8B%AC%EC%9B%90%EB%A6%AC/00012/">
+        
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/favicon.webp">
+    <meta property="og:site_name" content="K's Garage"> 
+
+    <!-- Twitter(X) -->
+    <meta name="twitter:card" content="assets/favicon.webp">
+    <meta name="twitter:image" content="assets/favicon.webp">
+    <meta name="twitter:title" content="리버싱 핵심원리 2부 1장 정리 2">
+        
+     
+
+    
+      
+        <title>리버싱 핵심원리 2부 1장 정리 2 - K's Garage</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_markdown_exec_pyodide.css">
+    
+      <link rel="stylesheet" href="../../../assets/_markdown_exec_ansi.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+        
+    
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WD2K7BQBQZ"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WD2K7BQBQZ",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WD2K7BQBQZ",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+
+    <!-- Naver Analytics Script -->
+    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">if(!wcs_add) var wcs_add = {};wcs_add["wa"] = "1a2ce08ab542b00";if(window.wcs) {wcs_do();}</script>
+    
+
+    
+    
+    
+
+    <!-- ALTERNATE -->
+    <link rel="alternate" href="https://an-noying.github.io/" hreflang="ko" type="text/html" title="K's Garage">
+    <link rel="alternate" href="https://an-noying.github.io/sitemap.xml" type="application/xml" title="K's Garage Sitemap">
+    <link rel="alternate" href="https://an-noying.github.io/feed_rss_created.xml" type="application/rss+xml" title="K's Garage RSS Feed">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-1-2" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../../.." title="K&#39;s Garage" class="md-header__button md-logo" aria-label="K's Garage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            K's Garage
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              리버싱 핵심원리 2부 1장 정리 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="다크 모드 전환"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="다크 모드 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="라이트 모드 전환"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="라이트 모드 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AN-NOYING/an-noying.github.io" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    블로그의 소스코드 보기
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  HOME
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About Me
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  리버스 엔지니어링
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../programming/" class="md-tabs__link">
+          
+  
+  
+  프로그래밍
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../game/" class="md-tabs__link">
+          
+  
+  
+  게임
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../how-to-use/" class="md-tabs__link">
+          
+  
+  
+  사용법
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../review/" class="md-tabs__link">
+          
+  
+  
+  후기
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../stat/" class="md-tabs__link">
+          
+  
+  
+  통계 및 분석
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="K&#39;s Garage" class="md-nav__button md-logo" aria-label="K's Garage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    K's Garage
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AN-NOYING/an-noying.github.io" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    블로그의 소스코드 보기
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HOME
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About Me
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    리버스 엔지니어링
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            리버스 엔지니어링
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    리버스 엔지니어링
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    카테고리
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            카테고리
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../category/%EB%A6%AC%EB%B2%84%EC%8B%B1-%ED%95%B5%EC%8B%AC%EC%9B%90%EB%A6%AC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    리버싱 핵심원리
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../programming/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    프로그래밍
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../game/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    게임
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../how-to-use/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    사용법
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../review/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    후기
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../stat/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    통계 및 분석
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#iat" class="md-nav__link">
+    <span class="md-ellipsis">
+      IAT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IAT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image_import_descriptor" class="md-nav__link">
+    <span class="md-ellipsis">
+      IMAGE_IMPORT_DESCRIPTOR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      실습
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eat" class="md-nav__link">
+    <span class="md-ellipsis">
+      EAT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EAT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image_export_directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      IMAGE_EXPORT_DIRECTORY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      실습
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Index로 돌아가기
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/u/36888398" alt="AnNoying">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          <a href="https://github.com/an-noying">AnNoying</a>
+                        
+                      </strong>
+                      <br>
+                      Blogger
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    메타데이터
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2025-01-22 00:00:00+00:00" class="md-ellipsis">2025년 1월 22일</time>
+                      </div>
+                    </li>
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></svg>
+                          <time datetime="2025-01-26 00:00:00+00:00" class="md-ellipsis">2025년 1월 26일</time>
+                        </div>
+                      </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            카테고리
+                            
+                              <a href="../../category/%EB%A6%AC%EB%B2%84%EC%8B%B1-%ED%95%B5%EC%8B%AC%EC%9B%90%EB%A6%AC/">리버싱 핵심원리</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              읽는시간 7분
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        <!-- Google Adsense - 1 -->
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7065893733087116" crossorigin="anonymous"></script>
+<div class="gAds" style="width:100%;min-width:250px;margin-bottom:1rem">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;width:100%"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-7065893733087116"
+         data-ad-slot="8592136030"></ins>
+</div>
+<script>window.addEventListener('load', () => { setTimeout(() => { (adsbygoogle = window.adsbygoogle || []).push({}); }, 1000); })</script>
+
+
+<!-- Tags -->
+
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <span class="md-tag">EAT</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">IAT</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">리버스 엔지니어링</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">리버싱</span>
+      
+    
+  </nav>
+
+
+<!-- Actions -->
+<!-- Actions -->
+
+  <!-- Repoting button -->
+  <a href="https://forms.gle/1gcnTUPV6e9S7HFh7" title="Reporting" class="md-content__button md-icon" target="_blank" rel="noopener noreferrer">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 6.9 3.87 4.78l1.41-1.41L7.4 5.5zM13 1v3h-2V1zm7.13 3.78L18 6.9l-1.4-1.4 2.12-2.13zM4.5 10.5v2h-3v-2zm15 0h3v2h-3zM6 20h12a2 2 0 0 1 2 2H4a2 2 0 0 1 2-2m6-15a6 6 0 0 1 6 6v8H6v-8a6 6 0 0 1 6-6"/></svg>
+  </a>
+
+  <!-- Edit button -->
+  
+    <a
+      href="https://github.com/AN-NOYING/an-noying.github.io/edit/main/docs/reversing/posts/reversing-core/00012.md"
+      title="이 페이지를 편집"
+      class="md-content__button md-icon"
+    >
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+
+  <!-- View button -->
+  
+    
+      
+    
+    <a
+      href="https://github.com/AN-NOYING/an-noying.github.io/raw/main/docs/reversing/posts/reversing-core/00012.md"
+      title="페이지소스 보기"
+      class="md-content__button md-icon"
+    >
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
+    </a>
+  
+
+
+
+  <!-- TOC -->
+  <aside id="custom-toc">
+    <nav class="md-nav" aria-label="목차">
+      <span>목차</span>
+      <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+        
+          <li class="md-nav__item">
+  <a href="#2-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      리버싱 핵심원리 2부 1장 정리 2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="리버싱 핵심원리 2부 1장 정리 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iat" class="md-nav__link">
+    <span class="md-ellipsis">
+      IAT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IAT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image_import_descriptor" class="md-nav__link">
+    <span class="md-ellipsis">
+      IMAGE_IMPORT_DESCRIPTOR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      실습
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eat" class="md-nav__link">
+    <span class="md-ellipsis">
+      EAT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EAT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image_export_directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      IMAGE_EXPORT_DIRECTORY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      실습
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  </aside>
+
+
+<!--
+  Hack: check whether the content contains a h1 headline. If it doesn't, the
+  page title (or respectively site name) is used as the main headline.
+-->
+
+
+<!-- Page content -->
+<!-- more -->
+
+<h1 id="2-1-2">리버싱 핵심원리 2부 1장 정리 2</h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>본 게시글의 내용은 <a href="https://www.yes24.com/Product/Goods/7529742" title="리버싱 핵심원리">리버싱 핵심원리</a>를 보며 복습 겸 정리하였습니다.</p>
+<p>책의 내용과 일부 상이할 수 있고, 이해를 돕기 위해 강좌 형식의 말투와 적절한(?) 예시를 추가하였습니다.</p>
+<p>본 게시글에서 사용되는 소스 코드와 파일, 프로그램은 리버싱 핵심원리에서 <a href="https://github.com/reversecore/book">제공하는 파일</a>과 언급되는 것들을 기반으로 하며, 일부 상이할 수 있습니다.</p>
+</div>
+<h2 id="iat">IAT</h2>
+<p>IAT<sup>Import Address Table</sup>는 PE 파일이 외부 동적 링크 라이브러리(DLL)에서 제공하는 함수들을 호출할 수 있도록 도와주는 테이블입니다. 실행 파일은 운영체제에서 제공하는 여러 함수를 호출하는데, 이 함수들이 주로 DLL에 포함되어 있습니다. IAT는 이러한 외부 함수의 호출을 처리할 수 있도록 도와줍니다.</p>
+<div class="admonition info">
+<p class="admonition-title">여기서 잠깐! DLL이란?</p>
+<p>DLL<sup>Dynamic Link Library</sup>은 프로그램이 동적으로 링크할 수 있는 라이브러리를 말합니다. Windows 운영체제에선 <code>.dll</code> 확장자를 갖는 파일로 제공되고 실행 파일과 함께 사용됩니다. 프로그램의 기능을 여러 DLL로 분리하여 관리할 수 있고 유지보수가 매우 용이해진다는 장점이 있습니다.</p>
+<p>16비트 DOS 시절에는 동적 링크와 같은 개념이 없었기 때문에 프로그램에서 외부 함수를 호출하려면 정적 링크(Static Linking)를 이용했습니다. 즉, 외부 함수나 라이브러리가 필요하면 실행 파일의 바이너리에 포함되는 방식이죠. 동일한 함수가 중복되기도 하고 실행 파일의 크기가 커지기 때문에 여러모로 단점이 많았습니다. 그래서 더 효율적으로 사용하고 유지보수를 용이하게 하기 위해 DLL과 같은 방식이 도입되었습니다.</p>
+<p>DLL을 불러와 사용하는 방식은 크게 두 가지로 나뉩니다. 묵시적인 방법과 명시적인 방법입니다.</p>
+<p>묵시적인 방식(Implicit Linking)은 실행 파일이 불러와질 때 프로그램에서 참조하는 모든 DLL을 자동으로 불러오는 것입니다. 이때 IAT를 통해 이루어집니다.</p>
+<p>명시적인 방식(Explicit Linking)은 개발자가 직접 필요한 DLL을 불러와 사용하고 해제하는 방법입니다. 특정 DLL이 필요할 때 메모리에 적재하고 사용한 다음 필요가 없어지면 해제합니다.</p>
+</div>
+<h3 id="image_import_descriptor">IMAGE_IMPORT_DESCRIPTOR</h3>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">winnt.h</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#__codelineno-0-46">46</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cm">/* Import name entry */</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">_IMAGE_IMPORT_BY_NAME</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="n">WORD</span><span class="w">    </span><span class="n">Hint</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="kt">char</span><span class="w">    </span><span class="n">Name</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">}</span><span class="w"> </span><span class="n">IMAGE_IMPORT_BY_NAME</span><span class="p">,</span><span class="o">*</span><span class="n">PIMAGE_IMPORT_BY_NAME</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;pshpack8.h&gt;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="cm">/* Import thunk */</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">_IMAGE_THUNK_DATA64</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="k">union</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">        </span><span class="n">ULONGLONG</span><span class="w"> </span><span class="n">ForwarderString</span><span class="p">;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">        </span><span class="n">ULONGLONG</span><span class="w"> </span><span class="n">Function</span><span class="p">;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">        </span><span class="n">ULONGLONG</span><span class="w"> </span><span class="n">Ordinal</span><span class="p">;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">        </span><span class="n">ULONGLONG</span><span class="w"> </span><span class="n">AddressOfData</span><span class="p">;</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">u1</span><span class="p">;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="p">}</span><span class="w"> </span><span class="n">IMAGE_THUNK_DATA64</span><span class="p">,</span><span class="o">*</span><span class="n">PIMAGE_THUNK_DATA64</span><span class="p">;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;poppack.h&gt;</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">_IMAGE_THUNK_DATA32</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">    </span><span class="k">union</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">        </span><span class="n">DWORD</span><span class="w"> </span><span class="n">ForwarderString</span><span class="p">;</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">        </span><span class="n">DWORD</span><span class="w"> </span><span class="n">Function</span><span class="p">;</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">        </span><span class="n">DWORD</span><span class="w"> </span><span class="n">Ordinal</span><span class="p">;</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">        </span><span class="n">DWORD</span><span class="w"> </span><span class="n">AddressOfData</span><span class="p">;</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">u1</span><span class="p">;</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="p">}</span><span class="w"> </span><span class="n">IMAGE_THUNK_DATA32</span><span class="p">,</span><span class="o">*</span><span class="n">PIMAGE_THUNK_DATA32</span><span class="p">;</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="cm">/* Import module directory */</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">_IMAGE_IMPORT_DESCRIPTOR</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="w">    </span><span class="k">union</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="w">        </span><span class="n">DWORD</span><span class="w">   </span><span class="n">Characteristics</span><span class="p">;</span><span class="w"> </span><span class="cm">/* 0 for terminating null import descriptor  */</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="w">        </span><span class="n">DWORD</span><span class="w">   </span><span class="n">OriginalFirstThunk</span><span class="p">;</span><span class="w"> </span><span class="cm">/* RVA to original unbound IAT */</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">DUMMYUNIONNAME</span><span class="p">;</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">    </span><span class="n">DWORD</span><span class="w">   </span><span class="n">TimeDateStamp</span><span class="p">;</span><span class="w">  </span><span class="cm">/* 0 if not bound,</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="cm">                 * -1 if bound, and real date\time stamp</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="cm">                 *    in IMAGE_DIRECTORY_ENTRY_BOUND_IMPORT</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="cm">                 * (new BIND)</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="cm">                 * otherwise date/time stamp of DLL bound to</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="cm">                 * (Old BIND)</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="cm">                 */</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="w">    </span><span class="n">DWORD</span><span class="w">   </span><span class="n">ForwarderChain</span><span class="p">;</span><span class="w"> </span><span class="cm">/* -1 if no forwarders */</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="w">    </span><span class="n">DWORD</span><span class="w">   </span><span class="n">Name</span><span class="p">;</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="w">    </span><span class="cm">/* RVA to IAT (if bound this IAT has actual addresses) */</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="w">    </span><span class="n">DWORD</span><span class="w">   </span><span class="n">FirstThunk</span><span class="p">;</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="p">}</span><span class="w"> </span><span class="n">IMAGE_IMPORT_DESCRIPTOR</span><span class="p">,</span><span class="o">*</span><span class="n">PIMAGE_IMPORT_DESCRIPTOR</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+<p><code>IMAGE_IMPORT_DESCRIPTOR</code> 구조체는 PE 파일에서 어떤 외부 라이브러리(DLL)에서 어떤 함수를 가져오는 지에 대한 정보를 담고 있습니다.</p>
+<p>PE 파일은 여러 개의 <code>IMAGE_IMPORT_DESCRIPTOR</code> 구조체를 가질 수 있고, 각 구조체는 하나의 DLL에 대한 가져오기 정보를 나타냅니다. 이 구조체 배열의 마지막은 모든 필드가 <code>0</code> 또는 <code>NULL</code>이 할당된 구조체로 끝납니다.</p>
+<p><code>OriginalFirstThunk</code>는 Import Name Table(INT)의 주소를 가리키는 RVA입니다. 이 테이블은 각각 가져온 함수에 대한 정보를 담고 있는 <code>IMAGE_THUNK_DATA</code> 구조체의 배열입니다. <code>Characteristics</code>나 <code>OriginalFirstThunk</code>이나 같은 거고 보통 <code>OriginalFirstThunk</code>로 사용하는 편입니다.</p>
+<p><code>Name</code>은 가져오는 DLL의 이름을 가리키는 RVA입니다. 이 RVA는 PE 파일에서 DLL 이름 문자열의 위치입니다.</p>
+<p><code>FirstThunk</code>는 Import Address Table(IAT)의 주소를 가리키는 RVA입니다.</p>
+<h3 id="_1">실습</h3>
+<p>Windows 10 64Bit 환경을 기준으로 <code>notepad.exe</code>를 실습 대상으로 합니다. 책에선 자세한 설명으로 작성되어 있지 않아서 제가 대체해서 작성합니다.</p>
+<figure>
+  <img alt="IMAGE1-1" src="https://i.postimg.cc/Zn07jPCQ/image.png" />
+<br />
+<figcaption>이미지 1-1</figcaption>
+</figure>
+<p><a href="https://github.com/jovibor/Pepper" title="Pepper">Pepper</a>라는 프로그램을 이용해 <code>C:\Windows\notepad.exe</code>를 열어주세요. <code>notepad.exe</code>는 메모장 프로그램입니다. Pepper 프로그램으로 열어주시면 <strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m8.5 13.5 2.5 3 3.5-4.5 4.5 6H5m16 1V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2"/></svg></span> 이미지 1-1</strong>처럼 64비트의 파일임을 확인할 수 있습니다.</p>
+<p><code>IMAGE_IMPORT_DESCRIPTOR</code> 구조체를 찾아보도록 합시다. 이 구조체를 찾기 위해선 OptionalHeader의 DataDirectory의 정보가 필요합니다.</p>
+<figure>
+  <img alt="IMAGE1-2" src="https://i.postimg.cc/wMt2D6r8/image.png" />
+<br />
+<figcaption>이미지 1-2</figcaption>
+</figure>
+<p>프로그램의 좌측 트리맵을 잘 보시면 Optional Header의 자식으로 Data Directories가 있습니다. 클릭해주세요.</p>
+<p><code>IMAGE_IMPORT_DESCRIPTOR</code> 구조체에 대한 실마리는 Import Table에서 확인할 수 있습니다. 프로그램에서 Import Directory에 해당하는 부분을 클릭해주세요.</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">winnt.h</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">_IMAGE_DATA_DIRECTORY</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="n">DWORD</span><span class="w"> </span><span class="n">VirtualAddress</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">  </span><span class="n">DWORD</span><span class="w"> </span><span class="n">Size</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="p">}</span><span class="w"> </span><span class="n">IMAGE_DATA_DIRECTORY</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">PIMAGE_DATA_DIRECTORY</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+<p>DataDirectory는 <code>IMAGE_DATA_DIRECTORY</code> 구조체 배열입니다. 그리고 이 구조체는 <code>VirtualAddress</code>와 <code>Size</code> 필드를 가집니다. </p>
+<p>Import Directory의 <code>VirtualAddress</code>와 <code>Size</code>는 프로그램에서 확인되듯 <code>0x2D0C8</code>과 <code>0x244</code> 값을 가집니다. <code>VirtualAddress</code>는 RVA입니다. <code>VirtualAddress</code>의 값을 RAW로 변환해보도록 합시다.</p>
+<figure>
+  <img alt="IMAGE1-3" src="https://i.postimg.cc/vTpzzJR1/image.png" />
+<br />
+<figcaption>이미지 1-3</figcaption>
+</figure>
+<p>RVA는 <code>0x2D0C8</code>로 이 RVA가 해당하는 섹션은 <code>.rdata</code>입니다. 위 프로그램에서 확인되는 값을 통해 RAW 값을 알아내면 아래와 같습니다.</p>
+<blockquote>
+<p>0x24A00 + (0x2D0C8 - 0x26000) = 0x2BAC8</p>
+</blockquote>
+<p><code>0x2BAC8</code>이라는 값이 도출되는데요, 이 위치가 바로 우리가 찾는 <code>IMAGE_IMPORT_DESCRIPTOR</code>입니다. 헥스에디터를 통해 이동해봅시다.</p>
+<figure>
+  <img alt="IMAGE1-4" src="https://i.postimg.cc/CMtmSqZF/image.png" />
+<br />
+<figcaption>이미지 1-4</figcaption>
+</figure>
+<p><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m8.5 13.5 2.5 3 3.5-4.5 4.5 6H5m16 1V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2"/></svg></span> 이미지 1-4</strong>에서 드래그된 부분이 <code>IMAGE_IMPORT_DESCRIPTOR</code> 구조체 배열의 첫 번째 부분입니다.</p>
+<p><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m8.5 13.5 2.5 3 3.5-4.5 4.5 6H5m16 1V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2"/></svg></span> 이미지 1-2</strong>를 통해 <code>Size</code>는 <code>0x244</code>로 확인됐기 때문에 <code>IMAGE_IMPORT_DESCRIPTOR</code>의 영역은 0x2BAC8에서 0x2BD0B까지입니다. 마지막 <code>IMAGE_IMPORT_DESCRIPTOR</code>는(0x2BCF8 ~ 0x2BD0B) 0x00으로 되어있는 걸 확인할 수 있습니다.</p>
+<p>첫 번째 <code>IMAGE_IMPORT_DESCRIPTOR</code>의 각 필드 값은 아래 표와 같습니다:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">File Offset</th>
+<th style="text-align: left;">Field Name</th>
+<th style="text-align: left;">Value(RVA)</th>
+<th style="text-align: left;">RAW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">0x2BAC8</td>
+<td style="text-align: left;"><code>OriginalFirstThunk</code></td>
+<td style="text-align: left;">0x2D3E0</td>
+<td style="text-align: left;">0x24A00 + (0x2D3E0 - 0x26000) = 0x2BDE0</td>
+</tr>
+<tr>
+<td style="text-align: left;">0x2BACC</td>
+<td style="text-align: left;"><code>TimeDateStamp</code></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">0x2BAD0</td>
+<td style="text-align: left;"><code>ForwarderChain</code></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">0x2BAD4</td>
+<td style="text-align: left;"><code>Name</code></td>
+<td style="text-align: left;">0x2E1F8</td>
+<td style="text-align: left;">0x24A00 + (0x2E1F8 - 0x26000) = 0x2CBF8</td>
+</tr>
+<tr>
+<td style="text-align: left;">0x2BAD8</td>
+<td style="text-align: left;"><code>FirstThunk</code></td>
+<td style="text-align: left;">0x268B8</td>
+<td style="text-align: left;">0x24A00 + (0x268B8 - 0x26000) = 0x252B8</td>
+</tr>
+</tbody>
+</table>
+<p><code>Name</code>은 어떤 외부 라이브러리에서 함수를 가져오는 지 라이브러리의 이름을 확인할 수 있습니다. RAW가 0x2CBF8로 산출되었기 때문에 헥스에디터로 해당 위치로 이동하면 <code>kernel32.dll</code>에서 가져온다는 걸 확인할 수 있습니다.</p>
+<p><code>FirstThunk</code>는 특수한 경우가 아닌 이상 PE 파일이 로딩되기 전까진 <code>OriginalFirstThunk</code>와 동일한 데이터를 가리킵니다. 이 필드는 IAT(Import Address Table)을 가리키는데 실행 시점에 함수 주소가 저장됩니다.</p>
+<p><code>OriginalFirstThunk</code>는 가져오는 함수의 정보가 담긴 구조체 포인터 배열입니다. 이 정보를 얻어야 프로세스 메모리에 로딩된 라이브러리에서 해당 함수의 시작 주소를 얻을 수 있죠. RAW를 구하면 0x2BDE0으로 나오는데 헥스에디터로 이동하면 <code>IMAGE_THUNK_DATA</code> 구조체를 만날 수 있습니다. <code>notepad.exe</code>는 64비트 프로그램이기 때문에 정확히는 <code>_IMAGE_THUNK_DATA64</code> 구조체입니다. 첫 번째 <code>_IMAGE_THUNK_DATA64</code>의 필드를 표로 나타내면 아래와 같습니다:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">File Offset</th>
+<th style="text-align: left;">Field Name</th>
+<th style="text-align: left;">Value(RVA)</th>
+<th style="text-align: left;">RAW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">0x2BDE0</td>
+<td style="text-align: left;"><code>Ordinal</code></td>
+<td style="text-align: left;">0x2DE3C</td>
+<td style="text-align: left;">0x24A00 + (0x2DE3C - 0x26000) = 0x2C83C</td>
+</tr>
+</tbody>
+</table>
+<p><code>Ordinal</code>은 <code>IMAGE_IMPORT_BY_NAME</code>의 위치를 가리킵니다. 0x2C83C가 산출되었으니 헥스 에디터로 확인해봅시다.</p>
+<figure>
+  <img alt="IMAGE1-5" src="https://i.postimg.cc/0y1nJ1dF/image.png" />
+<br />
+<figcaption>이미지 1-5</figcaption>
+</figure>
+<p>위 영역을 표로 나타내면 아래와 같습니다:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">File Offset</th>
+<th style="text-align: left;">Field Name</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">0x2BDE0</td>
+<td style="text-align: left;"><code>Hint</code></td>
+<td style="text-align: left;">0x2B8</td>
+</tr>
+<tr>
+<td style="text-align: left;">0x2C83E</td>
+<td style="text-align: left;"><code>Name</code></td>
+<td style="text-align: left;"><code>GetProcAddress</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>IMAGE_IMPORT_BY_NAME</code>의 <code>Name</code>은 크기가 1인데 어떻게 긴 문자열 값을 가지냐구요? C 언어에서 <code>char Name[1]</code>로 선언된 건 가변 길이를 가진다는 걸 의미합니다. 실제로는 문자열 데이터가 그 뒤에 연속적으로 저장된다는 걸 의미합니다. 현대적인 방식으로 쓴다면 <code>char Name[]</code>이나 <code>char* Name</code>이겠죠?</p>
+<p><code>Name</code>은 <code>GetProcAddress</code>로 확인됩니다. 즉 첫 번째 <code>IMAGE_IMPORT_DESCRIPTOR</code>는 <code>kernel32.dll</code>의 <code>GetProcAddress</code> 함수를 가져와 사용한다는 걸 알 수 있습니다.</p>
+<h2 id="eat">EAT</h2>
+<p>EAT<sup>Export Address Table</sup>는 DLL 파일이 외부로 제공하는 함수들의 주소를 관리하는 테이블입니다. EAT는 다른 프로그램이나 DLL이 해당 DLL의 함수의 주소를 찾을 때 사용되고, 실행 파일이 DLL을 불러오고 필요한 함수를 정확히 호출할 수 있도록 도와줍니다.</p>
+<p>EAT는 PE 파일 중 실행 파일이 아닌 DLL 파일에 주로 작성됩니다. 실행 파일에선 일반적으로 사용되진 않습니다.</p>
+<h3 id="image_export_directory">IMAGE_EXPORT_DIRECTORY</h3>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">winnt.h</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">_IMAGE_EXPORT_DIRECTORY</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="n">DWORD</span><span class="w"> </span><span class="n">Characteristics</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="n">DWORD</span><span class="w"> </span><span class="n">TimeDateStamp</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="n">WORD</span><span class="w">  </span><span class="n">MajorVersion</span><span class="p">;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="n">WORD</span><span class="w">  </span><span class="n">MinorVersion</span><span class="p">;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="n">DWORD</span><span class="w"> </span><span class="n">Name</span><span class="p">;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="n">DWORD</span><span class="w"> </span><span class="n">Base</span><span class="p">;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="n">DWORD</span><span class="w"> </span><span class="n">NumberOfFunctions</span><span class="p">;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="n">DWORD</span><span class="w"> </span><span class="n">NumberOfNames</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">    </span><span class="n">DWORD</span><span class="w"> </span><span class="n">AddressOfFunctions</span><span class="p">;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="n">DWORD</span><span class="w"> </span><span class="n">AddressOfNames</span><span class="p">;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="n">DWORD</span><span class="w"> </span><span class="n">AddressOfNameOrdinals</span><span class="p">;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="p">}</span><span class="w"> </span><span class="n">IMAGE_EXPORT_DIRECTORY</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">PIMAGE_EXPORT_DIRECTORY</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+<p>IAT와 마찬가지로 EAT에 대한 정보는 PE 파일 내 <code>IMAGE_EXPORT_DIRECTORY</code> 구조체에 저장되어 있습니다. IAT와 다르게 <code>IMAGE_EXPORT_DIRECTORY</code>는 배열이 아닌 단일 구조체로서 하나만 존재합니다.</p>
+<p><code>Name</code>은 DLL의 이름을 가리키는 RVA입니다.</p>
+<p><code>Base</code>는 내보내진(Export) 함수의 Ordinal의 시작 값입니다. 1인 경우 첫 번째 함수의 Ordinal이 1이라는 걸 의미합니다.</p>
+<p><code>NumberOfFunctions</code>는 내보내진 함수의 총 개수를 나타냅니다. <code>NumberOfNames</code>는 이름으로 내보내진 함수의 개수를 나타냅니다.</p>
+<p><code>AddressOfFunctions</code>는 내보내진 함수의 주소 배열(EAT)을 가리키는 RVA입니다. <code>AddressOfNames</code>는 내보내진 함수의 이름 배열을 가리키는 RVA입니다. <code>AddressOfNameOrdinals</code>는 내보내진 함수의 Ordinal 배열을 가리키는 RVA입니다.</p>
+<h3 id="_2">실습</h3>
+<figure>
+  <img alt="IMAGE1-6" src="https://i.postimg.cc/QMXq0gzq/image.png" />
+<br />
+<figcaption>이미지 1-6</figcaption>
+</figure>
+<p><code>C:\Windows\System32\kernel32.dll</code>을 실습 대상으로 하겠습니다. 이 DLL 파일의 EAT 정보를 찾아 <code>CreateProcessW</code> 함수의 주소를 찾아보도록 합시다.</p>
+<p>Pepper 프로그램을 통해 <code>kernel32.dll</code> 파일을 열어주세요. System32 폴더에 들어있었으니 32비트 파일임을 알 수 있습니다.</p>
+<p><code>IMAGE_EXPORT_DIRECTORY</code> 구조체는 OptionalHeader의 DataDirectory의 정보가 필요합니다. DataDirectory[0]에 <code>IMAGE_EXPORT_DIRECTORY</code> 구조체의 시작 주소가 담겨있습니다.</p>
+<p>0x9D2C0이라는 값이 담겨있는 걸 확인할 수 있습니다. 0x9D2C0은 <code>.rdata</code> 섹션 범위에 해당하는 걸 확인할 수 있고 RVA를 RAW로 변환하면 0x80600 + (0x9D2C0 - 0x82000) = 0x9B8C0이라는 값이 산출됩니다. 헥스에디터로 0x9B8C0 위치로 이동해봅시다.</p>
+<figure>
+  <img alt="IMAGE1-7" src="https://i.postimg.cc/8Ctm3JQg/image.png" />
+<br />
+<figcaption>이미지 1-7</figcaption>
+</figure>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">File Offset</th>
+<th style="text-align: left;">Field Name</th>
+<th style="text-align: left;">Value(RVA)</th>
+<th style="text-align: left;">RAW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">0x9B8C0</td>
+<td style="text-align: left;"><code>Characteristics</code></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">0x9B8C4</td>
+<td style="text-align: left;"><code>TimeDateStamp</code></td>
+<td style="text-align: left;">0x413E8087</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">0x9B8C8</td>
+<td style="text-align: left;"><code>MajorVersion</code></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">0x9B8CA</td>
+<td style="text-align: left;"><code>MinorVersion</code></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">0x9B8CC</td>
+<td style="text-align: left;"><code>Name</code></td>
+<td style="text-align: left;">0xA12BC</td>
+<td style="text-align: left;">0x80600 + (0xA12BC - 0x82000) = 0x9F8BC</td>
+</tr>
+<tr>
+<td style="text-align: left;">0x9B8D0</td>
+<td style="text-align: left;"><code>Base</code></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">0x9B8D4</td>
+<td style="text-align: left;"><code>NumberOfFunctions</code></td>
+<td style="text-align: left;">0x662</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">0x9B8D8</td>
+<td style="text-align: left;"><code>NumberOfNames</code></td>
+<td style="text-align: left;">0x662</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">0x9B8DC</td>
+<td style="text-align: left;"><code>AddressOfFunctions</code></td>
+<td style="text-align: left;">0x9D2E8</td>
+<td style="text-align: left;">0x80600 + (0x9D2E8 - 0x82000) = 0x9B8E8</td>
+</tr>
+<tr>
+<td style="text-align: left;">0x9B8E0</td>
+<td style="text-align: left;"><code>AddressOfNames</code></td>
+<td style="text-align: left;">0x9EC70</td>
+<td style="text-align: left;">0x80600 + (0x9EC70 - 0x82000) = 0x9D270</td>
+</tr>
+<tr>
+<td style="text-align: left;">0x9B8E4</td>
+<td style="text-align: left;"><code>AddressOfNameOrdinals</code></td>
+<td style="text-align: left;">0xA05F8</td>
+<td style="text-align: left;">0x80600 + (0xA05F8 - 0x82000) = 0x9EBF8</td>
+</tr>
+</tbody>
+</table>
+<p><code>IMAGE_EXPORT_DIRECTORY</code> 구조체의 정보를 표로 확인해보면 위와 같습니다.</p>
+<p>C++에서 <code>GetProcAddress</code> 함수를 통해 라이브러리의 함수 주소를 얻어낼 수 있습니다. 이 함수가 EAT의 정보를 참조해서 원하는 함수의 주소를 얻어오죠. 이 함수는 대략 아래와 같은 과정을 통해 주소를 얻어냅니다.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">과정</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li><code>AddressOfNames</code> 멤버를 이용해 원하는 함수의 이름을 찾는다. 이때 문자열 비교를 통해 찾게 되고 인덱스(Index)가 반환된다.</li>
+<li><code>AddressOfNameOrdinals</code> 멤버를 이용해 인덱스(Index)에 해당하는 값을 찾는다.</li>
+<li>2번에서 얻은 값을 인덱스로 하여 <code>AddressOfFunctions</code> 멤버에서 함수의 주소를 찾는다.</li>
+</ol>
+</div>
+</div>
+</div>
+<p>자, <code>CreateProcessW</code>의 함수 주소를 찾으러 떠나볼까요?</p>
+<figure>
+  <img alt="IMAGE1-8" src="https://i.postimg.cc/k4GvdJq6/image.png" />
+<br />
+<figcaption>이미지 1-8</figcaption>
+</figure>
+<p>우리가 찾는 <code>CreateProcessW</code> 함수의 이름은 배열에서 233번째에 있습니다. 어떻게 아나구요? Pepper로 확인이 됩니다. 처음에 일일이 뒤지다가 이건 아닌 거 같아서 Pepper로 봤습니다.</p>
+<p>헥스에디터로 <code>AddressOfNames</code>의 위치로 이동한 후 233번째 위치로 가면 0xA2AEA라는 값이 나타납니다. 이를 RAW로 변환하면 0x80600 + (0xA2AEA - 0x82000) = 0xA10EA입니다. 헥스에디터로 이동해봅시다.</p>
+<figure>
+  <img alt="IMAGE1-9" src="https://i.postimg.cc/JnFcrfzT/image.png" />
+<br />
+<figcaption>이미지 1-9</figcaption>
+</figure>
+<p><code>CreateProcessW</code> 문자열이 작성된 걸 확인할 수 있습니다.</p>
+<p>이제 Ordinal 값을 구한 후 <code>AddressOfFunctions</code>에 인덱스로 사용하면 함수의 주소를 찾을 수 있습니다. 인덱스가 233인 걸 알았으니 <code>AddressOfNameOrdinals</code>에 인덱스로 사용하여 Ordinal 값을 찾아봅시다.</p>
+<p>헥스에디터로 0x9EBF8로 이동하신 후 233번째에 해당하는 위치로 이동합니다. 참고로 <code>AddressOfNameOrdinals</code> 배열의 원소의 크기는 2Bytes입니다.</p>
+<p>Ordinal 값은 0xE8로 나타납니다. 이를 <code>AddressOfFunctions</code>에 인덱스로 사용하면 함수의 주소를 알아낼 수 있습니다.</p>
+<figure>
+  <img alt="IMAGE1-10" src="https://i.postimg.cc/90qPrL4c/image.png" />
+<br />
+<figcaption>이미지 1-10</figcaption>
+</figure>
+<p>함수의 주소(RVA)는 0x1CEA0로 나타납니다.</p>
+<p>책에선 kernel32.dll의 ImageBase가 0x7C7D0000으로 나타난있지만 제 환경에선 ASLR 기법이 적용되었는 지 PE에 기재된 ImageBase와는 다르게 나타나 디버거에서 실제 함수를 찾는 과정은 생략합니다.</p>
+
+<!-- Google Adsense - 2 -->
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7065893733087116" crossorigin="anonymous"></script>
+<div class="gAds" style="width:100%;min-width:250px;margin-bottom:1rem">
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;width:100%"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-7065893733087116"
+     data-ad-slot="2638716179"></ins>
+</div>
+<script>window.addEventListener('load', () => { setTimeout(() => { (adsbygoogle = window.adsbygoogle || []).push({}); }, 1000); })</script>
+
+
+<!-- HITS -->
+<!-- 
+  <a style="display:flex;justify-content:center;align-items:center;margin-bottom:1em" href="https://hits.seeyoufarm.com">
+    <img data-loaded="true" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fan-noying.github.io&count_bg=%23F67280&title_bg=%23888888&icon=&icon_color=%23E7E7E7&title=TOTAL&edge_flat=false"/>
+  </a>
+ -->
+
+<!-- Source file information -->
+
+
+
+
+
+
+
+  
+  
+
+
+
+<!-- Was this page helpful? -->
+
+  
+
+
+  
+
+
+
+<!-- Comment system -->
+
+  
+    <!-- <h2 id="__comments">댓글</h2> -->
+    <!-- Insert generated snippet here -->
+    <script src="https://giscus.app/client.js"
+      data-repo="AN-NOYING/an-noying.github.io"
+      data-repo-id="R_kgDONkkrRg"
+      data-category="Announcements"
+      data-category-id="DIC_kwDONkkrRs4ClpqF"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="preferred_color_scheme"
+      data-lang="ko"
+      crossorigin="anonymous"
+      async>
+    </script>
+
+    <!-- Synchronize Giscus theme with palette -->
+    <script>
+      var giscus = document.querySelector("script[src*=giscus]")
+
+      // Set palette on initial load
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate"
+          ? "transparent_dark"
+          : "light"
+
+        // Instruct Giscus to set theme
+        giscus.setAttribute("data-theme", theme) 
+      }
+
+      // Register event handlers after documented loaded
+      document.addEventListener("DOMContentLoaded", function() {
+        var ref = document.querySelector("[data-md-component=palette]")
+        ref.addEventListener("change", function() {
+          var palette = __md_get("__palette")
+          if (palette && typeof palette.color === "object") {
+            var theme = palette.color.scheme === "slate"
+              ? "transparent_dark"
+              : "light"
+
+            // Instruct Giscus to change theme
+            var frame = document.querySelector(".giscus-frame")
+            frame.contentWindow.postMessage(
+              { giscus: { setConfig: { theme } } },
+              "https://giscus.app"
+            )
+          }
+        })
+      })
+    </script>
+  
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="하단/푸터" >
+        
+          
+          <a href="../00011/" class="md-footer__link md-footer__link--prev" aria-label="이전: 리버싱 핵심원리 2부 1장 정리 1">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                이전
+              </span>
+              <div class="md-ellipsis">
+                리버싱 핵심원리 2부 1장 정리 1
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/AN-NOYING" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="/feed_rss_created.xml" target="_blank" rel="noopener" title="RSS" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64m0 352a64 64 0 1 1 128 0 64 64 0 1 1-128 0m32-256c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.prune", "toc.follow", "navigation.footer", "navigation.sections", "content.code.copy", "content.code.annotate", "content.tooltips", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+    
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../../javascripts/scroll-percentage.min.js"></script>
+      
+        <script src="../../../javascripts/drag-search.min.js"></script>
+      
+        <script src="../../../javascripts/back2tb.min.js"></script>
+      
+        <script src="../../../javascripts/improve-seo.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/main.js"></script>
+      
+    
+
+    
+    <!-- Google Ads Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7065893733087116" crossorigin="anonymous"></script>
+    
+
+  </body>
+</html>
